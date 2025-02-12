@@ -8,7 +8,7 @@ return {
     vim.g.mkdp_filetypes = { 'markdown' }
   end,
   keys = {
-    { '<leader>mdv', ':MarkdownPreview<CR>', desc = 'Markdown Preview' },
-    { '<leader>mds', ':MarkdownPreviewStop<CR>', desc = 'Markdown Preview Stop' },
+    { '<leader>mdv', ':MarkdownPreview<CR>', desc = '[M]ark[D]own Pre[V]iew' },
+    { '<leader>mds', ':MarkdownPreviewStop<CR>', desc = '[M]ark[D]own Preview [S]top' },
   },
 }

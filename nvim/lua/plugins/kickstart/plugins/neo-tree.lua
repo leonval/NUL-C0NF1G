@@ -12,6 +12,7 @@ return {
   cmd = 'Neotree',
   keys = {
     { '<leader>tt', ':Neotree reveal float<CR>', desc = 'NeoTree reveal' },
+    { '<leader>tb', ':Neotree buffers float<CR>', desc = 'NeoTree buffer' },
   },
   opts = {
     filesystem = {

@@ -10,7 +10,7 @@ return {
     keys = {
       { '<leader>fr', ':FlutterRun<CR>', desc = 'Flutter [R]un' },
       { '<leader>fq', ':FlutterQuit<CR>', desc = 'Flutter [Q]uit' },
-      { '<leader>fR', ':FlutterQuit<CR>', desc = 'Flutter [R]estart' },
+      { '<leader>fR', ':FlutterRestart<CR>', desc = 'Flutter [R]estart' },
     },
     -- alternatively you can override the default configs
     -- require('flutter-tools').setup {
