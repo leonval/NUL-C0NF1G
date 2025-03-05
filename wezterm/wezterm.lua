@@ -9,8 +9,8 @@ local config = wezterm.config_builder()
 config.allow_win32_input_mode = false
 config.color_scheme = 'tokyonight_night'
 config.default_domain = 'local'
-config.default_prog = { 'powershell.exe' }
--- config.font = wezterm.font("MesloLGS NF")
+config.default_prog = { 'pwsh.exe' }
+config.font = wezterm.font_with_fallback { 'Cascadia Code', 'JetBrains Mono' }
 config.window_decorations = "RESIZE"
 
 -- Fullscreen
