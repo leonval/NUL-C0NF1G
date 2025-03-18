@@ -1,0 +1,40 @@
+# list all directory
+*
+
+# exception
+#NOTE: folder
+!.keepassXC/*
+!athena-welcome
+!athena-welcome/*
+!autostart/
+!autostart/*
+!dconf/
+!dconf/*
+!Electron/
+!Electron/*
+!eww/
+!eww/*
+!gtk-3.0/
+!gtk-3.0/*
+!gtk-4.0/
+!gtk-4.0/*
+!kanata/
+!kanata/*
+!keepassxc/
+!keepassxc/*
+!lazygit/
+!lazygit/*
+!nautilus/
+!nautilus/*
+!neofetch/
+!neofetch/*
+!powershell/
+!powershell/*
+!xfce4/
+!xfce4/*
+
+#NOTE: files
+!.zshrc
+!picom.conf
+!.gitignore
+!.gitmodules
