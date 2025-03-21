@@ -14,10 +14,11 @@ config.font = wezterm.font_with_fallback { 'Cascadia Code', 'JetBrains Mono' }
 config.window_decorations = "RESIZE"
 
 -- Fullscreen
-wezterm.on('gui-startup', function(cmd)
+--[[ wezterm.on('gui-startup', function(cmd)
   local tab, pane, window = mux.spawn_window(cmd or {})
   window:gui_window():maximize()
 end)
+--]]
 
 -- Map Leader Key
 config.leader = { mods = 'CTRL', key = "Space", timeout_milliseconds = 500 }

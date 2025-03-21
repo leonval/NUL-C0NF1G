@@ -1,0 +1,2 @@
+# Output Location and Name
+-o "${USERPROFILE}\Downloads\yt-dlp\%(title)s.%(ext)s"
