@@ -2,11 +2,11 @@ general:
   # Commands to run when the WM has started. This is useful for running a
   # script or launching another application.
   # Example: The below command launches Zebar.
-  #startup_commands: ['shell-exec zebar']
+  startup_commands: ['shell-exec zebar']
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
-  #shutdown_commands: ['shell-exec taskkill /IM zebar.exe /F']
+  shutdown_commands: ['shell-exec taskkill /IM zebar.exe /F']
 
   # Commands to run after the WM config is reloaded.
   config_reload_commands: []
@@ -41,16 +41,16 @@ general:
 
 gaps:
   # Whether to scale the gaps with the DPI of the monitor.
-  scale_with_dpi: true
+  scale_with_dpi: false
 
   # Gap between adjacent windows.
   inner_gap: '8px'
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '12px'
+    top: '8px'
     right: '12px'
-    bottom: '12px'
+    bottom: '60px'
     left: '12px'
 
 window_effects:
@@ -65,18 +65,18 @@ window_effects:
     # Remove the title bar from the window's frame. Note that this can
     # cause rendering issues for some applications.
     hide_title_bar:
-      enabled: false
+      enabled: true
 
     # Change the corner style of the window's frame.
     # ** Exclusive to Windows 11 due to API limitations.
     corner_style:
-      enabled: false
+      enabled: true
       # Allowed values: 'square', 'rounded', 'small_rounded'.
-      style: 'square'
+      style: 'rounded'
 
     # Change the transparency of the window.
     transparency:
-      enabled: true
+      enabled: false
       # Can be something like '95%' or '0.95' for slightly transparent windows.
       # '0' or '0%' is fully transparent (and, by consequence, unfocusable).
       opacity: '95%'
@@ -98,7 +98,7 @@ window_effects:
 window_behavior:
   # New windows are created in this state whenever possible.
   # Allowed values: 'tiling', 'floating'.
-  initial_state: 'floating'
+  initial_state: 'tiling'
 
   # Sets the default options for when a new window is created. This also
   # changes the defaults for when the state change commands, like
@@ -121,30 +121,46 @@ window_behavior:
 
 workspaces:
   - name: '1'
+    display_name: 'Primus'
+    keep_alive: true
+
   - name: '2'
+    display_name: 'Secundus'
+    keep_alive: true
+
   - name: '3'
+    display_name: 'Tertius'
+    keep_alive: true
+
   - name: '4'
+    display_name: 'Quartus'
+    keep_alive: true
+
   - name: '5'
-  - name: '6'
-  - name: '7'
-  - name: '8'
-  - name: '9'
+    display_name: 'Quintus'
+    keep_alive: true
 
 window_rules:
   - commands: ['move --workspace 1']
     match:
-      # Move games to workspace 1
-      - window_process: { regex: 'afk journey|steam|epic game'}
-
-  - commands: ['move --workspace 2']
-    match:
-      # Move browser to workspace 2
-      - window_process: { regex: 'msedge|brave|chrome|zen'}
+      # Move terminal to workspace 1
+      - window_process: { regex: 'wezterm|powershell|cmd'}
 
   - commands: ['move --workspace 3']
     match:
-      # Move terminal to workspace 3
-      - window_process: { regex: 'wezterm|powershell|cmd'}
+      # Move browser to workspace 3
+      - window_process: { regex: 'msedge|brave|chrome|zen'}
+
+  - commands: ['move --workspace 4']
+    match:
+      # Move personal to workspace 4
+      - window_process: { regex: 'steam|epic game|LGP|Farlight Launcher|AFK Journey' }
+        window_title: { regex: 'steam|epic game|Farlight Launcher|AFK Journey' }
+
+  - commands: ['move --workspace 5']
+    match:
+      # Move other app to workspace 5
+      - window_title: { regex: 'Discord|Spotify' }
 
   - commands: ['ignore']
     match:
@@ -160,8 +176,23 @@ window_rules:
         window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
       - window_process: { equals: 'PowerToys' }
         window_title: { regex: '.*? - Peek' }
-      - window_process: { equals: 'Lively' }
+
+      # Lively Walppaper and EarTrumpet
+      - window_process: { regex: 'Lively|EarTrumpet' }
         window_class: { regex: 'HwndWrapper' }
+
+      # FXSound, YAPA, File Explorer, Task Manager
+      - window_process: { regex: 'FxSound|YAPA|explorer|Taskmgr' }
+
+      # File Explorer Picture
+      - window_class: { equals: 'WinUIDesktopWin32WindowClass' }
+
+      # WinRAR
+      - window_process: { equals: 'WinRAR' } 
+        window_class: { equals: 'WinRarWindow' }
+
+      # WinRAR
+      - window_process: { equals: 'KeePassXC' } 
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -227,8 +258,8 @@ keybindings:
 
   # Disables window management and all other keybindings until alt+shift+p
   # is pressed again.
-  #- commands: ['wm-toggle-pause']
-  #  bindings: ['alt+shift+p']
+  - commands: ['wm-toggle-pause']
+    bindings: ['alt+shift+p']
 
   # Change tiling direction. This determines where new tiling windows will
   # be inserted.
@@ -247,7 +278,7 @@ keybindings:
 
   # Change the focused window to be tiling.
   - commands: ['toggle-tiling']
-    bindings: ['alt+t']
+    bindings: ['alt+x']
   #  bindings: ['LWin+t']
 
   # Change the focused window to be fullscreen.

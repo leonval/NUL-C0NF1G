@@ -1,23 +1,53 @@
 (defcfg
   process-unmapped-keys no
+  concurrent-tap-hold yes
 )
 
 (defsrc
   1    2    3    4    5    6    7    8    9    0	-	=
-  tab	[  ]
+  tab							[    	]
   caps
+  	lalt
 )
 
 (deflayer main
-  1    2    3    4    5    6    7    8    9    0	-	=
-  @tab	@lnav  @rnav
-  @esctrl
+  _    _    _    _    _    _    _    _    _    _	_	_
+  @tab							@lnav  @rnav
+  @escr
+  	@lalt
 )
 
 (deflayer symbols
-  S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0	_	+
-  tab	_  _
+  S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0	S--	S-=
+  _							_    _	
   caps
+  	_
+)
+
+;; Variables
+(defvar
+	tap-timeout 500
+	hold-timeout 200
+)
+
+;; Aliases
+(defalias
+	;; layer
+	;; layer-main (layer-switch main)
+	;; layer-nav (layer-toggle symbols)
+
+	;; tap for esc, hold for left-ctrl
+	escr (tap-hold-press $tap-timeout $hold-timeout esc lctl)
+	
+	;; tap for tab, hold for symbol layer
+	tab (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle symbols))
+	
+	;; Windows Navigation
+	lnav (tap-hold $tap-timeout $hold-timeout S-tab [)
+	rnav (tap-hold $tap-timeout $hold-timeout tab ])
+
+	;; add timeout to lalt
+	lalt (one-shot-press 500 lalt)
 )
 
 #|
@@ -32,10 +62,10 @@
 
 (deflayer nul
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  @tab  q    w    e    r    t    y    u    i    o    p    [    ]   \ 
-  @esctrl a    s    d    f    g    h    j    k    l    ;    '
-  @lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  grv	1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  @tab	q    w    e    r    t    y    u    i    o    p    [    ]   \ 
+  @esctrl a  s    d    f    g    h    j    k    l    ;    '
+  @lsft	z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           spc            ralt rmet rctl
 )
 
@@ -48,23 +78,3 @@
   _    _    _              _              _    _    _
 )
 |#
-
-;; Aliases
-(defalias
-	;; layer
-	layer-main (layer-switch main)
-	;; layer-nav (layer-toggle symbols)
-	
-	;; tap for esc, hold for left-ctrl
-	esctrl (tap-hold 200 200 esc lctl)
-	
-	;; add timeout to lsft
-	;; lsft (one-shot-release 500 lsft)
-	
-	;; tap for tab, hold for symbol layer
-	tab (tap-hold 200 200 tab (layer-toggle symbols))
-	
-	;; Windows Navigation
-	lnav (tap-hold 200 200 S-tab [)
-	rnav (tap-hold 200 200 tab ])
-)
