@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<channel name="thunar" version="1.0">
+  <property name="last-location-bar" type="string" value="ThunarLocationButtons"/>
+  <property name="last-view" type="string" value="ThunarIconView"/>
+  <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_100_PERCENT"/>
+  <property name="last-show-hidden" type="bool" value="false"/>
+  <property name="last-separator-position" type="int" value="178"/>
+  <property name="misc-single-click" type="bool" value="false"/>
+  <property name="last-window-maximized" type="bool" value="false"/>
+  <property name="last-window-width" type="int" value="947"/>
+  <property name="last-window-height" type="int" value="584"/>
+  <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
+  <property name="last-details-view-column-widths" type="string" value="50,116,131,50,1303,92,50,91,508,139,50,102,50,691"/>
+  <property name="misc-confirm-close-multiple-tabs" type="bool" value="false"/>
+  <property name="misc-directory-specific-settings" type="bool" value="true"/>
+</channel>

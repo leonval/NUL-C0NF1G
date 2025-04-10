@@ -1,0 +1,15 @@
+[user]
+showWindowCount=true
+forceIconSize=true
+iconSize=24
+indicatorStyle=1
+inactiveIndicatorStyle=5
+showPreviews=true
+indicatorOrientation=1
+pinned=
+indicatorColorFromTheme=true
+keyComboActive=true
+keyAloneActive=false
+noWindowsListIfSingle=false
+onlyDisplayVisible=false
+onlyDisplayScreen=false

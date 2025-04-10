@@ -3,38 +3,40 @@
 
 # exception
 #NOTE: folder
-!.keepassXC/*
-!athena-welcome
-!athena-welcome/*
+!.keepassXC/
+!.keepassXC/**
 !autostart/
-!autostart/*
+!autostart/**
 !dconf/
-!dconf/*
+!dconf/**
 !Electron/
-!Electron/*
+!Electron/**
 !eww/
-!eww/*
+!eww/**
 !gtk-3.0/
-!gtk-3.0/*
+!gtk-3.0/**
 !gtk-4.0/
-!gtk-4.0/*
+!gtk-4.0/**
 !kanata/
-!kanata/*
+!kanata/**
 !keepassxc/
-!keepassxc/*
+!keepassxc/**
 !lazygit/
-!lazygit/*
+!lazygit/**
 !nautilus/
-!nautilus/*
+!nautilus/**
 !neofetch/
-!neofetch/*
+!neofetch/**
+!nvim/
+!nvim/**
 !powershell/
-!powershell/*
+!powershell/**
+!systemd/
+!systemd/**
 !xfce4/
-!xfce4/*
+!xfce4/**
 
 #NOTE: files
 !.zshrc
 !picom.conf
 !.gitignore
-!.gitmodules

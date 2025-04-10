@@ -9,9 +9,12 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zshrc'
 
+alias sudo='sudo '
 alias shopt='/usr/bin/shopt'
 alias yay='paru'
 alias lg='lazygit'
+#alias svim='sudo nvim'
+alias vim='nvim'
 
 # Project
 alias pmika="cd ~/1-NUL-M1KH43L/3-school/2-kuliah/UNAIR/penelitian/mika/web/mikaeducation"
