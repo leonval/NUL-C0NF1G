@@ -26,7 +26,7 @@
 
 ;; Variables
 (defvar
-	tap-timeout 500
+	tap-timeout 200
 	hold-timeout 200
 )
 
