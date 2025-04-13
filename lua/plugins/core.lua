@@ -90,7 +90,7 @@ return {
 			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
 			-- Slightly advanced example of overriding default behavior and theme
-			vim.keymap.set("n", "<leader>/", function()
+			vim.keymap.set("n", "<C-f>", function()
 				-- You can pass additional configuration to Telescope to change the theme, layout, etc.
 				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 					winblend = 10,
@@ -170,9 +170,9 @@ return {
 				-- No, but seriously. Please read `:help ins-completion`, it is really good!
 				mapping = cmp.mapping.preset.insert({
 					-- Select the [n]ext item
-					["<C-n>"] = cmp.mapping.select_next_item(),
+					["<C-i>"] = cmp.mapping.select_next_item(),
 					-- Select the [p]revious item
-					["<C-p>"] = cmp.mapping.select_prev_item(),
+					["<C-u>"] = cmp.mapping.select_prev_item(),
 
 					-- Scroll the documentation window [b]ack / [f]orward
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -281,13 +281,16 @@ return {
 		lazy = false, -- neo-tree will lazily load itself
 		cmd = "Neotree",
 		keys = {
-			{ "<leader>tt", ":Neotree reveal<CR>", desc = "NeoTree reveal" },
+			{ "<leader>tt", ":Neotree reveal float<CR>", desc = "NeoTree reveal" },
+			{ "<leader>tb", ":Neotree float buffers<CR>", desc = "NeoTree reveal buffers" },
+			{ "<leader>ts", ":Neotree float git_status<CR>", desc = "NeoTree reveal git status" },
 		},
 		---@module "neo-tree"
 		---@type neotree.Config?
 		opts = {
 			--	filesystem = {
 			window = {
+				position = "float",
 				mappings = {
 					["<leader>tt"] = "close_window",
 				},
