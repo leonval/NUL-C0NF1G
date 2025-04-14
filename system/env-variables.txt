@@ -1,0 +1,11 @@
+# my config folder
+%XDG_CONFIG_HOME=USERPROFILE%\.config
+# glazewm config path
+GLAZEWM_CONFIG_PATH=%HOMEPATH%\.config\glzr\glazewm\nul-config.yaml
+# powershell script bin
+%USERPROFILE%\5-HIKARI-L2.2021\2-app\powershell\script
+# git subrepo
+GIT_SUBREPO_ROOT=%HOMEPATH%\app\2-work\1-tech\git-subrepo
+MANPATH=%HOMEPATH%\app\2-work\1-tech\git-subrepo\man
+%HOMEPATH%\app\2-work\1-tech\git-subrepo
+%HOMEPATH%\app\2-work\1-tech\git-subrepo\lib
