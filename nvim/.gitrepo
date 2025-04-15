@@ -6,6 +6,7 @@
 [subrepo]
 	remote = git@git-personal:leonval/NUL-C0NF1G.git
 	branch = subrepo/nvim
-	commit = 
+	commit = 218f320b64be140cbc99a193f636463c6750df04
 	method = merge
 	cmdver = 0.4.9
+	parent = 06f863af45ba4c80994fbb6e25033a7587286524
