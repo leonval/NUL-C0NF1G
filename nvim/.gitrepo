@@ -4,7 +4,7 @@
 ; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
 ;
 [subrepo]
-	remote = git@github.com:leonval/NUL-C0NF1G.git
+	remote = git@git-personal:leonval/NUL-C0NF1G.git
 	branch = subrepo/nvim
 	commit = 
 	method = merge
