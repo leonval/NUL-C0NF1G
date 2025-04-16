@@ -168,6 +168,8 @@ window_rules:
       - window_process: { equals: 'Resolve'}
         window_class: { equals: 'Qt5152QWindow'}
 
+      - window_process: { equals: 'KeePassXC' }
+
   - commands: ['ignore']
     match:
       # Ignores any Zebar windows.
@@ -198,9 +200,7 @@ window_rules:
         window_class: { equals: 'WinRarWindow' }
 
       # KeePassXC
-      - window_process: { equals: 'KeePassXC' } 
-
-      
+      # - window_process: { equals: 'KeePassXC' } 
 
       - window_process: { equals: 'Zoom'}
 
