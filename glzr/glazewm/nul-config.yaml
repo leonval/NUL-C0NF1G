@@ -50,7 +50,7 @@ gaps:
   outer_gap:
     top: '8px'
     right: '12px'
-    bottom: '60px'
+    bottom: '48px'
     left: '12px'
 
 window_effects:
@@ -92,7 +92,7 @@ window_effects:
       enabled: false
       style: 'square'
     transparency:
-      enabled: true
+      enabled: false
       opacity: '95%'
 
 window_behavior:
@@ -109,7 +109,7 @@ window_behavior:
       centered: true
 
       # Whether to show floating windows as always on top.
-      shown_on_top: false
+      shown_on_top: true
 
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
@@ -169,6 +169,8 @@ window_rules:
         window_class: { equals: 'Qt5152QWindow'}
 
       - window_process: { equals: 'KeePassXC' }
+      
+      - window_process: { regex: 'explorer|Taskmgr' }
 
   - commands: ['ignore']
     match:
@@ -190,7 +192,7 @@ window_rules:
         window_class: { regex: 'HwndWrapper' }
 
       # FXSound, YAPA, File Explorer, Task Manager
-      - window_process: { regex: 'FxSound|YAPA|explorer|Taskmgr' }
+      - window_process: { regex: 'FxSound|YAPA' } # insert to add: |explorer|Taskmgr
 
       # Zoom & File Explorer Picture
       - window_class: { equals: 'WinUIDesktopWin32WindowClass|Zoom' }
@@ -203,6 +205,9 @@ window_rules:
       # - window_process: { equals: 'KeePassXC' } 
 
       - window_process: { equals: 'Zoom'}
+
+      # BongoCat
+      - window_process: { equals: 'BongoCat' } 
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
