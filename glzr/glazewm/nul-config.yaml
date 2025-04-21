@@ -109,7 +109,7 @@ window_behavior:
       centered: true
 
       # Whether to show floating windows as always on top.
-      shown_on_top: true
+      shown_on_top: false
 
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
@@ -160,7 +160,7 @@ window_rules:
   - commands: ['move --workspace 5']
     match:
       # Move other app to workspace 5
-      - window_title: { regex: 'Discord|Spotify' }
+      - window_process: { regex: 'Discord|Spotify' }
 
   - commands: ['set-floating']
     match:
@@ -171,6 +171,12 @@ window_rules:
       - window_process: { equals: 'KeePassXC' }
       
       - window_process: { regex: 'explorer|Taskmgr' }
+
+      - window_process: { equals: 'vlc' }
+
+  - commands: ['size --width 958 --height 618']
+    match:
+      - window_process: { equals: 'KeePassXC' }
 
   - commands: ['ignore']
     match:
