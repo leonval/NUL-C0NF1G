@@ -2,29 +2,15 @@
 *
 
 # exception
-#NOTE: folder
+# NOTE: folder
 !.keepassXC/
 !.keepassXC/**
-!autostart/
-!autostart/**
-!dconf/
-!dconf/**
-!Electron/
-!Electron/**
-!eww/
-!eww/**
-!gtk-3.0/
-!gtk-3.0/**
-!gtk-4.0/
-!gtk-4.0/**
 !kanata/
 !kanata/**
 !keepassxc/
 !keepassxc/**
 !lazygit/
 !lazygit/**
-!nautilus/
-!nautilus/**
 !neofetch/
 !neofetch/**
 !nvim/
@@ -33,10 +19,8 @@
 !powershell/**
 !systemd/
 !systemd/**
-!xfce4/
-!xfce4/**
 
-#NOTE: files
+# NOTE: files
 !.zshrc
 !picom.conf
 !.gitignore

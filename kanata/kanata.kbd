@@ -1,26 +1,53 @@
 (defcfg
   process-unmapped-keys no
+  concurrent-tap-hold yes
 )
 
 (defsrc
   1    2    3    4    5    6    7    8    9    0	-	=
-  tab	[    ]
+  tab							[    	]
   caps
-  lalt
+  	lalt
 )
 
 (deflayer main
   _    _    _    _    _    _    _    _    _    _	_	_
-  @tab	@lnav  @rnav
+  @tab							@lnav  @rnav
   @escr
-  @lalt
+  	@lalt
 )
 
 (deflayer symbols
   S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0	S--	S-=
-  tab	_    _	
+  _							_    _	
   caps
-  @lalt
+  	_
+)
+
+;; Variables
+(defvar
+	tap-timeout 200
+	hold-timeout 200
+)
+
+;; Aliases
+(defalias
+	;; layer
+	;; layer-main (layer-switch main)
+	;; layer-nav (layer-toggle symbols)
+
+	;; tap for esc, hold for left-ctrl
+	escr (tap-hold-press $tap-timeout $hold-timeout esc lctl)
+	
+	;; tap for tab, hold for symbol layer
+	tab (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle symbols))
+	
+	;; Windows Navigation
+	lnav (tap-hold $tap-timeout $hold-timeout S-tab [)
+	rnav (tap-hold $tap-timeout $hold-timeout tab ])
+
+	;; add timeout to lalt
+	lalt (one-shot-release 500 lalt)
 )
 
 #|
@@ -51,29 +78,3 @@
   _    _    _              _              _    _    _
 )
 |#
-
-;; Variables
-(defvar
-	tap-timeout 500
-	hold-timeout 200
-)
-
-;; Aliases
-(defalias
-	;; layer
-	;; layer-main (layer-switch main)
-	;; layer-nav (layer-toggle symbols)
-	
-	;; tap for esc, hold for left-ctrl
-	escr (tap-hold $tap-timeout $hold-timeout esc lctl)
-		
-	;; tap for tab, hold for symbol layer
-	tab (tap-hold $tap-timeout $hold-timeout tab (layer-toggle symbols))
-	
-	;; Windows Navigation
-	lnav (tap-hold $tap-timeout $hold-timeout S-tab [)
-	rnav (tap-hold $tap-timeout $hold-timeout tab ])
-
-	;; add timeout to lalt
-	lalt (one-shot-release 500 lalt)
-)
