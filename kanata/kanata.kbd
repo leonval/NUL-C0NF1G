@@ -47,7 +47,7 @@
 	rnav (tap-hold $tap-timeout $hold-timeout tab ])
 
 	;; add timeout to lalt
-	lalt (one-shot-press 500 lalt)
+	lalt (one-shot-release 500 lalt)
 )
 
 #|

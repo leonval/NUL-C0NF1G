@@ -143,34 +143,34 @@ workspaces:
 window_rules:
   - commands: ['move --workspace 1']
     match:
-      # Move terminal to workspace 1
-      - window_process: { regex: 'wezterm|powershell|cmd'}
+      - window_process: { regex: 'wezterm|powershell|cmd'} # terminals
 
   - commands: ['move --workspace 3']
     match:
-      # Move browser to workspace 3
-      - window_process: { regex: 'msedge|brave|chrome|zen'}
+      - window_process: { regex: 'msedge|brave|chrome|zen'} # browsers
 
   - commands: ['move --workspace 4']
     match:
-      # Move personal to workspace 4
       - window_process: { regex: 'steam|epic game|LGP|Farlight Launcher|AFK Journey' }
         window_title: { regex: 'steam|epic game|Farlight Launcher|AFK Journey' }
 
   - commands: ['move --workspace 5']
     match:
-      # Move other app to workspace 5
       - window_process: { regex: 'Discord|Spotify' }
 
   - commands: ['set-floating']
     match:
-      # DaVinci Resolve
-      - window_process: { equals: 'Resolve'}
-        window_class: { equals: 'Qt5152QWindow'}
+      - window_process: { equals: 'Resolve'} # DaVinci Resolve
+        window_class: { equals: 'Qt5152QWindowIcon'}
 
       - window_process: { equals: 'KeePassXC' }
       
-      - window_process: { regex: 'explorer|Taskmgr' }
+      - window_process: { regex: 'explorer|Taskmgr' } # Explorer and Task Manager
+
+      - window_process: { equals: 'WinRAR' }
+        window_class: { equals: 'WinRarWindow' }
+
+      - window_process: { equals: 'Zoom'}
 
       - window_process: { equals: 'vlc' }
 
@@ -203,17 +203,7 @@ window_rules:
       # Zoom & File Explorer Picture
       - window_class: { equals: 'WinUIDesktopWin32WindowClass|Zoom' }
 
-      # WinRAR
-      - window_process: { equals: 'WinRAR' } 
-        window_class: { equals: 'WinRarWindow' }
-
-      # KeePassXC
-      # - window_process: { equals: 'KeePassXC' } 
-
-      - window_process: { equals: 'Zoom'}
-
-      # BongoCat
-      - window_process: { equals: 'BongoCat' } 
+      - window_process: { equals: 'BongoCat' }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -227,6 +217,7 @@ binding_modes:
         bindings: ['k']
       - commands: ['resize --height -2%']
         bindings: ['j']
+
       # Press enter/escape to return to default keybindings.
       - commands: ['wm-disable-binding-mode --name resize']
         bindings: ['escape', 'enter']
