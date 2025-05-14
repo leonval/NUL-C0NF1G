@@ -109,7 +109,7 @@ window_behavior:
       centered: true
 
       # Whether to show floating windows as always on top.
-      shown_on_top: false
+      shown_on_top: true
 
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
@@ -147,34 +147,36 @@ window_rules:
 
   - commands: ['move --workspace 3']
     match:
-      - window_process: { regex: 'msedge|brave|chrome|zen'} # browsers
+      - window_process: { equals: 'zen'} # Zen Browser
 
   - commands: ['move --workspace 4']
     match:
-      - window_process: { regex: 'steam|epic game|LGP|Farlight Launcher|AFK Journey' }
-        window_title: { regex: 'steam|epic game|Farlight Launcher|AFK Journey' }
+      - window_process: { regex: 'epic game|LGP|Farlight Launcher|AFK Journey' } # Games  WARN: need recode
+        window_title: { regex: 'epic game|Farlight Launcher|AFK Journey' }
+
+      - window_process: { equals: 'steamwebhelper' }
 
   - commands: ['move --workspace 5']
     match:
-      - window_process: { regex: 'Discord|Spotify' }
+      - window_process: { regex: 'Discord' }
+      - window_process: { regex: 'Spotify' }
 
   - commands: ['set-floating']
     match:
       - window_process: { equals: 'Resolve'} # DaVinci Resolve
         window_class: { equals: 'Qt5152QWindowIcon'}
 
-      - window_process: { equals: 'KeePassXC' }
       
-      - window_process: { regex: 'explorer|Taskmgr' } # Explorer and Task Manager
+      - window_process: { equals: 'explorer' } # Explorer
+
+      - window_process: { equals: 'Taskmgr' } # Task Manager
 
       - window_process: { equals: 'WinRAR' }
         window_class: { equals: 'WinRarWindow' }
 
-      - window_process: { equals: 'Zoom'}
-
       - window_process: { equals: 'vlc' }
 
-  - commands: ['size --width 958 --height 618']
+  - commands: ['set-floating --width 958 --height 618']
     match:
       - window_process: { equals: 'KeePassXC' }
 
@@ -190,18 +192,18 @@ window_rules:
       # Ignore rules for various 3rd-party apps.
       - window_process: { equals: 'PowerToys' }
         window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+
       - window_process: { equals: 'PowerToys' }
         window_title: { regex: '.*? - Peek' }
 
-      # Lively Walppaper and EarTrumpet
-      - window_process: { regex: 'Lively|EarTrumpet' }
+      - window_process: { equals: 'EarTrumpet' }
         window_class: { regex: 'HwndWrapper' }
 
-      # FXSound, YAPA, File Explorer, Task Manager
-      - window_process: { regex: 'FxSound|YAPA' } # insert to add: |explorer|Taskmgr
+      - window_process: { equals: 'FxSound' }
 
-      # Zoom & File Explorer Picture
-      - window_class: { equals: 'WinUIDesktopWin32WindowClass|Zoom' }
+      - window_class: { equals: 'WinUIDesktopWin32WindowClass' } #  File Explorer Picture
+
+      - window_class: { equals: 'Zoom' }
 
       - window_process: { equals: 'BongoCat' }
 
@@ -266,7 +268,6 @@ keybindings:
   # the name 'resize'.
   - commands: ['wm-enable-binding-mode --name resize']
     bindings: ['alt+r']
-  #  bindings: ['LWin+r']
 
   # Disables window management and all other keybindings until alt+shift+p
   # is pressed again.
@@ -283,19 +284,19 @@ keybindings:
     bindings: ['alt+z']
 
   # Change the focused window to be floating.
+  # - commands: ['set-floating --width 1896 --height 1024']
+  #   bindings: ['alt+x']
+
   - commands: ['toggle-floating --centered']
     bindings: ['alt+shift+space']
-  #  bindings: ['LWin+shift+space']
 
   # Change the focused window to be tiling.
   - commands: ['toggle-tiling']
     bindings: ['alt+x']
-  #  bindings: ['LWin+t']
 
   # Change the focused window to be fullscreen.
   - commands: ['toggle-fullscreen']
     bindings: ['alt+f']
-  #  bindings: ['LWin+f']
 
   # Minimize focused window.
   - commands: ['toggle-minimized']
@@ -305,35 +306,29 @@ keybindings:
   # Close focused window.
   - commands: ['close']
     bindings: ['alt+q']
-  #  bindings: ['LWin+q']
 
   # Kill GlazeWM process safely.
   #- commands: ['wm-exit']
   #  bindings: ['alt+shift+e']
-  #  bindings: ['LWin+shift+e']
 
   # Re-evaluate configuration file.
   #- commands: ['wm-reload-config']
   #  bindings: ['alt+shift+r']
-  #  bindings: ['LWin+shift+r']
 
   # Redraw all windows.
   - commands: ['wm-redraw']
     bindings: ['alt+shift+w']
-  #  bindings: ['LWin+shift+w']
 
-    # NOTE: App Shortcut
+  # NOTE: app shortcut
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
   - commands: ['shell-exec C:\Program Files\WezTerm\wezterm-gui.exe']
     bindings: ['alt+enter']
-  #  bindings: ['LWin+enter']
 
   # Launch Browser
   - commands: ['shell-exec C:\Program Files\Zen Browser\zen.exe']
     bindings: ['alt+b']
-  #  bindings: ['LWin+b']
   
   # Launch Explorer
   - commands: ['shell-exec explorer']
@@ -352,27 +347,15 @@ keybindings:
   # Change focus to a workspace defined in `workspaces` config.
   - commands: ['focus --workspace 1']
     bindings: ['alt+1']
-  #  bindings: ['LWin+1']
   - commands: ['focus --workspace 2']
     bindings: ['alt+2']
-  #  bindings: ['LWin+2']
   - commands: ['focus --workspace 3']
     bindings: ['alt+3']
-  #  bindings: ['LWin+3']
   - commands: ['focus --workspace 4']
     bindings: ['alt+4']
-  #  bindings: ['LWin+4']
   - commands: ['focus --workspace 5']
     bindings: ['alt+5']
-  # - commands: ['focus --workspace 6']
-  #   bindings: ['alt+6']
-  # - commands: ['focus --workspace 7']
-  #   bindings: ['alt+7']
-  # - commands: ['focus --workspace 8']
-  #   bindings: ['alt+8']
-  # - commands: ['focus --workspace 9']
-  #   bindings: ['alt+9']
-
+  
   # Move the focused window's parent workspace to a monitor in a given
   # direction.
   #- commands: ['move-workspace --direction left']
@@ -387,24 +370,11 @@ keybindings:
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ['move --workspace 1']
     bindings: ['alt+shift+1']
-  #  bindings: ['LWin+shift+1']
   - commands: ['move --workspace 2']
     bindings: ['alt+shift+2']
-  #  bindings: ['LWin+shift+2']
   - commands: ['move --workspace 3']
     bindings: ['alt+shift+3']
-  #  bindings: ['LWin+shift+3']
   - commands: ['move --workspace 4']
     bindings: ['alt+shift+4']
-  #  bindings: ['LWin+shift+4']
   - commands: ['move --workspace 5']
     bindings: ['alt+shift+5']
-  #  bindings: ['LWin+shift+5']
-  # - commands: ['move --workspace 6']
-  #   bindings: ['alt+shift+6']
-  # - commands: ['move --workspace 7']
-  #   bindings: ['alt+shift+7']
-  # - commands: ['move --workspace 8']
-  #   bindings: ['alt+shift+8']
-  # - commands: ['move --workspace 9']
-  #   bindings: ['alt+shift+9']
