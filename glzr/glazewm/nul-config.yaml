@@ -109,7 +109,7 @@ window_behavior:
       centered: true
 
       # Whether to show floating windows as always on top.
-      shown_on_top: true
+      shown_on_top: false
 
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
@@ -143,7 +143,9 @@ workspaces:
 window_rules:
   - commands: ['move --workspace 1']
     match:
-      - window_process: { regex: 'wezterm|powershell|cmd'} # terminals
+      - window_process: { equals: 'wezterm-gui' } # wezterm
+      - window_process: { equals: 'pwsh' } # powershell
+      - window_process: { equals: 'cmd' } # cmd
 
   - commands: ['move --workspace 3']
     match:
@@ -153,7 +155,6 @@ window_rules:
     match:
       - window_process: { regex: 'epic game|LGP|Farlight Launcher|AFK Journey' } # Games  WARN: need recode
         window_title: { regex: 'epic game|Farlight Launcher|AFK Journey' }
-
       - window_process: { equals: 'steamwebhelper' }
 
   - commands: ['move --workspace 5']
@@ -164,17 +165,13 @@ window_rules:
   - commands: ['set-floating']
     match:
       - window_process: { equals: 'Resolve'} # DaVinci Resolve
-        window_class: { equals: 'Qt5152QWindowIcon'}
-
-      
       - window_process: { equals: 'explorer' } # Explorer
-
+      - window_process: { equals: 'Photos' } #  File Explorer Picture
       - window_process: { equals: 'Taskmgr' } # Task Manager
-
       - window_process: { equals: 'WinRAR' }
         window_class: { equals: 'WinRarWindow' }
-
       - window_process: { equals: 'vlc' }
+      - window_process: { equals: 'kdenlive' }
 
   - commands: ['set-floating --width 958 --height 618']
     match:
@@ -184,28 +181,23 @@ window_rules:
     match:
       # Ignores any Zebar windows.
       - window_process: { equals: 'zebar' }
-
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
         window_class: { regex: 'Chrome_WidgetWin_1|MozillaDialogClass' }
-
       # Ignore rules for various 3rd-party apps.
       - window_process: { equals: 'PowerToys' }
         window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
-
       - window_process: { equals: 'PowerToys' }
         window_title: { regex: '.*? - Peek' }
-
       - window_process: { equals: 'EarTrumpet' }
         window_class: { regex: 'HwndWrapper' }
-
       - window_process: { equals: 'FxSound' }
-
-      - window_class: { equals: 'WinUIDesktopWin32WindowClass' } #  File Explorer Picture
-
-      - window_class: { equals: 'Zoom' }
-
+      - window_process: { equals: 'Zoom' }
       - window_process: { equals: 'BongoCat' }
+      - window_process: { equals: 'Resolve'} # DaVinci Resolve Project Manager
+        window_class: { equals: 'Qt5152QWindow' }
+        window_title: { equals: 'Project Manager' }
+      - window_process: { equals: 'Cloudflare WARP'}
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -228,30 +220,22 @@ keybindings:
   # Shift focus in a given direction.
   - commands: ['focus --direction left']
     bindings: ['alt+h']
-  #  bindings: ['LWin+h']
   - commands: ['focus --direction right']
     bindings: ['alt+l']
-  #  bindings: ['LWin+l']
   - commands: ['focus --direction up']
     bindings: ['alt+k']
-  #  bindings: ['LWin+k']
   - commands: ['focus --direction down']
     bindings: ['alt+j']
-  #  bindings: ['LWin+j']
 
   # Move focused window in a given direction.
   - commands: ['move --direction left']
     bindings: ['alt+shift+h']
-  #  bindings: ['LWin+shift+h']
   - commands: ['move --direction right']
     bindings: ['alt+shift+l']
-  #  bindings: ['LWin+shift+l']
   - commands: ['move --direction up']
     bindings: ['alt+shift+k']
-  #  bindings: ['LWin+shift+k']
   - commands: ['move --direction down']
     bindings: ['alt+shift+j']
-  #  bindings: ['LWin+shift+j']
 
   # Resize focused window by a percentage or pixel amount.
   #- commands: ['resize --width -2%']
@@ -279,14 +263,11 @@ keybindings:
   - commands: ['toggle-tiling-direction']
     bindings: ['alt+v']
 
-  # Change focus from tiling windows -> floating -> fullscreen.
+  # Change focus from tiling windows -> floating -> fullscreen
   - commands: ['wm-cycle-focus']
     bindings: ['alt+z']
 
   # Change the focused window to be floating.
-  # - commands: ['set-floating --width 1896 --height 1024']
-  #   bindings: ['alt+x']
-
   - commands: ['toggle-floating --centered']
     bindings: ['alt+shift+space']
 
@@ -301,7 +282,6 @@ keybindings:
   # Minimize focused window.
   - commands: ['toggle-minimized']
     bindings: ['alt+m']
-  #  bindings: ['LWin+m']
 
   # Close focused window.
   - commands: ['close']
@@ -335,10 +315,10 @@ keybindings:
     bindings: ['alt+e']
 
   # Focus the next/previous active workspace defined in `workspaces` config.
-  #- commands: ['focus --next-active-workspace']
-  #  bindings: ['alt+s']
-  #- commands: ['focus --prev-active-workspace']
-  #  bindings: ['alt+a']
+  - commands: ['focus --next-active-workspace']
+    bindings: ['alt+]']
+  - commands: ['focus --prev-active-workspace']
+    bindings: ['alt+[']
 
   # Focus the workspace that last had focus.
   #- commands: ['focus --recent-workspace']

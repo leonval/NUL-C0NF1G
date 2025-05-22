@@ -24,24 +24,14 @@ config.leader = { mods = "CTRL", key = "Space", timeout_milliseconds = 500 }
 -- tmux
 config.keys = {
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "t",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "q",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
-	},
-	{
-		mods = "LEADER",
-		key = "[",
-		action = wezterm.action.ActivateTabRelative(-1),
-	},
-	{
-		mods = "LEADER",
-		key = "]",
-		action = wezterm.action.ActivateTabRelative(1),
 	},
 	{
 		mods = "LEADER",
@@ -54,47 +44,47 @@ config.keys = {
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "h",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "j",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "k",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "l",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "LeftArrow",
 		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "RightArrow",
 		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "DownArrow",
 		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "UpArrow",
 		action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "p",
 		action = wezterm.action.ShowLauncher,
 	},

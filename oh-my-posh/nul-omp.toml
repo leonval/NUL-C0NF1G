@@ -1,3 +1,4 @@
+osc99 = true
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
 version = 3
 final_space = true
@@ -18,8 +19,8 @@ final_space = true
 
   [[blocks.segments]]
     leading_diamond = '╭─'
-    foreground = 'green'
-    background = 'blue'
+    foreground = 'transparent'
+    background = 'green'
     type = 'path'
     style = 'diamond'
 

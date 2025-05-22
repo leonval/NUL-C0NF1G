@@ -33,12 +33,12 @@ vim.schedule(function()
 end)
 
 -- Ctlr+Shift+c to copy to system clipboard
-vim.keymap.set("n", "<C-S-c>", '"+y', { desc = "Copy to system clipboard" })
-vim.keymap.set("v", "<C-S-c>", '"+y', { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
+vim.keymap.set("v", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
 
 -- Ctlr+Shift+v to paste to system clipboard
-vim.keymap.set("n", "<C-S-v>", '"+p', { desc = "Paste from system clipboard" })
-vim.keymap.set("v", "<C-S-v>", "<C-r>+", { desc = "Paste from system clipboard" })
+vim.keymap.set("n", "<C-v>", '"+P', { desc = "Paste from system clipboard" })
+vim.keymap.set("v", "<C-v>", "<C-r>+", { desc = "Paste from system clipboard" })
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -111,9 +111,8 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "write current buffer" }) -- Write buffer shortcut
-vim.keymap.set("n", "<C-q>", ":q<CR>", { desc = "quit current buffer" }) -- Quit buffer shortcut
-vim.keymap.set("n", "<C-f>", ":q<CR>", { desc = "quit current buffer" }) -- Quit buffer shortcut
+vim.keymap.set("n", "<leader>fs", ":w<CR>", { desc = "[W]rite current buffer" }) -- Write buffer shortcut
+vim.keymap.set("n", "<leader>fq", ":q<CR>", { desc = "[Q]uit current buffer" }) -- Quit buffer shortcut
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

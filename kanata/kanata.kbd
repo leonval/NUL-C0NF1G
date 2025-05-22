@@ -4,22 +4,22 @@
 )
 
 (defsrc
-  1    2    3    4    5    6    7    8    9    0	-	=
-  tab							[    	]
+  1	2	3	4	5	6	7	8	9	0	-	=
+  tab							[	]
   caps
   	lalt
 )
 
 (deflayer main
-  _    _    _    _    _    _    _    _    _    _	_	_
-  @tab							@lnav  @rnav
+  _	_	_	_	_	_	_	_	_	_	_	_
+  @tab							@lnav	@rnav
   @escr
   	@lalt
 )
 
 (deflayer symbols
-  S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0	S--	S-=
-  _							_    _	
+  S-1	S-2	S-3	S-4	S-5	S-6	S-7	S-8	S-9	S-0	S--	S-=
+  _							_	_	
   caps
   	_
 )
@@ -34,7 +34,6 @@
 (defalias
 	;; layer
 	;; layer-main (layer-switch main)
-	;; layer-nav (layer-toggle symbols)
 
 	;; tap for esc, hold for left-ctrl
 	escr (tap-hold-press $tap-timeout $hold-timeout esc lctl)
