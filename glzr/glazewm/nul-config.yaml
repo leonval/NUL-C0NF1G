@@ -198,6 +198,7 @@ window_rules:
         window_class: { equals: 'Qt5152QWindow' }
         window_title: { equals: 'Project Manager' }
       - window_process: { equals: 'Cloudflare WARP'}
+      - window_process: { equals: 'OverKeys'}
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.

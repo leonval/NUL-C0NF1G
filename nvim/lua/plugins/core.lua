@@ -302,4 +302,10 @@ return {
 			},
 		},
 	},
+	-- Harpoon for navigating buffer
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 }

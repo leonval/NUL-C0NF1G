@@ -7,6 +7,7 @@ local config = wezterm.config_builder()
 -- Config
 config.allow_win32_input_mode = false
 config.color_scheme = "tokyonight_night"
+config.colors = { background = "black" }
 config.default_prog = { "pwsh.exe" }
 config.font = wezterm.font_with_fallback({ "Cascadia Code", "JetBrains Mono" })
 config.window_decorations = "RESIZE"
@@ -19,7 +20,7 @@ end)
 --]]
 
 -- Map Leader Key
-config.leader = { mods = "CTRL", key = "Space", timeout_milliseconds = 500 }
+-- config.leader = { mods = "CTRL", key = "Space", timeout_milliseconds = 500 }
 
 -- tmux
 config.keys = {
@@ -34,12 +35,12 @@ config.keys = {
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "|",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		mods = "LEADER",
+		mods = "CTRL",
 		key = "-",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
