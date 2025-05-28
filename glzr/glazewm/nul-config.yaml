@@ -60,7 +60,7 @@ window_effects:
     # ** Exclusive to Windows 11 due to API limitations.
     border:
       enabled: true
-      color: '#8dbcff'
+      color: '#048004'
 
     # Remove the title bar from the window's frame. Note that this can
     # cause rendering issues for some applications.
@@ -84,7 +84,7 @@ window_effects:
   # Visual effects to apply to non-focused windows.
   other_windows:
     border:
-      enabled: true
+      enabled: false
       color: '#a1a1a1'
     hide_title_bar:
       enabled: false
@@ -172,6 +172,8 @@ window_rules:
         window_class: { equals: 'WinRarWindow' }
       - window_process: { equals: 'vlc' }
       - window_process: { equals: 'kdenlive' }
+      - window_process: { equals: 'laragon' }
+      - window_process: { equals: 'heidisql' }
 
   - commands: ['set-floating --width 958 --height 618']
     match:
@@ -209,9 +211,9 @@ binding_modes:
       - commands: ['resize --width +2%']
         bindings: ['l']
       - commands: ['resize --height +2%']
-        bindings: ['k']
-      - commands: ['resize --height -2%']
         bindings: ['j']
+      - commands: ['resize --height -2%']
+        bindings: ['k']
 
       # Press enter/escape to return to default keybindings.
       - commands: ['wm-disable-binding-mode --name resize']

@@ -5,7 +5,7 @@
 @import 'https://www.nerdfonts.com/assets/css/webfont.css';
 
 i {
-  color: rgb(115 130 175 / 95%);
+  color: rgb(04 255 04 / 100%);
   margin-right: 7px;
 }
 
@@ -71,7 +71,7 @@ body,
 }
 
 .workspace {
-  background: rgb(255 255 255 / 5%);
+  background: rgb(255 255 255 / 15%);
   margin-right: 4px;
   padding: 4px 8px;
   color: rgb(255 255 255 / 90%);
@@ -85,7 +85,8 @@ body,
 
   &.focused,
   &:hover {
-    background: rgb(75 115 255 / 50%);
+    background: rgb(04 255 04 / 100%);
+    color: rgb(0 0 0 / 100%);
   }
 }
 

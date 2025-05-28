@@ -15,5 +15,10 @@ return {
 			-- You can configure highlights by doing something like:
 			vim.cmd.hi("Comment gui=none")
 		end,
+		opts = {
+			on_colors = function(colors)
+				colors.bg = "#000000"
+			end,
+		},
 	},
 }

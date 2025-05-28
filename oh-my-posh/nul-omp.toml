@@ -1,4 +1,5 @@
-osc99 = true
+osc7 = true
+pwd = 'osc7'
 console_title_template = '{{ .Shell }}({{ .Folder }})'
 version = 3
 final_space = true
@@ -28,7 +29,7 @@ final_space = true
   [[blocks.segments]]
     leading_diamond = '╭─'
     trailing_diamond = ''
-    template = '  {{ path .Path .Location }}'
+    template = ' {{ path .Path .Location }} '
     foreground = 'transparent'
     background_templates = ['{{if gt .Code 0}}p:red{{end}}', '{{if eq .Code 0}}p:green{{end}}']
     background = 'p:green'
@@ -123,4 +124,4 @@ final_space = true
 
     [blocks.segments.properties]
       cache_duration = 'none'
-      threshold = 5000
+      threshold = 500
