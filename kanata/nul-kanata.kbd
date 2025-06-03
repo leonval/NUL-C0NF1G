@@ -1,0 +1,73 @@
+(defcfg
+  process-unmapped-keys no
+  concurrent-tap-hold yes
+)
+
+(defsrc
+  1	2	3	4	5	6	7	8	9	0	-	=
+  tab								i	o
+  caps						h	j	k	l
+  	lalt
+)
+
+(deflayer main
+  _	_	_	_	_	_	_	_	_	_	_	_
+  @tab								@i	@o
+  @esctl					_	_	_	_
+  	@lalt
+)
+
+(deflayer symbols
+  S-1	S-2	S-3	S-4	S-5	S-6	S-7	S-8	S-9	S-0	S--	S-=
+  _								_	_
+  @ctlcap					_	_	_	_
+  	@lalt
+)
+
+(deftemplate alt-fork (original-action new-action)
+  (fork $original-action (unmod $new-action) (lalt))
+)
+
+;; Variables
+(defvar
+	tap-timeout 200
+	hold-timeout 200
+)
+
+;; Aliases
+(defalias
+	;; tap for esc, hold for left-ctrl
+	esctl (tap-hold-press $tap-timeout $hold-timeout esc lctl)
+	
+	;; tap for tab, hold for symbol layer
+	tab (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle symbols))
+
+	;; tap for ctl, double tap for caps
+	ctlcap (tap-dance $tap-timeout (lctl caps))
+
+	;; tap for arrow, hold for letters
+	;; larr (tap-hold-press $tap-timeout $hold-timeout ◀ h)
+	;; darr (tap-hold-press $tap-timeout $hold-timeout ▼ j)
+	;; uarr (tap-hold-press $tap-timeout $hold-timeout ▲ k)
+	;; rarr (tap-hold-press $tap-timeout $hold-timeout ▶ l)
+	
+	;; Windows Navigation
+	;; lnav (tap-hold $tap-timeout $hold-timeout S-tab (macro i))
+	;; rnav (tap-hold $tap-timeout $hold-timeout tab (macro o))
+
+	;; Nav Switches
+	i (switch
+		((input real lalt)) S-tab break
+		((input real lctl)) S-tab break
+		() i break
+	)
+
+	o (switch
+		((input real lalt)) tab break
+		((input real lctl)) tab break
+		() o break
+	)
+
+	;; add timeout to lalt
+	lalt (one-shot-release 500 lalt)
+)
