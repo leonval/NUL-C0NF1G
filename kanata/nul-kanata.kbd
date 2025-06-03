@@ -12,15 +12,15 @@
 
 (deflayer main
   _	_	_	_	_	_	_	_	_	_	_	_
-  @tab								@i	@o
+  @tab								_	_
   @esctl					_	_	_	_
   	@lalt
 )
 
 (deflayer symbols
   S-1	S-2	S-3	S-4	S-5	S-6	S-7	S-8	S-9	S-0	S--	S-=
-  _								_	_
-  @ctlcap					_	_	_	_
+  _								@lnav	@rnav
+  @ctlcap					◀	▼	▲	▶
   	@lalt
 )
 
@@ -46,27 +46,14 @@
 	ctlcap (tap-dance $tap-timeout (lctl caps))
 
 	;; tap for arrow, hold for letters
-	;; larr (tap-hold-press $tap-timeout $hold-timeout ◀ h)
-	;; darr (tap-hold-press $tap-timeout $hold-timeout ▼ j)
-	;; uarr (tap-hold-press $tap-timeout $hold-timeout ▲ k)
-	;; rarr (tap-hold-press $tap-timeout $hold-timeout ▶ l)
+	larr (tap-hold-press $tap-timeout $hold-timeout ◀ h)
+	darr (tap-hold-press $tap-timeout $hold-timeout ▼ j)
+	uarr (tap-hold-press $tap-timeout $hold-timeout ▲ k)
+	rarr (tap-hold-press $tap-timeout $hold-timeout ▶ l)
 	
 	;; Windows Navigation
-	;; lnav (tap-hold $tap-timeout $hold-timeout S-tab (macro i))
-	;; rnav (tap-hold $tap-timeout $hold-timeout tab (macro o))
-
-	;; Nav Switches
-	i (switch
-		((input real lalt)) S-tab break
-		((input real lctl)) S-tab break
-		() i break
-	)
-
-	o (switch
-		((input real lalt)) tab break
-		((input real lctl)) tab break
-		() o break
-	)
+	lnav (tap-hold $tap-timeout $hold-timeout S-tab (macro home))
+	rnav (tap-hold $tap-timeout $hold-timeout tab (macro end))
 
 	;; add timeout to lalt
 	lalt (one-shot-release 500 lalt)
