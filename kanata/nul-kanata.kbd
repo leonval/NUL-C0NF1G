@@ -5,55 +5,55 @@
 
 (defsrc
   1	2	3	4	5	6	7	8	9	0	-	=
-  tab								i	o
+  tab							u	i	
   caps						h	j	k	l
-  	lalt
+  	lalt			spc
 )
 
-(deflayer main
+(deflayer PRIMUS
   _	_	_	_	_	_	_	_	_	_	_	_
-  @tab								_	_
-  @esctl					_	_	_	_
-  	@lalt
+  @tab							_	_
+  @ectl						_	_	_	_
+  	@lalt			@spc
 )
 
-(deflayer symbols
+(deflayer SECUNDUS
   S-1	S-2	S-3	S-4	S-5	S-6	S-7	S-8	S-9	S-0	S--	S-=
-  _								@lnav	@rnav
-  @ctlcap					◀	▼	▲	▶
-  	@lalt
+  _							_	_
+  caps						_	_	_	_
+  	@lalt			_
 )
 
-(deftemplate alt-fork (original-action new-action)
-  (fork $original-action (unmod $new-action) (lalt))
+(deflayer TERTIUS
+  _	_	_	end	_	_	_	_	_	home	_	_
+  _							S-tab	tab
+  @ectl						◀	▼	▲	▶
+  	@lalt			_
 )
 
 ;; Variables
 (defvar
-	tap-timeout 200
-	hold-timeout 200
+	medium-timeout 200
+	brief-timeout 100
 )
 
 ;; Aliases
 (defalias
 	;; tap for esc, hold for left-ctrl
-	esctl (tap-hold-press $tap-timeout $hold-timeout esc lctl)
+	ectl (tap-hold-press $medium-timeout $medium-timeout esc lctl)
 	
-	;; tap for tab, hold for symbol layer
-	tab (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle symbols))
+	;; tap for tab, hold for second layer
+	tab (tap-hold-press $medium-timeout $medium-timeout tab (layer-toggle SECUNDUS))
 
 	;; tap for ctl, double tap for caps
-	ctlcap (tap-dance $tap-timeout (lctl caps))
+	spc (tap-hold $medium-timeout $medium-timeout spc (layer-toggle TERTIUS))
 
-	;; tap for arrow, hold for letters
-	larr (tap-hold-press $tap-timeout $hold-timeout ◀ h)
-	darr (tap-hold-press $tap-timeout $hold-timeout ▼ j)
-	uarr (tap-hold-press $tap-timeout $hold-timeout ▲ k)
-	rarr (tap-hold-press $tap-timeout $hold-timeout ▶ l)
+	;; tap for ctl, double tap for caps
+	ctlcap (tap-dance $medium-timeout (lctl caps))
 	
 	;; Windows Navigation
-	lnav (tap-hold $tap-timeout $hold-timeout S-tab (macro home))
-	rnav (tap-hold $tap-timeout $hold-timeout tab (macro end))
+	lnav (tap-hold $medium-timeout $medium-timeout S-tab (macro home))
+	rnav (tap-hold $medium-timeout $medium-timeout tab (macro end))
 
 	;; add timeout to lalt
 	lalt (one-shot-release 500 lalt)
