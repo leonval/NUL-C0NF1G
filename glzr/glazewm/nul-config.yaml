@@ -98,7 +98,7 @@ window_effects:
 window_behavior:
   # New windows are created in this state whenever possible.
   # Allowed values: 'tiling', 'floating'.
-  initial_state: 'tiling'
+  initial_state: 'floating'
 
   # Sets the default options for when a new window is created. This also
   # changes the defaults for when the state change commands, like
@@ -196,14 +196,13 @@ window_rules:
         window_class: { regex: 'HwndWrapper' }
       - window_process: { equals: 'FxSound' }
       - window_process: { equals: 'Zoom' }
+        window_class: { equals: 'zBubbleBaseClass' }
       - window_process: { equals: 'BongoCat' }
       - window_process: { equals: 'Resolve'} # DaVinci Resolve Project Manager
         window_class: { equals: 'Qt5152QWindow' }
         window_title: { equals: 'Project Manager' }
       - window_process: { equals: 'Cloudflare WARP'}
       - window_process: { equals: 'OverKeys'}
-      - window_process: { equals: 'hl'} # Half Life
-      - window_process: { equals: 'pcsx2-qt'} # PCSX2
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.

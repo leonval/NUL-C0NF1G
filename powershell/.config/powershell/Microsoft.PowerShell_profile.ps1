@@ -12,4 +12,4 @@ function prompt {
     "${osc7}PS $p$('>' * ($nestedPromptLevel + 1)) ";
 }
 
-oh-my-posh init pwsh --config $env:USERPROFILE\.config\oh-my-posh\nul-omp.toml | Invoke-Expression
+oh-my-posh init pwsh --config $env:USERPROFILE\.dotfiles\oh-my-posh\nul-omp.toml | Invoke-Expression
