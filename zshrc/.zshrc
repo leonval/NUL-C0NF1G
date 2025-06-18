@@ -5,6 +5,7 @@
 #
 source ~/.bashrc
 alias cat="bat --theme Dracula"
+alias lg="lazygit"
 
 autoload -U compinit
 compinit
