@@ -1,0 +1,43 @@
+(defcfg
+  process-unmapped-keys no
+  concurrent-tap-hold yes
+)
+
+(defsrc
+  1	2	3	4	5	6	7	8	9	0	-	=
+  tab
+  caps
+  	lalt
+)
+
+(deflayer PRIMUS
+  _	_	_	_	_	_	_	_	_	_	_	_
+  @tab
+  ctl
+  	@lalt
+)
+
+(deflayer SECUNDUS
+  S-1	S-2	S-3	S-4	S-5	S-6	S-7	S-8	S-9	S-0	S--	S-=
+  _
+  caps
+  	@lalt
+)
+
+;; Variables
+(defvar
+	medium-timeout 200
+	brief-timeout 100
+)
+
+;; Aliases
+(defalias
+	;; tap for tab, hold for second layer
+	tab (tap-hold-press $medium-timeout $medium-timeout tab (layer-toggle SECUNDUS))
+
+	;; tap for ctl, double tap for caps
+	ctlcap (tap-dance $medium-timeout (lctl caps))
+
+	;; add timeout to lalt
+	lalt (one-shot-release 500 lalt)
+)
