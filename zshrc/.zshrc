@@ -37,3 +37,10 @@ setopt SHARE_HISTORY
 
 # autoload -U colors
 #colors
+
+# bun completions
+[ -s "/home/nnoel/.bun/_bun" ] && source "/home/nnoel/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

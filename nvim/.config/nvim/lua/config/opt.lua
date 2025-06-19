@@ -114,7 +114,14 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("n", "<leader>fs", ":w<CR>", { desc = "[W]rite current buffer" }) -- Write buffer shortcut
 vim.keymap.set("n", "<leader>fq", ":q<CR>", { desc = "[Q]uit current buffer" }) -- Quit buffer shortcut
 
-vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true, desc = "Exit normal mode" })
+vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true, desc = "Exit insert mode" })
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>bd",
+	":bd<CR>",
+	{ noremap = true, silent = true, desc = "[D]elete current [B]uffer" }
+)
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
