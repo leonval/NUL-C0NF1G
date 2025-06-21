@@ -121,23 +121,23 @@ window_behavior:
 
 workspaces:
   - name: '1'
-    display_name: 'Primus'
+    display_name: 'PRIMUS'
     keep_alive: true
 
   - name: '2'
-    display_name: 'Secundus'
+    display_name: 'SECUNDUS'
     keep_alive: true
 
   - name: '3'
-    display_name: 'Tertius'
+    display_name: 'TERTIUS'
     keep_alive: true
 
   - name: '4'
-    display_name: 'Quartus'
+    display_name: 'QUARTUS'
     keep_alive: true
 
   - name: '5'
-    display_name: 'Quintus'
+    display_name: 'QUINTUS'
     keep_alive: true
 
 window_rules:
