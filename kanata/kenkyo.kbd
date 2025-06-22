@@ -4,9 +4,9 @@
 )
 
 (defsrc
-  q w e r t y u i o p
-  a s d f g h j k l ;
-  z x c v b n m , . /
+       q w e r t y u i o p
+  caps a s d f g h j k l ;
+       z x c v b n m , . /
          spc
 )
 
@@ -18,10 +18,23 @@
   chord-timeout 50
 )
 
+;; Aliases
+(defalias
+	;; tap for esc, hold for left-ctrl
+	ectl (tap-hold-press 200 200 esc lctl)
+)
+
 (deftemplate charmod (char mod)
   (switch 
     ((key-timing $streak-count less-than $streak-time)) $char break
     () (tap-hold-release-timeout $tap-timeout $hold-timeout $char $mod $char) break
+  )
+)
+
+(deftemplate charmod-notime (char mod)
+  (switch 
+    ((key-timing $streak-count less-than $streak-time)) $char break
+    () (tap-hold-release $tap-timeout $hold-timeout $char $mod) break
   )
 )
 
@@ -55,6 +68,7 @@
 )
 
 (deflayermap (PRIMUS)
+  caps @ectl
   w (chord mtl w)
   e (chord mtl e)
   i (chord mtr i)
@@ -75,10 +89,11 @@
   , (chord mbr ,)
   . (chord mbr .)
   / (t! charmod / rctl)
-  spc (t! charmod spc (multi (layer-switch SECUNDUS) (on-release tap-virtualkey clear)))
+  spc (t! charmod-notime spc (multi (layer-switch SECUNDUS) (on-release tap-virtualkey clear)))
 )
 
 (deflayermap (SECUNDUS)
+  caps @ectl
   e (layer-switch TERTIUS)
   r (on-press press-virtualkey shift)
   y ins
@@ -132,6 +147,7 @@
 )
 
 (deflayermap (TERTIUS)
+  caps @ectl
   q f1
   w (chord ftl w)
   e (chord ftl e)
