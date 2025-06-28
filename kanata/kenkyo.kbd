@@ -90,7 +90,7 @@
   . (chord mbr .)
   / (t! charmod / rctl)
   spc (t! charmod-notime spc (multi (layer-switch SECUNDUS) (on-release tap-virtualkey clear)))
-  ralt (layer-switch TERTIUS)
+  ralt bspc
 )
 
 (deflayermap (SECUNDUS)
@@ -179,5 +179,5 @@
   , (chord fbr ,)
   . (chord fbr .)
   / (t! charmod \ lctl)
-  ralt (layer-switch PRIMUS)
+  ralt bspc
 )
