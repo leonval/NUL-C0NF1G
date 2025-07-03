@@ -4,10 +4,10 @@
 )
 
 (defsrc
-       q w e r t y u i o p
+  `    q w e r t y u i o p
   caps a s d f g h j k l ;
        z x c v b n m , . /
-         spc ralt
+         spc ralt rctl
 )
 
 (defvar
@@ -68,6 +68,7 @@
 )
 
 (deflayermap (PRIMUS)
+  ` esc
   caps @ectl
   w (chord mtl w)
   e (chord mtl e)
@@ -91,9 +92,11 @@
   / (t! charmod / rctl)
   spc (t! charmod-notime spc (multi (layer-switch SECUNDUS) (on-release tap-virtualkey clear)))
   ralt ret
+  rctl bspc
 )
 
 (deflayermap (SECUNDUS)
+  ` esc
   caps @ectl
   e (layer-switch TERTIUS)
   r (on-press press-virtualkey shift)
@@ -122,6 +125,7 @@
   . del
   / ret
   ralt ret
+  rctl bspc
 )
 
 (defchords ftl $chord-timeout
@@ -149,6 +153,7 @@
 )
 
 (deflayermap (TERTIUS)
+  ` esc
   caps @ectl
   q 1
   w (chord ftl w)
@@ -181,4 +186,5 @@
   . (chord fbr .)
   / (t! charmod \ lctl)
   ralt ret
+  rctl bspc
 )
