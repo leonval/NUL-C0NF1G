@@ -43,37 +43,9 @@
   clear (multi (layer-switch PRIMUS) (on-press release-virtualkey shift))
 )
 
-(defchords mtl $chord-timeout
-  (w  ) w
-  (  e) e
-  (w e) esc
-)
-
-(defchords mtr $chord-timeout
-  (i  ) i
-  (  o) o
-  (i o) bspc
-)
-
-(defchords mbl $chord-timeout
-  (x  ) (t! charmod x ralt)
-  (  c) c
-  (x c) tab
-)
-
-(defchords mbr $chord-timeout
-  (,  ) ,
-  (  .) (t! charmod . ralt)
-  (, .) ret
-)
-
 (deflayermap (PRIMUS)
   ` esc
   caps @ectl
-  w (chord mtl w)
-  e (chord mtl e)
-  i (chord mtr i)
-  o (chord mtr o)
   a (t! charmod-notime a lmet)
   s (t! charmod-notime s lalt)
   d (t! charmod-notime d lsft)
@@ -83,12 +55,10 @@
   l (t! charmod l lalt)
   ; (t! charmod ; rmet)
   z (t! charmod z lctl) 
-  x (chord mbl x)
-  c (chord mbl c)
+  x (t! charmod x ralt)
   v (t! charmod v (layer-while-held TERTIUS))
   m (t! charmod m (layer-while-held TERTIUS))
-  , (chord mbr ,)
-  . (chord mbr .)
+  . (t! charmod . ralt)
   / (t! charmod / rctl)
   spc (t! charmod-notime spc (multi (layer-switch SECUNDUS) (on-release tap-virtualkey clear)))
   ralt ret
@@ -128,42 +98,18 @@
   rctl bspc
 )
 
-(defchords ftl $chord-timeout
-  (w  ) 2
-  (  e) 3
-  (w e) esc
-)
-
-(defchords ftr $chord-timeout
-  (i  ) 8
-  (  o) 9
-  (i o) bspc
-)
-
-(defchords fbl $chord-timeout
-  (x  ) (t! charmod ` ralt)
-  (  c) -
-  (x c) tab
-)
-
-(defchords fbr $chord-timeout
-  (,  ) [
-  (  .) (t! charmod ] ralt)
-  (, .) ret
-)
-
 (deflayermap (TERTIUS)
   ` esc
   caps @ectl
   q 1
-  w (chord ftl w)
-  e (chord ftl e)
+  w 2
+  e 3
   r 4
   t 5
   y 6
   u 7
-  i (chord ftr i)
-  o (chord ftr o)
+  i 8
+  o 9
   p 0
   a (t! charmod-notime f1 lmet)
   s (t! charmod-notime f2 lalt)
@@ -176,14 +122,14 @@
   l (t! charmod f9 lalt)
   ; (t! charmod f10 rmet)
   z (t! charmod lsgt lctl)
-  x (chord fbl x)
-  c (chord fbl c)
+  x (t! charmod ` ralt)
+  c -
   v =
   b f11
   n f12
   m '
-  , (chord fbr ,)
-  . (chord fbr .)
+  , [
+  . (t! charmod ] ralt)
   / (t! charmod \ lctl)
   ralt ret
   rctl bspc
