@@ -1,0 +1,52 @@
+(defcfg
+  process-unmapped-keys no
+  concurrent-tap-hold yes
+)
+
+(defvar
+  chord-timeout 50
+)
+
+(defchords gaming $chord-timeout
+  (tab  ) tab
+  (  [) -
+  (tab [) lrld-next
+)
+
+(defsrc
+  `	1	2	3	4	5	6	7	8	9	0	-	=
+  tab										[
+  caps
+  lsft
+  						ralt	rctl
+)
+
+(deflayer PRIMUS
+  esc	_	_	_	_	_	_	_	_	_	_	_	_
+  @tab										@rld
+  ctl
+  @lsf
+  						ret	bspc
+)
+
+;; Variables
+(defvar
+	medium-timeout 200
+	brief-timeout 100
+)
+
+(defvirtualkeys
+	sft lsft
+)
+
+;; Aliases
+(defalias
+  tab (chord gaming tab)
+  rld (chord gaming [)
+
+  ;; add timeout to lalt
+  lalt (one-shot-release 500 lalt)
+
+  ;; toggle shift key
+  lsf (on-press toggle-vkey sft)
+)

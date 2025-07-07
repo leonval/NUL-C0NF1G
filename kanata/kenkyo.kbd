@@ -4,9 +4,9 @@
 )
 
 (defsrc
-  `    q w e r t y u i o p
-  caps a s d f g h j k l ;
-       z x c v b n m , . /
+  `    q w e r t y u i o p [
+  tab  a s d f g h j k l ;
+  caps z x c v b n m , . /
          spc ralt rctl
 )
 
@@ -43,8 +43,15 @@
   clear (multi (layer-switch PRIMUS) (on-press release-virtualkey shift))
 )
 
+(defchords gaming $chord-timeout
+  (tab  ) tab
+  (  [) -
+  (tab [) lrld-next
+)
+
 (deflayermap (PRIMUS)
   ` esc
+  tab (chord gaming tab)
   caps @ectl
   a (t! charmod-notime a lmet)
   s (t! charmod-notime s lalt)
@@ -61,6 +68,7 @@
   . (t! charmod . ralt)
   / (t! charmod / rctl)
   spc (t! charmod-notime spc (multi (layer-switch SECUNDUS) (on-release tap-virtualkey clear)))
+  [ (chord gaming [)
   ralt ret
   rctl bspc
 )
@@ -95,7 +103,7 @@
   . del
   / ret
   ralt ret
-  rctl bspc
+  rctl del
 )
 
 (deflayermap (TERTIUS)
