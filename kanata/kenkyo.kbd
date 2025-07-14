@@ -18,12 +18,6 @@
   chord-timeout 50
 )
 
-;; Aliases
-(defalias
-	;; tap for esc, hold for left-ctrl
-	ectl (tap-hold-press 200 200 esc lctl)
-)
-
 (deftemplate charmod (char mod)
   (switch 
     ((key-timing $streak-count less-than $streak-time)) $char break
@@ -45,14 +39,14 @@
 
 (defchords gaming $chord-timeout
   (tab  ) tab
-  (  [) -
+  (  [) del
   (tab [) lrld-next
 )
 
 (deflayermap (PRIMUS)
   ` esc
   tab (chord gaming tab)
-  caps @ectl
+  caps ctl
   a (t! charmod-notime a lmet)
   s (t! charmod-notime s lalt)
   d (t! charmod-notime d lsft)
@@ -75,7 +69,7 @@
 
 (deflayermap (SECUNDUS)
   ` esc
-  caps @ectl
+  caps ctl
   e (layer-switch TERTIUS)
   r (on-press press-virtualkey shift)
   y ins
@@ -103,12 +97,12 @@
   . del
   / ret
   ralt ret
-  rctl del
+  rctl bspc
 )
 
 (deflayermap (TERTIUS)
   ` esc
-  caps @ectl
+  caps ctl
   q 1
   w 2
   e 3
