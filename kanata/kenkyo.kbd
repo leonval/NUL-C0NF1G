@@ -82,7 +82,6 @@
   d lsft
   f lctl
   g comp ;; Enable if not MacOS.
-  h esc
   j left
   k down
   l rght
@@ -92,10 +91,8 @@
   c volu
   v pp
   n tab
-  m bspc
-  , spc
-  . del
-  / ret
+  m pgup
+  . pgdn
   ralt ret
   rctl bspc
 )
