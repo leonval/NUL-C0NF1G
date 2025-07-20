@@ -4,6 +4,8 @@
 # functions, options, key bindings, etc.
 #
 source ~/.bashrc
+eval "$(zoxide init zsh)"
+alias cd="z"
 alias cat="bat --theme Dracula"
 alias lg="lazygit"
 alias vim="nvim"
