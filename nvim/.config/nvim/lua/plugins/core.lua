@@ -291,16 +291,22 @@ return {
 		---@module "neo-tree"
 		---@type neotree.Config?
 		opts = {
-			--	filesystem = {
+			filesystem = {
+				filtered_items = {
+					visible = true,
+					hide_gitignored = false,
+					hide_dotfiles = true,
+					hide_by_name = {
+						"package-lock.json",
+					},
+					never_show = { ".git" },
+				},
+			},
 			window = {
 				position = "float",
 				mappings = {
 					["<leader>tt"] = "close_window",
 				},
-			},
-			filtered_items = {
-				hide_gitignored = false,
-				hide_dotfiles = false,
 			},
 		},
 	},

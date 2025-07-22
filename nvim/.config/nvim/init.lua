@@ -6,6 +6,7 @@ require("lazy").setup(
 		{ import = "plugins" },
 		{ import = "plugins.lsp" },
 		{ import = "plugins.formatting" },
+		{ import = "plugins.dev.markdown" },
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
@@ -14,9 +15,9 @@ require("lazy").setup(
 			colorscheme = { "habamax" },
 		},
 		-- automatically check for plugin updates
-		checker = { 
+		checker = {
 			enabled = true,
-			notify = false
+			notify = false,
 		},
 		change_detection = {
 			notify = true,
