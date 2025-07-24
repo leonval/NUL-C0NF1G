@@ -93,7 +93,7 @@ config.keys = {
 }
 
 for i = 0, 8 do
-	-- leader + number to activate that tab
+	-- ctrl + number to activate that tab
 	table.insert(config.keys, {
 		key = tostring(i + 1),
 		mods = "CTRL",
@@ -101,6 +101,14 @@ for i = 0, 8 do
 	})
 end
 
+for i = 0, 8 do
+	-- CTRL+SHIFT+ number to move to that position
+	table.insert(config.keys, {
+		key = tostring(i + 1),
+		mods = "ALT|CTRL",
+		action = wezterm.action.MoveTab(i),
+	})
+end
 -- tab bar
 config.hide_tab_bar_if_only_one_tab = false
 config.use_fancy_tab_bar = false
