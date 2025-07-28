@@ -32,8 +32,8 @@ config.keys = {
 	},
 	{
 		mods = "CTRL",
-		key = "q",
-		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+		key = "w",
+		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 	{
 		mods = "CTRL",
@@ -89,6 +89,36 @@ config.keys = {
 		mods = "CTRL",
 		key = "p",
 		action = wezterm.action.ShowLauncher,
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "!",
+		action = wezterm.action.MoveTab(0),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "@",
+		action = wezterm.action.MoveTab(1),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "#",
+		action = wezterm.action.MoveTab(2),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "$",
+		action = wezterm.action.MoveTab(3),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "%",
+		action = wezterm.action.MoveTab(4),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "^",
+		action = wezterm.action.MoveTab(5),
 	},
 }
 
