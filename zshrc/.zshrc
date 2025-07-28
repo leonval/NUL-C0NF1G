@@ -10,6 +10,7 @@ alias cat="bat --theme Dracula"
 alias lg="lazygit"
 alias vim="nvim"
 alias sudo="sudo "
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 autoload -U compinit
 compinit
@@ -46,3 +47,4 @@ setopt SHARE_HISTORY
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin/:$PATH"

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+SERVICE="warp-svc.service"
+
+# Parse arguments
+case "$1" in
+    start)
+        echo "Starting warp service..."
+        systemctl start "$SERVICE"
+        ;;
+    stop)
+        echo "Stopping warp service..."
+        systemctl stop "$SERVICE"
+        ;;
+    connect)
+        echo "Connecting with warp-cli..."
+        warp-cli connect
+        ;;
+    disconnect)
+        echo "Disconnecting with warp-cli..."
+        warp-cli disconnect
+        ;;
+    status)
+        systemctl status "$SERVICE"
+        warp-cli status
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|connect|disconnect|status}"
+        exit 1
+        ;;
+esac
