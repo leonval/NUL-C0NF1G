@@ -90,6 +90,36 @@ config.keys = {
 		key = "p",
 		action = wezterm.action.ShowLauncher,
 	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "!",
+		action = wezterm.action.MoveTab(0),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "@",
+		action = wezterm.action.MoveTab(1),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "#",
+		action = wezterm.action.MoveTab(2),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "$",
+		action = wezterm.action.MoveTab(3),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "%",
+		action = wezterm.action.MoveTab(4),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "^",
+		action = wezterm.action.MoveTab(5),
+	},
 }
 
 for i = 0, 8 do
@@ -101,14 +131,6 @@ for i = 0, 8 do
 	})
 end
 
-for i = 0, 8 do
-	-- CTRL+SHIFT+ number to move to that position
-	table.insert(config.keys, {
-		key = tostring(i + 1),
-		mods = "ALT|CTRL",
-		action = wezterm.action.MoveTab(i),
-	})
-end
 -- tab bar
 config.hide_tab_bar_if_only_one_tab = false
 config.use_fancy_tab_bar = false
