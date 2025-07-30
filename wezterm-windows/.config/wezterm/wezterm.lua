@@ -32,8 +32,8 @@ config.keys = {
 	},
 	{
 		mods = "CTRL",
-		key = "q",
-		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+		key = "w",
+		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 	{
 		mods = "CTRL",
