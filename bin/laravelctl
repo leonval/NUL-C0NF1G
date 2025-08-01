@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Parse arguments
+case "$1" in
+    serve)
+        echo "Serving laravel app..."
+        php artisan serve
+        ;;
+    model)
+        echo "Making laravel model..."
+        php artisan make:model
+        ;;
+    controller)
+        echo "Making laravel controller..."
+        php artisan make:controller
+        ;;
+    migration)
+        echo "Making laravel migration..."
+        php artisan make:migration
+        ;;
+    *)
+        echo "Usage: $0 {serve||model|controller|migration}"
+        exit 1
+        ;;
+esac
