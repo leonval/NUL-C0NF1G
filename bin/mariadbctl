@@ -13,7 +13,7 @@ case "$1" in
         systemctl stop "$SERVICE"
         ;;
     *)
-        echo "Usage: $0 {serve||model|controller|migration}"
+        echo "Usage: $0 {start|stop}"
         exit 1
         ;;
 esac

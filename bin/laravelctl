@@ -19,7 +19,7 @@ case "$1" in
         php artisan make:migration
         ;;
     *)
-        echo "Usage: $0 {serve||model|controller|migration}"
+        echo "Usage: $0 {serve|model|controller|migration}"
         exit 1
         ;;
 esac
