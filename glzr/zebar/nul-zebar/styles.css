@@ -10,10 +10,11 @@ i {
 }
 
 body {
-  color: rgb(255 255 255 / 95%);
+  color: rgb(04 255 04 / 100%);
   font-family: ui-monospace, monospace;
   font-size: 12px;
   overflow: hidden;
+  background: rgb(04 255 04 / 0%);
 }
 
 div,
@@ -30,8 +31,6 @@ body,
 }
 
 #root {
-  border-bottom: 1px solid rgb(255 255 255 / 5%);
-  background: linear-gradient(rgb(0 0 0 / 90%), rgb(5 2 20 / 85%));
 }
 
 .app {
@@ -39,7 +38,7 @@ body,
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   height: 100%;
-  padding: 4px 1.5vw;
+  padding: 0px 0.5vw;
 }
 
 .left,
@@ -47,6 +46,16 @@ body,
 .right {
   display: flex;
   align-items: center;
+}
+
+.os-banner {
+  background: #000000;
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #04ff04;
+  height: 100%;
+  padding: 4px 8px;
 }
 
 .center {
@@ -57,26 +66,20 @@ body,
   justify-self: end;
 }
 
-.binding-mode,
-.tiling-direction,
-.paused-button,
-.memory,
-.cpu {
-  margin-right: 20px;
-}
-
 .workspaces {
   display: flex;
   align-items: center;
 }
 
 .workspace {
-  background: rgb(255 255 255 / 15%);
-  margin-right: 4px;
+  background: #000000;
+  margin: 0 2px;
   padding: 4px 8px;
   color: rgb(255 255 255 / 90%);
-  border: none;
-  border-radius: 2px;
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #04ff04;
   cursor: pointer;
 
   &.displayed {
@@ -85,25 +88,36 @@ body,
 
   &.focused,
   &:hover {
-    background: rgb(04 255 04 / 100%);
-    color: rgb(0 0 0 / 100%);
+    background: #04ff04;
+    color: #000000;
+    border-color: #ffffff;
+    margin: 8px 2px 0;
   }
 }
 
 .binding-mode,
 .tiling-direction,
 .paused-button {
-  background: rgb(255 255 255 / 15%);
-  color: rgb(255 255 255 / 90%);
-  border-radius: 2px;
+  background: #000000;
+  color: #04ff04;
   line-height: 1;
   padding: 4px 8px;
-  border: 0;
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #04ff04;
   cursor: pointer;
+  margin: 0 10px;
 }
 
-.binding-mode {
-  margin-right: 4px;
+.memory, .cpu {
+  background: #000000;
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #04ff04;
+  padding: 4px 8px;
+  margin: 0px 2px
 }
 
 .cpu .high-usage {
