@@ -11,7 +11,7 @@ config.colors = { background = "black" }
 config.default_prog = { "zsh" }
 config.font = wezterm.font_with_fallback({ "Fira Code", "Cascadia Code", "JetBrains Mono" })
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.75
 
 -- Fullscreen
 --[[ wezterm.on('gui-startup', function(cmd)
