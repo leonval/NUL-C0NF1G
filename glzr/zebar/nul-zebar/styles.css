@@ -91,6 +91,7 @@ body,
   font-weight: bold;
   font-size: 12px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
   &.displayed {
     background: rgb(255 255 255 / 15%);
@@ -100,8 +101,9 @@ body,
   &:hover {
     background: #04ff04;
     color: #000000;
-    align-self: end;
+    margin: 8px 2px 0;
     border-color: #ffffff;
+    transition: all 0.2s ease-in-out;
   }
 }
 
@@ -119,12 +121,14 @@ body,
   border-radius: 5px;
   border-color: #04ff04;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
-    align-self: end;
+    margin: 8px 10px 0;
     background: #04ff04;
     color: #000000;
     border-color: #ffffff;
+    transition: all 0.2s ease-in-out;
   }
 }
 
