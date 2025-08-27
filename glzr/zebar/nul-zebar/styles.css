@@ -108,6 +108,13 @@ body,
   border-color: #04ff04;
   cursor: pointer;
   margin: 0 10px;
+
+  &:hover {
+    background: #04ff04;
+    color: #000000;
+    border-color: #ffffff;
+    margin: 8px 10px 0;
+  }
 }
 
 .memory, .cpu {
