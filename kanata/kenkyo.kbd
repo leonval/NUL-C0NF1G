@@ -72,7 +72,8 @@
   caps ctl
   e (layer-switch TERTIUS)
   r (on-press press-virtualkey shift)
-  y ins
+  y pgup
+  h pgdn
   u home
   i up
   o end
@@ -91,8 +92,6 @@
   c volu
   v pp
   n tab
-  m pgup
-  . pgdn
   ralt ret
   rctl bspc
 )
