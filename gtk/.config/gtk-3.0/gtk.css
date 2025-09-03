@@ -217,6 +217,48 @@
 	transition: all 0.2s ease-in-out;
 }
 
+#launcher-arrow {
+	margin: 4px 2px;
+	background-color: #000000;
+	color: #04ff04;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #04ff04;
+	transition: all 0.2s ease-in-out;
+}
+
+#launcher-arrow:hover {
+	margin: 8px 2px 0;
+	background-color: #04ff04;
+	color: #000000;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ffffff;
+	transition: all 0.2s ease-in-out;
+}
+
+#launcher-arrow:checked {
+	margin: 8px 2px 0;
+	background-color: #04ff04;
+	color: #000000;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ffffff;
+	transition: all 0.2s ease-in-out;
+}
+
 #pulseaudio-button {
 	margin: 4px 2px;
 	background-color: #000000;
@@ -343,6 +385,48 @@
 	border-style: solid;
 	border-width: 2px;
 	border-color: #ffffff;
+	transition: all 0.2s ease-in-out;
+}
+
+#xfce4-notification-plugin {
+	margin: 4px 2px;
+	background-color: #000000;
+	color: #04ff04;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #04ff04;
+	transition: all 0.2s ease-in-out;
+}
+
+#xfce4-notification-plugin:hover {
+	margin: 8px 2px 0;
+	background-color: #04ff04;
+	color: #ffffff;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ffffff;
+	transition: all 0.2s ease-in-out;
+}
+
+#xfce4-notification-plugin:checked {
+	margin: 8px 2px 0;
+	background-color: #04ff04;
+	color: #000000;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #04ff04;
 	transition: all 0.2s ease-in-out;
 }
 

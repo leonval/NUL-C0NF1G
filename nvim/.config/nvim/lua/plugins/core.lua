@@ -11,6 +11,7 @@ return {
 			},
 		},
 	},
+
 	{ -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'
@@ -127,7 +128,8 @@ return {
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 			vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 			vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+			vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch existing [B]uffers" })
+			vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "[ ] Search Files" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<C-f>", function()
@@ -309,46 +311,45 @@ return {
 			--  Check out: https://github.com/echasnovski/mini.nvim
 		end,
 	},
-	-- Neo-tree is a Neovim plugin to browse the file system
-	-- https://github.com/nvim-neo-tree/neo-tree.nvim
+
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-			-- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
-		},
-		lazy = false, -- neo-tree will lazily load itself
-		cmd = "Neotree",
-		keys = {
-			{ "<leader>tt", ":Neotree reveal float<CR>", desc = "NeoTree reveal" },
-			{ "<leader>tb", ":Neotree float buffers<CR>", desc = "NeoTree reveal buffers" },
-			{ "<leader>ts", ":Neotree float git_status<CR>", desc = "NeoTree reveal git status" },
-		},
-		---@module "neo-tree"
-		---@type neotree.Config?
+		"stevearc/oil.nvim",
+		---@module 'oil'
+		---@type oil.SetupOpts
 		opts = {
-			filesystem = {
-				filtered_items = {
-					visible = true,
-					hide_gitignored = false,
-					hide_dotfiles = true,
-					hide_by_name = {
-						"package-lock.json",
-					},
-					never_show = { ".git" },
-				},
+			delete_to_trash = true,
+			keymaps = {
+				["g?"] = { "actions.show_help", mode = "n" },
+				["<CR>"] = "actions.select",
+				["<leader>l"] = { "actions.select", mode = "n" },
+				["<C-s>"] = { "actions.select", opts = { vertical = true } },
+				-- ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
+				["<C-t>"] = { "actions.select", opts = { tab = true } },
+				["<C-p>"] = "actions.preview",
+				["<C-c>"] = { "actions.close", mode = "n" },
+				["<C-l>"] = "actions.refresh",
+				["-"] = { "actions.parent", mode = "n" },
+				["<leader>h"] = { "actions.parent", mode = "n" },
+				["_"] = { "actions.open_cwd", mode = "n" },
+				["`"] = { "actions.cd", mode = "n" },
+				["~"] = { "actions.cd", opts = { scope = "tab" }, mode = "n" },
+				["gs"] = { "actions.change_sort", mode = "n" },
+				-- ["g."] = { "actions.toggle_hidden", mode = "n" },
+				["<C-h>"] = { "actions.toggle_hidden", mode = "n" },
+				["g\\"] = { "actions.toggle_trash", mode = "n" },
 			},
-			window = {
-				position = "float",
-				mappings = {
-					["<leader>tt"] = "close_window",
-				},
+			use_default_keymaps = false,
+			view_options = {
+				show_hidden = true,
 			},
 		},
+		-- Optional dependencies
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+		-- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+		lazy = false,
 	},
+
 	-- Harpoon for navigating buffer
 	{
 		"ThePrimeagen/harpoon",
