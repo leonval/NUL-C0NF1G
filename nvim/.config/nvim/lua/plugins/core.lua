@@ -119,6 +119,9 @@ return {
 
 			-- See `:help telescope.builtin`
 			local builtin = require("telescope.builtin")
+			vim.keymap.set("n", "<leader>sa", function()
+				builtin.find_files({ hidden = true, no_ignore = true })
+			end, { desc = "[S]earch [A]ll (including ignored and dotfiles)" })
 			vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
 			vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 			vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
@@ -129,16 +132,18 @@ return {
 			vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 			vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch existing [B]uffers" })
-			vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "[ ] Search Files" })
+			vim.keymap.set("n", "<leader><leader>", function()
+				builtin.find_files({ hidden = true, no_ignore = false })
+			end, { desc = "[ ] Search Files (including dotfiles)" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<C-f>", function()
 				-- You can pass additional configuration to Telescope to change the theme, layout, etc.
 				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 					winblend = 10,
-					previewer = false,
+					previewer = true,
 				}))
-			end, { desc = "[/] Fuzzily search in current buffer" })
+			end, { desc = "[C-f] Fuzzily search in current buffer" })
 
 			-- It's also possible to pass additional configuration options.
 			--  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -212,9 +217,10 @@ return {
 				-- No, but seriously. Please read `:help ins-completion`, it is really good!
 				mapping = cmp.mapping.preset.insert({
 					-- Select the [n]ext item
-					["<C-i>"] = cmp.mapping.select_next_item(),
+					-- ["<C-i>"] = cmp.mapping.select_next_item(),
+					["j"] = cmp.mapping.select_next_item(),
 					-- Select the [p]revious item
-					["<C-u>"] = cmp.mapping.select_prev_item(),
+					["k"] = cmp.mapping.select_prev_item(),
 
 					-- Scroll the documentation window [b]ack / [f]orward
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -223,11 +229,11 @@ return {
 					-- Accept ([y]es) the completion.
 					--  This will auto-import if your LSP supports it.
 					--  This will expand snippets if the LSP sent a snippet.
-					["<C-y>"] = cmp.mapping.confirm({ select = true }),
+					-- ["<C-y>"] = cmp.mapping.confirm({ select = true }),
 
 					-- If you prefer more traditional completion keymaps,
 					-- you can uncomment the following lines
-					--['<CR>'] = cmp.mapping.confirm { select = true },
+					["<Tab>"] = cmp.mapping.confirm({ select = true }),
 					--['<Tab>'] = cmp.mapping.select_next_item(),
 					--['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
@@ -273,7 +279,7 @@ return {
 	},
 
 	{ -- Collection of various small independent plugins/modules
-		"echasnovski/mini.nvim",
+		"nvim-mini/mini.nvim",
 		config = function()
 			-- Better Around/Inside textobjects
 			--
@@ -306,6 +312,7 @@ return {
 			end
 
 			require("mini.bufremove").setup()
+			require("mini.files").setup({ options = { permanent_delete = false } })
 
 			-- ... and there is more!
 			--  Check out: https://github.com/echasnovski/mini.nvim
@@ -317,16 +324,17 @@ return {
 		---@module 'oil'
 		---@type oil.SetupOpts
 		opts = {
+			default_file_explorer = false,
 			delete_to_trash = true,
 			keymaps = {
 				["g?"] = { "actions.show_help", mode = "n" },
 				["<CR>"] = "actions.select",
 				["l"] = { "actions.select", mode = "n" },
-				["<leader>ks"] = { "actions.select", opts = { vertical = true } },
+				["<leader>ts"] = { "actions.select", opts = { vertical = true } },
 				-- ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
-				["<leader>kt"] = { "actions.select", opts = { tab = true } },
-				["<leader>kp"] = "actions.preview",
-				["<leader>kq"] = { "actions.close", mode = "n" },
+				["<leader>te"] = { "actions.select", opts = { tab = true } },
+				["<leader>tp"] = "actions.preview",
+				["q"] = { "actions.close", mode = "n" },
 				["<C-l>"] = "actions.refresh",
 				["-"] = { "actions.parent", mode = "n" },
 				["h"] = { "actions.parent", mode = "n" },
@@ -337,7 +345,7 @@ return {
 				-- ["g."] = { "actions.toggle_hidden", mode = "n" },
 				["<C-h>"] = { "actions.toggle_hidden", mode = "n" },
 				-- ["g\\"] = { "actions.toggle_trash", mode = "n" },
-				["<leader>k\\"] = { "actions.toggle_trash", mode = "n" },
+				["<leader>t\\"] = { "actions.toggle_trash", mode = "n" },
 			},
 			use_default_keymaps = false,
 			view_options = {

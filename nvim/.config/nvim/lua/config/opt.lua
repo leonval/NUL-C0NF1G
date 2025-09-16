@@ -32,14 +32,6 @@ vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
 
--- Ctlr+Shift+c to copy to system clipboard
-vim.keymap.set("n", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
-vim.keymap.set("v", "<C-c>", '"+y', { desc = "Copy to system clipboard" })
-
--- Ctlr+Shift+v to paste to system clipboard
-vim.keymap.set("n", "<C-v>", '"+P', { desc = "Paste from system clipboard" })
-vim.keymap.set("v", "<C-v>", "<C-r>+", { desc = "Paste from system clipboard" })
-
 -- Enable break indent
 vim.opt.breakindent = true
 
@@ -114,13 +106,19 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("n", "<leader>fs", ":w<CR>", { desc = "[W]rite current buffer" }) -- Write buffer shortcut
 vim.keymap.set("n", "<leader>fq", ":q<CR>", { desc = "[Q]uit current buffer" }) -- Quit buffer shortcut
 
-vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true, desc = "Exit insert mode" })
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>bd",
-	":bd<CR>",
-	{ noremap = true, silent = true, desc = "[D]elete current [B]uffer" }
-)
+-- File picker
+vim.keymap.set("n", "<leader>tt", function()
+	require("mini.files").open()
+end, { desc = "Open mini.files file picker" })
+vim.keymap.set("n", "<leader>to", ":Oil<CR>", { desc = "Open Oil.nvim file picker" })
+
+-- Buffer(s)
+vim.keymap.set("n", "<leader>bd", function()
+	require("mini.bufremove").delete(0, false)
+end, { desc = "[D]elete current [B]uffer" })
+
+-- Exit insert mode modification
+vim.keymap.set("i", "jj", "<C-[>", { desc = "Exit insert mode" })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -133,5 +131,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank()
+	end,
+})
+
+-- Autocommands
+vim.api.nvim_create_autocmd("FileType", {
+	desc = "Always open help in a vertical split on the right",
+	group = vim.api.nvim_create_augroup("window-behaviour", { clear = true }),
+	pattern = "help",
+	callback = function()
+		vim.cmd("wincmd L")
 	end,
 })
