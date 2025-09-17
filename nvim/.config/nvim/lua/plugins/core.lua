@@ -312,7 +312,12 @@ return {
 			end
 
 			require("mini.bufremove").setup()
-			require("mini.files").setup({ options = { permanent_delete = false } })
+			require("mini.files").setup({
+				mappings = {
+					close = "<Esc>",
+				},
+				options = { permanent_delete = false },
+			})
 
 			-- ... and there is more!
 			--  Check out: https://github.com/echasnovski/mini.nvim
@@ -334,7 +339,7 @@ return {
 				-- ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
 				["<leader>te"] = { "actions.select", opts = { tab = true } },
 				["<leader>tp"] = "actions.preview",
-				["q"] = { "actions.close", mode = "n" },
+				["<Esc>"] = { "actions.close", mode = "n" },
 				["<C-l>"] = "actions.refresh",
 				["-"] = { "actions.parent", mode = "n" },
 				["h"] = { "actions.parent", mode = "n" },
