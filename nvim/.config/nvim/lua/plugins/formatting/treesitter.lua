@@ -21,7 +21,7 @@ return {
 				"vimdoc",
 			},
 			-- Autoinstall languages that are not installed
-			auto_install = true,
+			auto_install = false,
 			highlight = {
 				enable = true,
 				disable = { "c" },

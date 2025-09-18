@@ -1,5 +1,6 @@
 return {
 	"iamcco/markdown-preview.nvim",
+	enabled = false,
 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 	build = "cd app && npm install",
 	init = function()
@@ -15,7 +16,7 @@ return {
 		{
 			"<leader>cP",
 			":MarkdownPreviewStop<cr>",
-			desc = "X Markdown Preview Stop",
+			desc = "[X] Markdown Preview Stop",
 		},
 	},
 }
