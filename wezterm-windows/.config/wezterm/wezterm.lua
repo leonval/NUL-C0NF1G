@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 config.allow_win32_input_mode = false
 config.color_scheme = "tokyonight_night"
 config.colors = { background = "black" }
-config.default_prog = { "pwsh.exe" }
+config.default_prog = { "nu" }
 config.font = wezterm.font_with_fallback({ "Fira Code", "Cascadia Code", "JetBrains Mono" })
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.75
