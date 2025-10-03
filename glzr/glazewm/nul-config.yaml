@@ -37,7 +37,7 @@ general:
   # effect if `hide_method: 'hide'`.
   # - 'true': Show all windows (regardless of workspace).
   # - 'false': Only show windows from the currently shown workspaces.
-  show_all_in_taskbar: false
+  show_all_in_taskbar: true
 
 gaps:
   # Whether to scale the gaps with the DPI of the monitor.
@@ -141,6 +141,10 @@ workspaces:
     keep_alive: true
 
 window_rules:
+  - commands: ['set-tiling']
+    match:
+      - window_process: { equals: 'zen' } # Zen Browser
+
   - commands: ['set-floating']
     match:
       - window_process: { equals: 'explorer' } # Explorer
@@ -206,20 +210,20 @@ keybindings:
     bindings: ['alt+h']
   - commands: ['focus --direction right']
     bindings: ['alt+l']
-  # - commands: ['focus --direction up']
-  #   bindings: ['alt+k']
-  # - commands: ['focus --direction down']
-  #   bindings: ['alt+j']
+  - commands: ['focus --direction up']
+    bindings: ['alt+i']
+  - commands: ['focus --direction down']
+    bindings: ['alt+u']
   
   # Move focused window in a given direction.
-  - commands: ['move --direction left']
-    bindings: ['alt+shift+h']
-  - commands: ['move --direction right']
-    bindings: ['alt+shift+l']
-  - commands: ['move --direction up']
-    bindings: ['alt+shift+k']
-  - commands: ['move --direction down']
-    bindings: ['alt+shift+j']
+  # - commands: ['move --direction left']
+  #   bindings: ['alt+shift+h']
+  # - commands: ['move --direction right']
+  #   bindings: ['alt+shift+l']
+  # - commands: ['move --direction up']
+  #   bindings: ['alt+shift+k']
+  # - commands: ['move --direction down']
+  #   bindings: ['alt+shift+j']
 
   # Resize focused window by a percentage or pixel amount.
   #- commands: ['resize --width -2%']
@@ -330,6 +334,12 @@ keybindings:
   #  bindings: ['alt+shift+d']
   #- commands: ['move-workspace --direction down']
   #  bindings: ['alt+shift+s']
+
+  # Move focused window to a next or previous workspaces.
+  - commands: ['move --next-workspace']
+    bindings: ['alt+shift+j']
+  - commands: ['move --prev-workspace']
+    bindings: ['alt+shift+k']
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ['move --workspace 1']
