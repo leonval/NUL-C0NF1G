@@ -37,7 +37,7 @@ general:
   # effect if `hide_method: 'hide'`.
   # - 'true': Show all windows (regardless of workspace).
   # - 'false': Only show windows from the currently shown workspaces.
-  show_all_in_taskbar: true
+  show_all_in_taskbar: false
 
 gaps:
   # Whether to scale the gaps with the DPI of the monitor.
@@ -123,22 +123,27 @@ workspaces:
   - name: '1'
     display_name: 'PRIMUS'
     keep_alive: true
+    bind_to_monitor: 0
 
   - name: '2'
     display_name: 'SECUNDUS'
     keep_alive: true
+    bind_to_monitor: 0
 
   - name: '3'
     display_name: 'TERTIUS'
     keep_alive: true
+    bind_to_monitor: 0
 
   - name: '4'
     display_name: 'QUARTUS'
     keep_alive: true
+    bind_to_monitor: 0
 
   - name: '5'
     display_name: 'QUINTUS'
     keep_alive: true
+    bind_to_monitor: 0
 
 window_rules:
   - commands: ['set-tiling']
@@ -336,19 +341,19 @@ keybindings:
   #  bindings: ['alt+shift+s']
 
   # Move focused window to a next or previous workspaces.
-  - commands: ['move --next-workspace']
+  - commands: ['move --next-workspace', 'focus --next-active-workspace']
     bindings: ['alt+shift+j']
-  - commands: ['move --prev-workspace']
+  - commands: ['move --prev-workspace', 'focus --prev-active-workspace']
     bindings: ['alt+shift+k']
 
   # Move focused window to a workspace defined in `workspaces` config.
-  - commands: ['move --workspace 1']
+  - commands: ['move --workspace 1', 'focus --workspace 1']
     bindings: ['alt+shift+1']
-  - commands: ['move --workspace 2']
+  - commands: ['move --workspace 2', 'focus --workspace 2']
     bindings: ['alt+shift+2']
-  - commands: ['move --workspace 3']
+  - commands: ['move --workspace 3', 'focus --workspace 3']
     bindings: ['alt+shift+3']
-  - commands: ['move --workspace 4']
+  - commands: ['move --workspace 4', 'focus --workspace 4']
     bindings: ['alt+shift+4']
-  - commands: ['move --workspace 5']
+  - commands: ['move --workspace 5', 'focus --workspace 5']
     bindings: ['alt+shift+5']
