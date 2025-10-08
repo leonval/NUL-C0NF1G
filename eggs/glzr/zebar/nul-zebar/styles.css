@@ -1,0 +1,150 @@
+/**
+ * Import the Nerdfonts icon font.
+ * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
+ */
+@import 'https://www.nerdfonts.com/assets/css/webfont.css';
+
+i {
+  color: #04ff04;
+  margin-right: 7px;
+}
+
+body {
+  padding: 3px 0;
+  background: ;
+  color: #04ff04;
+  font-family: 'Fira Code', 'Cascadia Mono';
+  font-weight: bold;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+div,
+span,
+p {
+  cursor: default;
+  user-select: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+}
+
+.app {
+  height: 100%;
+  padding: 0px 0.5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.left,
+.center,
+.right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.os-banner {
+  height: 80%;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  background: #000000;
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #04ff04;
+}
+
+.center {
+  justify-self: center;
+}
+
+.right {
+  justify-self: end;
+}
+
+.workspaces {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.workspace {
+  height: 80%;
+  margin: 0 2px;
+  padding: 0 8px;
+  background: #000000;
+  color: #04ff04;
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #04ff04;
+  font-family: 'Fira Code', 'Cascadia Mono';
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &.displayed {
+    background: rgb(255 255 255 / 15%);
+  }
+
+  &.focused,
+  &:hover {
+    background: #04ff04;
+    color: #000000;
+    margin: 8px 2px 0;
+    border-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.binding-mode,
+.tiling-direction,
+.paused-button {
+  height: 80%;
+  margin: 0 10px;
+  padding: 0 8px;
+  line-height: 1;
+  background: #000000;
+  color: #04ff04;
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #04ff04;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    margin: 8px 10px 0;
+    background: #04ff04;
+    color: #000000;
+    border-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.memory, .cpu {
+  height:80%;
+  margin: 0px 2px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  background: #000000;
+  border: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #04ff04;
+}
+
+.cpu .high-usage {
+  color: #900029;
+}

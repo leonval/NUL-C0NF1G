@@ -1,0 +1,134 @@
+(defcfg
+;; You can set the value below to no if you only use the keys defined in defsrc.
+  process-unmapped-keys yes
+)
+
+(defsrc
+  `    q w e r t y u i o p [
+  tab  a s d f g h j k l ;
+  caps z x c v b n m , . /
+         spc ralt rctl
+)
+
+(defvar
+  streak-count 3
+  streak-time 325
+  tap-timeout 200
+  hold-timeout 500
+  chord-timeout 50
+)
+
+(deftemplate charmod (char mod)
+  (switch 
+    ((key-timing $streak-count less-than $streak-time)) $char break
+    () (tap-hold-release-timeout $tap-timeout $hold-timeout $char $mod $char) break
+  )
+)
+
+(deftemplate charmod-notime (char mod)
+  (switch 
+    ((key-timing $streak-count less-than $streak-time)) $char break
+    () (tap-hold-release $tap-timeout $hold-timeout $char $mod) break
+  )
+)
+
+(defvirtualkeys
+  shift (multi (layer-switch PRIMUS) lsft)
+  clear (multi (layer-switch PRIMUS) (on-press release-virtualkey shift))
+)
+
+(defchords gaming $chord-timeout
+  (tab  ) tab
+  (  [) del
+  (tab [) lrld-next
+)
+
+(deflayermap (PRIMUS)
+  ` esc
+  tab (chord gaming tab)
+  caps ctl
+  a (t! charmod-notime a lmet)
+  s (t! charmod-notime s lalt)
+  d (t! charmod-notime d lsft)
+  f (t! charmod-notime f lctl)
+  j (t! charmod j rctl)
+  k (t! charmod k rsft)
+  l (t! charmod l lalt)
+  ; (t! charmod ; rmet)
+  z (t! charmod z lctl) 
+  x (t! charmod x ralt)
+  v (t! charmod v (layer-while-held TERTIUS))
+  m (t! charmod m (layer-while-held TERTIUS))
+  . (t! charmod . ralt)
+  / (t! charmod / rctl)
+  spc (t! charmod-notime spc (multi (layer-switch SECUNDUS) (on-release tap-virtualkey clear)))
+  [ (chord gaming [)
+  ralt ret
+  rctl bspc
+)
+
+(deflayermap (SECUNDUS)
+  ` esc
+  caps ctl
+  e (layer-switch TERTIUS)
+  r (on-press press-virtualkey shift)
+  y pgup
+  h pgdn
+  u home
+  i up
+  o end
+  p pgup
+  a lmet
+  s lalt
+  d lsft
+  f lctl
+  g comp ;; Enable if not MacOS.
+  j left
+  k down
+  l rght
+  ; pgdn
+  z mute
+  x vold
+  c volu
+  v pp
+  n tab
+  ralt ret
+  rctl bspc
+)
+
+(deflayermap (TERTIUS)
+  ` esc
+  caps ctl
+  q 1
+  w 2
+  e 3
+  r 4
+  t 5
+  y 6
+  u 7
+  i 8
+  o 9
+  p 0
+  a (t! charmod-notime f1 lmet)
+  s (t! charmod-notime f2 lalt)
+  d (t! charmod-notime f3 lsft)
+  f (t! charmod-notime f4 lctl)
+  g f5
+  h f6
+  j (t! charmod f7 rctl)
+  k (t! charmod f8 rsft)
+  l (t! charmod f9 lalt)
+  ; (t! charmod f10 rmet)
+  z (t! charmod lsgt lctl)
+  x (t! charmod ` ralt)
+  c -
+  v =
+  b f11
+  n f12
+  m '
+  , [
+  . (t! charmod ] ralt)
+  / (t! charmod \ lctl)
+  ralt ret
+  rctl bspc
+)

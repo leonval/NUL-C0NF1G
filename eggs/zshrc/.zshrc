@@ -1,0 +1,51 @@
+#
+# .zshrc is sourced in interactive shells.
+# It should contain commands to set up aliases,
+# functions, options, key bindings, etc.
+#
+source ~/.bashrc
+eval "$(zoxide init zsh)"
+alias cd="z"
+alias cat="bat --theme Dracula"
+alias lg="lazygit"
+alias vim="nvim"
+alias sudo="sudo "
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
+autoload -U compinit
+compinit
+
+#allow tab completion in the middle of a word
+setopt COMPLETE_IN_WORD
+
+## keep background processes at full speed
+#setopt NOBGNICE
+## restart running processes on exit
+#setopt HUP
+
+## history
+setopt APPEND_HISTORY
+## for sharing history between zsh processes
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
+## never ever beep ever
+#setopt NO_BEEP
+
+## automatically decide when to page a list of completions
+#LISTMAX=0
+
+## disable mail checking
+#MAILCHECK=0
+
+# autoload -U colors
+#colors
+
+# bun completions
+[ -s "/home/nnoel/.bun/_bun" ] && source "/home/nnoel/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin/:$PATH"
+eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh/nul-omp.toml)"

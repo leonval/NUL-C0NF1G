@@ -1,0 +1,35 @@
+(defcfg
+  process-unmapped-keys no
+  concurrent-tap-hold yes
+)
+
+(defvar
+  chord-timeout 50
+)
+
+(defchords gaming $chord-timeout
+  (tab  ) tab
+  (  [) -
+  (tab [) lrld-next
+)
+
+(defsrc
+  1	2	3	4	5	6	7	8	9	0	-	=
+  `
+  tab										[
+  caps
+  					ralt	rctl
+)
+
+(deflayer PRIMUS
+  _	_	_	_	_	_	_	_	_	_	_	_
+  esc
+  @tab										@rld
+  ctl
+  					ret	bspc
+)
+
+(defalias
+  tab (chord gaming tab)
+  rld (chord gaming [)
+)

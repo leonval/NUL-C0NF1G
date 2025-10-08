@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SERVICE="mariadb.service"
+
+# Parse arguments
+case "$1" in
+    start)
+        echo "Starting mariadb service..."
+        systemctl start "$SERVICE"
+        ;;
+    stop)
+        echo "Stop mariadb service..."
+        systemctl stop "$SERVICE"
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}"
+        exit 1
+        ;;
+esac

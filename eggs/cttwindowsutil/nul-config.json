@@ -1,0 +1,230 @@
+{
+  "Install": [
+    {
+      "winget": "Guru3D.Afterburner",
+      "choco": "msiafterburner"
+    },
+    {
+      "winget": "Docker.DockerDesktop",
+      "choco": "docker-desktop"
+    },
+    {
+      "winget": "AntibodySoftware.WizTree",
+      "choco": "wiztree"
+    },
+    {
+      "winget": "Microsoft.VisualStudio.2022.Community",
+      "choco": "visualstudio2022community"
+    },
+    {
+      "winget": "Notepad++.Notepad++",
+      "choco": "notepadplusplus"
+    },
+    {
+      "winget": "Telegram.TelegramDesktop",
+      "choco": "telegram"
+    },
+    {
+      "winget": "GOG.Galaxy",
+      "choco": "goggalaxy"
+    },
+    {
+      "winget": "Microsoft.VisualStudioCode",
+      "choco": "vscode"
+    },
+    {
+      "winget": "Python.Python.3.12",
+      "choco": "python"
+    },
+    {
+      "winget": "TheDocumentFoundation.LibreOffice",
+      "choco": "libreoffice-fresh"
+    },
+    {
+      "winget": "wez.wezterm",
+      "choco": "wezterm"
+    },
+    {
+      "winget": "OBSProject.OBSStudio",
+      "choco": "obs-studio"
+    },
+    {
+      "winget": "Microsoft.PowerShell",
+      "choco": "powershell-core"
+    },
+    {
+      "winget": "Oracle.VirtualBox",
+      "choco": "virtualbox"
+    },
+    {
+      "winget": "DigitalScholar.Zotero",
+      "choco": "zotero"
+    },
+    {
+      "winget": "EpicGames.EpicGamesLauncher",
+      "choco": "epicgameslauncher"
+    },
+    {
+      "winget": "PDFgear.PDFgear",
+      "choco": "na"
+    },
+    {
+      "winget": "Balena.Etcher",
+      "choco": "etcher"
+    },
+    {
+      "winget": "Adobe.Acrobat.Reader.64-bit",
+      "choco": "adobereader"
+    },
+    {
+      "winget": "Brave.Brave",
+      "choco": "brave"
+    },
+    {
+      "winget": "Codeusa.BorderlessGaming",
+      "choco": "borderlessgaming"
+    },
+    {
+      "winget": "TechPowerUp.GPU-Z",
+      "choco": "gpu-z"
+    },
+    {
+      "winget": "RARLab.WinRAR",
+      "choco": "winrar"
+    },
+    {
+      "winget": "VideoLAN.VLC",
+      "choco": "vlc"
+    },
+    {
+      "winget": "Discord.Discord",
+      "choco": "discord"
+    },
+    {
+      "winget": "ElectronicArts.EADesktop",
+      "choco": "ea-app"
+    },
+    {
+      "winget": "Microsoft.WindowsPCHealthCheck",
+      "choco": "na"
+    },
+    {
+      "winget": "Microsoft.Teams",
+      "choco": "microsoft-teams"
+    },
+    {
+      "winget": "AutoHotkey.AutoHotkey",
+      "choco": "autohotkey"
+    },
+    {
+      "winget": "Microsoft.WindowsTerminal",
+      "choco": "microsoft-windows-terminal"
+    },
+    {
+      "winget": "Valve.Steam",
+      "choco": "steam-client"
+    },
+    {
+      "winget": "ShareX.ShareX",
+      "choco": "sharex"
+    },
+    {
+      "winget": "JanDeDobbeleer.OhMyPosh",
+      "choco": "oh-my-posh"
+    },
+    {
+      "winget": "GoLang.Go",
+      "choco": "golang"
+    },
+    {
+      "winget": "Microsoft.OneDrive",
+      "choco": "onedrive"
+    },
+    {
+      "winget": "Obsidian.Obsidian",
+      "choco": "obsidian"
+    },
+    {
+      "winget": "Microsoft.Edge",
+      "choco": "microsoft-edge"
+    },
+    {
+      "winget": "Microsoft.PowerToys",
+      "choco": "powertoys"
+    },
+    {
+      "winget": "JesseDuffield.lazygit",
+      "choco": "lazygit"
+    },
+    {
+      "winget": "RevoUninstaller.RevoUninstaller",
+      "choco": "revo-uninstaller"
+    }
+  ],
+  "WPFInstall": [
+    "WPFInstallmsiafterburner",
+    "WPFInstalldockerdesktop",
+    "WPFInstallwiztree",
+    "WPFInstallvisualstudio",
+    "WPFInstallnotepadplus",
+    "WPFInstalltelegram",
+    "WPFInstallgog",
+    "WPFInstallvscode",
+    "WPFInstallpython3",
+    "WPFInstalllibreoffice",
+    "WPFInstallwezterm",
+    "WPFInstallobs",
+    "WPFInstallpowershell",
+    "WPFInstallOVirtualBox",
+    "WPFInstallzotero",
+    "WPFInstallepicgames",
+    "WPFInstallpdfgear",
+    "WPFInstalletcher",
+    "WPFInstalladobe",
+    "WPFInstallbrave",
+    "WPFInstallBorderlessGaming",
+    "WPFInstallgpuz",
+    "WPFInstallwinrar",
+    "WPFInstallvlc",
+    "WPFInstalldiscord",
+    "WPFInstalleaapp",
+    "WPFInstallwindowspchealth",
+    "WPFInstallteams",
+    "WPFInstallautohotkey",
+    "WPFInstallterminal",
+    "WPFInstallsteam",
+    "WPFInstallsharex",
+    "WPFInstallposh",
+    "WPFInstallgolang",
+    "WPFInstallonedrive",
+    "WPFInstallobsidian",
+    "WPFInstalledge",
+    "WPFInstallpowertoys",
+    "WPFInstalllazygit",
+    "WPFInstallrevo"
+  ],
+  "WPFFeature": [],
+  "WPFTweaks": [
+    "WPFTweaksRestorePoint",
+    "WPFTweaksDVR",
+    "WPFTweaksDeleteTempFiles",
+    "WPFTweaksPowershell7",
+    "WPFTweaksLoc",
+    "WPFTweaksEndTaskOnTaskbar",
+    "WPFTweaksLaptopHibernation",
+    "WPFTweaksHiber",
+    "WPFTweaksHome",
+    "WPFTweaksRightClickMenu",
+    "WPFTweaksStorage",
+    "WPFTweaksDiskCleanup",
+    "WPFTweaksServices",
+    "WPFTweaksEdgeDebloat",
+    "WPFTweaksConsumerFeatures",
+    "WPFTweaksTele",
+    "WPFTweaksPowershell7Tele",
+    "WPFTweaksRecallOff",
+    "WPFTweaksRemoveCopilot",
+    "WPFTweaksWifi",
+    "WPFTweaksAH"
+  ]
+}
