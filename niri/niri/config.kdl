@@ -287,10 +287,10 @@ clipboard {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-spawn-at-startup "waybar"
-spawn-at-startup "swaybg"
-spawn-at-startup "swayidle"
-spawn-at-startup "mako"
+// spawn-at-startup "waybar"
+// spawn-at-startup "swaybg"
+// spawn-at-startup "swayidle"
+// spawn-at-startup "mako"
 spawn-at-startup "keepassxc"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
@@ -348,7 +348,9 @@ window-rule {
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+
+    // default-column-width {}
+    open-maximized true
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -381,7 +383,15 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"xfce4"#
+    match app-id="zen"
+
+    open-maximized true
+}
+
+window-rule {
+    match app-id="xfce4-appfinder"
+
+    open-floating true
 }
 
 binds {
@@ -637,8 +647,8 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
+    Ctrl+Print { screenshot; }
+    Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
