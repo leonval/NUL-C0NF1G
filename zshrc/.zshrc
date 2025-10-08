@@ -48,4 +48,9 @@ setopt SHARE_HISTORY
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.dotfiles/bin/:$PATH"
+
+# yolk
+export YOLK_DIR="$HOME/.dotfiles"
+
+# Oh My Posh
 eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh/nul-omp.toml)"
