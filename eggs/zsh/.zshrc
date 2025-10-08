@@ -10,6 +10,15 @@ alias cat="bat --theme Dracula"
 alias lg="lazygit"
 alias vim="nvim"
 alias sudo="sudo "
+
+# yolk dotfiles
+alias ygst="yolk git status"
+alias ygaa="yolk git add -A"
+ygc() {
+  yolk git commit -m "$*"
+}
+
+# laravel sail alias
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 autoload -U compinit
@@ -47,5 +56,12 @@ setopt SHARE_HISTORY
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bin files
 export PATH="$HOME/.dotfiles/bin/:$PATH"
+
+# yolk dotfile manager
+export YOLK_DIR="$HOME/.dotfiles"
+
+# Oh My Posh
 eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh/nul-omp.toml)"
