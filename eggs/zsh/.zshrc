@@ -13,6 +13,7 @@ alias sudo="sudo "
 
 # yolk dotfiles
 alias ygst="yolk git status"
+alias ygl="yolk git log"
 alias ygaa="yolk git add -A"
 ygc() {
   yolk git commit -m "$*"
