@@ -149,10 +149,11 @@ window_rules:
   - commands: ['set-tiling']
     match:
       - window_process: { equals: 'zen' } # Zen Browser
+      - window_process: { equals: 'wezterm-gui' }
 
   - commands: ['set-floating']
     match:
-      - window_process: { equals: 'explorer' } # Explorer
+      - window_process: { equals: 'explorer' } # Windows File Explorer
       - window_process: { equals: 'Photos' } #  File Explorer Picture
       - window_process: { equals: 'Taskmgr' } # Task Manager
       - window_process: { equals: 'WINWORD' } # Microsoft Windows
@@ -210,6 +211,12 @@ binding_modes:
         bindings: ['escape', 'enter']
 
 keybindings:
+  # As an alternative to the resize keybindings below, resize mode enables
+  # resizing via arrow keys or HJKL. The binding mode is defined above with
+  # the name 'resize'.
+  - commands: ['wm-enable-binding-mode --name resize']
+    bindings: ['alt+r']
+
   # Shift focus in a given direction.
   - commands: ['focus --direction left']
     bindings: ['alt+h']
@@ -239,12 +246,6 @@ keybindings:
   #  bindings: ['alt+shift+k']
   #- commands: ['resize --height -2%']
   #  bindings: ['alt+shift+j']
-
-  # As an alternative to the resize keybindings above, resize mode enables
-  # resizing via arrow keys or HJKL. The binding mode is defined above with
-  # the name 'resize'.
-  - commands: ['wm-enable-binding-mode --name resize']
-    bindings: ['alt+r']
 
   # Disables window management and all other keybindings until alt+shift+p
   # is pressed again.
@@ -296,11 +297,11 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec C:\Program Files\WezTerm\wezterm-gui.exe']
+  - commands: ['shell-exec wezterm-gui.exe']
     bindings: ['alt+enter']
 
   # Launch Browser
-  - commands: ['shell-exec C:\Program Files\Zen Browser\zen.exe']
+  - commands: ['shell-exec zen.exe']
     bindings: ['alt+b']
   
   # Launch Explorer

@@ -1,4 +1,6 @@
+require("config.keymap")
 require("config.opt")
+require("config.autocommand")
 require("config.lazy")
 -- Setup lazy.nvim
 require("lazy").setup(
