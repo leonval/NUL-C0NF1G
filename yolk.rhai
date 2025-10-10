@@ -20,6 +20,7 @@ export let eggs = #{
     wezterm: #{
 	enabled: io::command_available("wezterm"),
 	targets: "~/.config/wezterm/",
+	templates: ["wezterm.lua"],
     },
     nvim: #{
 	enabled: io::command_available("nvim"),
@@ -33,6 +34,11 @@ export let eggs = #{
     systemd: #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.config/systemd/",
+	strategy: "merge",
+    },
+    nushell: #{
+	enabled: SYSTEM.platform == "Windows",
+	targets: "~/.config/nushell/",
 	strategy: "merge",
     },
 };

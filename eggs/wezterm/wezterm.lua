@@ -8,9 +8,13 @@ local config = wezterm.config_builder()
 config.allow_win32_input_mode = false
 config.color_scheme = "tokyonight_night"
 config.colors = { background = "black" }
+-- {% if SYSTEM.platform == "Windows" %}
+--<yolk> config.default_prog = { "nu" }
+-- {% else %}
 config.default_prog = { "zsh" }
+-- {% end %}
 config.font = wezterm.font_with_fallback({ "Fira Code", "Cascadia Code", "JetBrains Mono" })
--- config.window_decorations = "RESIZE"
+--<yolk> config.window_decorations = "RESIZE" -- {< if SYSTEM.platform == "Windows" >}
 config.window_background_opacity = 0.75
 
 -- Fullscreen
