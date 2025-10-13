@@ -41,4 +41,7 @@ export let eggs = #{
 	targets: "~/.config/nushell/",
 	strategy: "merge",
     },
+    zed: #{
+	targets: "~/.config/zed/",
+    },
 };
