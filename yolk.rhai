@@ -44,4 +44,10 @@ export let eggs = #{
     zed: #{
 	targets: "~/.config/zed/",
     },
+    git: #{
+	targets: #{
+	".gitconfig": "~/.gitconfig",
+	},
+	templates: [".gitconfig"],
+    },
 };
