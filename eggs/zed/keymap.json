@@ -7,12 +7,6 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
-    "bindings": {
-      "space space": "file_finder::Toggle"
-    }
-  },
-  {
     "context": "Editor && vim_mode == insert",
     "bindings": {
       "j j": "vim::NormalBefore"
@@ -21,13 +15,48 @@
   {
     "context": "Workspace",
     "bindings": {
+      // Find File
+      "space space": "file_finder::Toggle",
+
+      // Save File
       "space f s": "workspace::Save"
     }
   },
   {
     "context": "(VimControl || (!Editor && !Terminal))",
     "bindings": {
+      // Pane Navigation
+      "space h": "workspace::ActivatePaneUp",
+      "space l": "workspace::ActivatePaneRight",
+      "space k": "workspace::ActivatePaneUp",
+      "space j": "workspace::ActivatePaneDown",
+
+      // Pane Split
+      "space w s": "pane::SplitVertical",
+      "space w h": "pane::SplitHorizontal",
+
+      // Close Pane
       "space f q": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-f": "vim::Search",
+      "space t t": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "(ProjectPanel && not_editing)",
+    "bindings": {
+      // Close Project Panel
+      "escape": "workspace::ToggleLeftDock",
+
+      // Project Panel Operation
+      "r": "project_panel::Rename",
+      "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
+      "d": ["project_panel::Delete", { "skip_prompt": false }]
     }
   }
 ]

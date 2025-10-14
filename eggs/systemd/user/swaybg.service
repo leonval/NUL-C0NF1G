@@ -4,5 +4,5 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swaybg -m fill -i "~/5-HIKARI-L2K.Athena/1-system/wallpaper/tactical-ronin-semi-realism-higgsfield-generated-16x9.png"
+ExecStart=/usr/bin/swaybg -i /home/nnoel/5-HIKARI-L2K.Athena/1-system/wallpaper/tactical-ronin-semi-realism-higgsfield-generated-16x9.png
 Restart=on-failure
