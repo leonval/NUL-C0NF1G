@@ -4,3 +4,4 @@
 	editor = nvim
 [push]
 	default = simple
+	autoSetupRemote = true
