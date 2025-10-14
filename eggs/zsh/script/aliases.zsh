@@ -22,13 +22,15 @@ alias xt="eza --icons --tree"
 alias xta="eza --icons --tree --all"
 
 # yolk dotfiles
-alias ygs="yolk git status"
+alias ygs="yolk git status --short --branch"
+alias ygst="yolk git status"
 alias ygl="yolk git log"
 alias ygaa="yolk git add -A"
-alias ygc="yolk git commit"
+alias ygc="yolk git commit --verbose"
 alias ygP="yolk git push"
 alias ygf="yolk git fetch"
 alias ygp="yolk git pull"
+alias ygd="yolk git diff"
 
 # laravel sail alias
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'

@@ -2,3 +2,5 @@
 	defaultBranch = main
 [core]
 	editor = nvim
+[push]
+	default = simple
