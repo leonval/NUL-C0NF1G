@@ -389,12 +389,6 @@ window-rule {
 }
 
 window-rule {
-    match app-id="xfce4-appfinder"
-
-    open-floating true
-}
-
-window-rule {
     match title="Kando Menu"
     open-floating true
     border { off; }
@@ -420,7 +414,7 @@ binds {
     //	Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Run Terminal: Wezterm" { spawn "wezterm"; }
     alt+ctrl+a { spawn "keepassxc"; }
-    Mod+space hotkey-overlay-title="Run Appfinder: Xfce Appfinder" { spawn "xfce4-appfinder"; }
+    Mod+space hotkey-overlay-title="Run Appfinder: fuzzel" { spawn "fuzzel"; }
     Mod+e hotkey-overlay-title="Run File Manager: Thunar" { spawn "thunar"; }
     Mod+b hotkey-overlay-title="Run Browser: Zen Browser" { spawn "zen-browser"; }
     Super+L hotkey-overlay-title="Lock the Screen: Swaylock" { spawn "swaylock"; }
