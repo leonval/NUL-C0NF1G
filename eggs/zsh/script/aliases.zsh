@@ -1,7 +1,6 @@
 alias sudo="sudo "
 
 alias cd="z" # zoxide
-alias cat="bat --theme Dracula"
 alias lg="lazygit"
 alias vim="nvim"
 
@@ -24,13 +23,12 @@ alias xta="eza --icons --tree --all"
 # yolk dotfiles
 alias ygs="yolk git status --short --branch"
 alias ygst="yolk git status"
-alias ygl="yolk git log"
+alias ygl="yolk git log --graph"
+alias yglp="yolk git log --stat --patch --graph"
+alias yglo="yolk git log --graph $'--pretty=%Cred%h%Creset -%C(char lp)auto(char rp)%d%Creset %s %Cgreen(char lp)%ad(char rp) %C(char lp)bold blue(char rp)<%an>%Creset' --date=short"
 alias ygaa="yolk git add -A"
 alias ygc="yolk git commit --verbose"
 alias ygP="yolk git push"
 alias ygf="yolk git fetch"
 alias ygp="yolk git pull"
 alias ygd="yolk git diff"
-
-# laravel sail alias
-alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
