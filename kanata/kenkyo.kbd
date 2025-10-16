@@ -91,7 +91,8 @@
   x vold
   c volu
   v pp
-  n tab
+  m brdn
+  , brup
   ralt ret
   rctl bspc
 )
