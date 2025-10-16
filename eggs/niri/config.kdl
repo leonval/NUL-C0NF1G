@@ -150,10 +150,15 @@ layout {
     }
 
     // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
-    // preset-window-heights { }
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 1.0; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -296,10 +301,6 @@ clipboard {
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
-// WARNING: not working on AthenaOS
-// Starts DankShell
-// spawn-at-startup "dms" "run"
-
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
     skip-at-startup
@@ -341,14 +342,6 @@ workspace "TERTIUS"
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
-window-rule {
-    geometry-corner-radius 8
-    clip-to-geometry true
-    open-maximized true
-}
-
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {
@@ -382,18 +375,20 @@ window-rule {
     // block-out-from "screencast"
 }
 
-/-window-rule {
-    match app-id="zen"
-
-    open-maximized true
-}
-
 window-rule {
     match title="Kando Menu"
     open-floating true
     border { off; }
     shadow { off; }
 }
+
+// Example: enable rounded corners for all windows.
+// (This example rule is commented out with a "/-" in front.)
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -669,53 +664,4 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
-
-    // NOTE: Dank material shell
-   //  Mod+Space hotkey-overlay-title="Application Launcher" {
-   //    spawn "dms" "ipc" "call" "spotlight" "toggle";
-   //  }
-   // Mod+V hotkey-overlay-title="Clipboard Manager" {
-   //    spawn "dms" "ipc" "call" "clipboard" "toggle";
-   // }
-   // Mod+M hotkey-overlay-title="Task Manager" {
-   //    spawn "dms" "ipc" "call" "processlist" "toggle";
-   // }
-   // Mod+N hotkey-overlay-title="Notification Center" {
-   //    spawn "dms" "ipc" "call" "notifications" "toggle";
-   // }
-   // Mod+Comma hotkey-overlay-title="Settings" {
-   //    spawn "dms" "ipc" "call" "settings" "toggle";
-   // }
-   // Mod+P hotkey-overlay-title="Notepad" {
-   //    spawn "dms" "ipc" "call" "notepad" "toggle";
-   // }
-   // Super+Alt+L hotkey-overlay-title="Lock Screen" {
-   //    spawn "dms" "ipc" "call" "lock" "lock";
-   // }
-   // // Mod+X hotkey-overlay-title="Power Menu" {
-   // //    spawn "dms" "ipc" "call" "powermenu" "toggle";
-   // // }
-   // XF86AudioRaiseVolume allow-when-locked=true {
-   //    spawn "dms" "ipc" "call" "audio" "increment" "3";
-   // }
-   // XF86AudioLowerVolume allow-when-locked=true {
-   //    spawn "dms" "ipc" "call" "audio" "decrement" "3";
-   // }
-   // XF86AudioMute allow-when-locked=true {
-   //    spawn "dms" "ipc" "call" "audio" "mute";
-   // }
-   // XF86AudioMicMute allow-when-locked=true {
-   //    spawn "dms" "ipc" "call" "audio" "micmute";
-   // }
-   // XF86MonBrightnessUp allow-when-locked=true {
-   //    spawn "dms" "ipc" "call" "brightness" "increment" "5" "";
-   // }
-   // // You can override the default device for e.g. keyboards by adding the device name to the last param
-   // XF86MonBrightnessDown allow-when-locked=true {
-   //    spawn "dms" "ipc" "call" "brightness" "decrement" "5" "";
-   // }
-   // // Night mode toggle
-   // Mod+Shift+N allow-when-locked=true {
-   //    spawn "dms" "ipc" "call" "night" "toggle";
-   // }
 }
