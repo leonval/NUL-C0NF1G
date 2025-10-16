@@ -291,7 +291,7 @@ clipboard {
 // spawn-at-startup "swaybg"
 // spawn-at-startup "swayidle"
 // spawn-at-startup "mako"
-spawn-at-startup "keepassxc"
+// spawn-at-startup "keepassxc"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -341,6 +341,14 @@ workspace "TERTIUS"
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
+// Example: enable rounded corners for all windows.
+// (This example rule is commented out with a "/-" in front.)
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+    open-maximized true
+}
+
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {
@@ -350,7 +358,6 @@ window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
 
     // default-column-width {}
-    open-maximized true
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -375,14 +382,7 @@ window-rule {
     // block-out-from "screencast"
 }
 
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
-window-rule {
-    geometry-corner-radius 8
-    clip-to-geometry true
-}
-
-window-rule {
+/-window-rule {
     match app-id="zen"
 
     open-maximized true
