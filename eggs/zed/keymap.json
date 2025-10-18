@@ -19,7 +19,11 @@
       "space space": "file_finder::Toggle",
 
       // Save File
-      "space f s": "workspace::Save"
+      "space f s": "workspace::Save",
+
+      // Tab Navigation
+      "ctrl-tab": "pane::ActivateNextItem",
+      "ctrl-shift-tab": "pane::ActivatePreviousItem"
     }
   },
   {
@@ -57,6 +61,16 @@
       "a": "project_panel::NewFile",
       "A": "project_panel::NewDirectory",
       "d": ["project_panel::Delete", { "skip_prompt": false }]
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "space 1": ["pane::ActivateItem", 0],
+      "space 2": ["pane::ActivateItem", 1],
+      "space 3": ["pane::ActivateItem", 2],
+      "space 4": ["pane::ActivateItem", 3],
+      "space 5": ["pane::ActivateItem", 4]
     }
   }
 ]
