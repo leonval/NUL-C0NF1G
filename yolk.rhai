@@ -1,4 +1,30 @@
+import "theme" as theme;
+
 export let eggs = #{
+    wezterm: #{
+	enabled: io::command_available("wezterm"),
+	targets: "~/.config/wezterm/",
+	templates: ["wezterm.lua"],
+    },
+    nvim: #{
+	enabled: io::command_available("nvim"),
+	targets: "~/.config/nvim/",
+    },
+    git: #{
+	targets: #{
+	".gitconfig": "~/.gitconfig",
+	},
+	templates: [".gitconfig"],
+    },
+    zed: #{
+	targets: "~/.config/zed/",
+    },
+    kaizen: #{
+	enabled: io::command_available("kaizen"),
+	targets: "~/.config/kaizen/",
+    },
+
+    // Linux Explicit
     bash: #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: #{
@@ -16,15 +42,7 @@ export let eggs = #{
 	".zshrc": "~/.zshrc",
 	}, 
 	templates: [".zshenv",".zprofile",".zshrc"],
-    },
-    wezterm: #{
-	enabled: io::command_available("wezterm"),
-	targets: "~/.config/wezterm/",
-	templates: ["wezterm.lua"],
-    },
-    nvim: #{
-	enabled: io::command_available("nvim"),
-	targets: "~/.config/nvim/",
+	main_file: "config"
     },
     niri: #{
 	enabled: io::command_available("niri"),
@@ -36,18 +54,16 @@ export let eggs = #{
 	targets: "~/.config/systemd/",
 	strategy: "merge",
     },
+    desktop: #{
+	enabled: SYSTEM.platform == "Linux",
+	targets: "~/.local/share/applications/",
+	strategy: "merge",
+    },
+
+    // Windows Explicit
     nushell: #{
 	enabled: SYSTEM.platform == "Windows",
 	targets: "~/.config/nushell/",
 	strategy: "merge",
-    },
-    zed: #{
-	targets: "~/.config/zed/",
-    },
-    git: #{
-	targets: #{
-	".gitconfig": "~/.gitconfig",
-	},
-	templates: [".gitconfig"],
     },
 };

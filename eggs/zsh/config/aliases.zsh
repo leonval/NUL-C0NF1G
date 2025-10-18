@@ -1,8 +1,10 @@
 alias sudo="sudo "
 
+# general
 alias cd="z" # zoxide
 alias lg="lazygit"
 alias vim="nvim"
+alias zsh-reload='source ~/.zshrc'
 
 # bat
 alias b="bat"
@@ -26,6 +28,7 @@ alias ygst="yolk git status"
 alias ygl="yolk git log --graph"
 alias yglp="yolk git log --stat --patch --graph"
 alias yglo="yolk git log --graph $'--pretty=%Cred%h%Creset -%C(char lp)auto(char rp)%d%Creset %s %Cgreen(char lp)%ad(char rp) %C(char lp)bold blue(char rp)<%an>%Creset' --date=short"
+alias yga="yolk git add"
 alias ygaa="yolk git add -A"
 alias ygc="yolk git commit --verbose"
 alias ygP="yolk git push"
