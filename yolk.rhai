@@ -59,6 +59,9 @@ export let eggs = #{
 	targets: "~/.local/share/applications/",
 	strategy: "merge",
     },
+    dunst: #{
+	targets: "~/.config/dunst",
+    },
 
     // Windows Explicit
     nushell: #{
