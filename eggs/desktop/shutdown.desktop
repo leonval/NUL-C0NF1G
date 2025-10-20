@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Shutdown
+Comment=Shuts down the system immediately
+Exec=shutdown
+Icon=~/.dotfiles/share/icons/google-material-mode-off-on.svg
+Terminal=false
+Categories=System;Utility;
+StartupNotify=true

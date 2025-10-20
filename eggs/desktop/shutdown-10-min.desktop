@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Shutdown (10 min)
+Comment=Shuts down the system in 10 minutes
+Exec=shutdown-10-min
+Icon=~/.dotfiles/share/icons/google-material-mode-off-on.svg
+Terminal=true
+Categories=System;Utility;
+StartupNotify=true
