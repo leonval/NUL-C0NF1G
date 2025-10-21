@@ -62,6 +62,9 @@ export let eggs = #{
     dunst: #{
 	targets: "~/.config/dunst",
     },
+    swaylock: #{
+	targets: "~/.config/swaylock",
+    },
 
     // Windows Explicit
     nushell: #{

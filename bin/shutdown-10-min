@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Simple 10-minute shutdown timer script
+
+# Time in minutes
+DELAY_MINUTES=10
+
+# Notify user
+notify-send "Shutdown Scheduled" "System will shut down in $DELAY_MINUTES minutes."
+
+# Schedule shutdown
+sudo shutdown +$DELAY_MINUTES
