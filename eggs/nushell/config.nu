@@ -22,6 +22,3 @@ $env.config.buffer_editor = 'nvim'
 $env.config.shell_integration.osc133 = false
 
 oh-my-posh init nu --config ~/.dotfiles/oh-my-posh/nul-omp.toml
-source ~/.config/nushell/script/.oh-my-posh.nu
-source ~/.config/nushell/script/zoxide.nu
-source ~/.config/nushell/script/yazi.nu
