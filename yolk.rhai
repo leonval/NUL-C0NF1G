@@ -72,4 +72,13 @@ export let eggs = #{
 	targets: "~/.config/nushell/",
 	strategy: "merge",
     },
+    komorebi: #{
+	enabled: SYSTEM.platform == "Windows",
+	targets: #{
+	"applications.json": "~/applications.json",
+	"komorebi.json": "~/komorebi.json",
+	"whkdrc": "~/.config/whkdrc",
+	},
+	templates: ["application.json","komorebi.json","whkdrc"],
+    },
 };
