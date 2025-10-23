@@ -4,6 +4,7 @@ export let eggs = #{
     wezterm: #{
 	enabled: io::command_available("wezterm"),
 	targets: "~/.config/wezterm/",
+	templates: ["wezterm.lua"],
     },
     nvim: #{
 	enabled: io::command_available("nvim"),
@@ -17,10 +18,6 @@ export let eggs = #{
     },
     zed: #{
 	targets: "~/.config/zed/",
-    },
-    kaizen: #{
-	enabled: io::command_available("kaizen"),
-	targets: "~/.config/kaizen/",
     },
     yazi: #{
 	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/yazi/config/" } else { "~/.config/yazi/" },
@@ -85,5 +82,5 @@ export let eggs = #{
 	"whkdrc": "~/.config/whkdrc",
 	},
 	templates: ["application.json","komorebi.json","whkdrc"],
-    },
+    }
 };
