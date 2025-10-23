@@ -4,7 +4,6 @@ export let eggs = #{
     wezterm: #{
 	enabled: io::command_available("wezterm"),
 	targets: "~/.config/wezterm/",
-	templates: ["wezterm.lua"],
     },
     nvim: #{
 	enabled: io::command_available("nvim"),
@@ -22,6 +21,10 @@ export let eggs = #{
     kaizen: #{
 	enabled: io::command_available("kaizen"),
 	targets: "~/.config/kaizen/",
+    },
+    yazi: #{
+	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/yazi/config/" } else { "~/.config/yazi/" },
+	strategy: if SYSTEM.platform == "Windows" { "merge" } else { "put" },
     },
 
     // Linux Explicit
@@ -60,9 +63,11 @@ export let eggs = #{
 	strategy: "merge",
     },
     dunst: #{
+	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.config/dunst",
     },
     swaylock: #{
+	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.config/swaylock",
     },
 
