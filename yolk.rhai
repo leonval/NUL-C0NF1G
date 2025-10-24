@@ -51,7 +51,11 @@ export let eggs = #{
     },
     systemd: #{
 	enabled: SYSTEM.platform == "Linux",
-	targets: "~/.config/systemd/",
+	targets: #{
+	"user": "~/.config/systemd/user",
+	"system": "/etc/systemd/system",
+	},
+	templates: ["user", "system"],
 	strategy: "merge",
     },
     desktop: #{
