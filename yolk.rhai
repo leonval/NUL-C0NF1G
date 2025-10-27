@@ -21,7 +21,6 @@ export let eggs = #{
     },
     yazi: #{
 	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/yazi/config/" } else { "~/.config/yazi/" },
-	strategy: if SYSTEM.platform == "Windows" { "merge" } else { "put" },
     },
 
     // Linux Explicit
@@ -53,9 +52,8 @@ export let eggs = #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: #{
 	"user": "~/.config/systemd/user",
-	"system": "/etc/systemd/system",
 	},
-	templates: ["user", "system"],
+	templates: ["user"],
 	strategy: "merge",
     },
     desktop: #{
