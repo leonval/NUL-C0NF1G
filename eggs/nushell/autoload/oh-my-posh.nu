@@ -4,9 +4,9 @@ if ($env.config? | is-not-empty) {
 }
 
 $env.POWERLINE_COMMAND = 'oh-my-posh'
-$env.POSH_THEME = (echo "C:\\Users\\nnoel\\.dotfiles\\oh-my-posh\\nul-omp.toml")
+$env.POSH_THEME = (echo "C:\\Users\\nnoel\\.dotfiles\\config\\oh-my-posh\\nul-omp.toml")
 $env.PROMPT_INDICATOR = ""
-$env.POSH_SESSION_ID = (echo "29af116c-43a9-4d98-a683-b4db5d6c98d1")
+$env.POSH_SESSION_ID = (echo "514b58e4-fba1-48ab-96df-a5de5063b535")
 $env.POSH_SHELL = "nu"
 $env.POSH_SHELL_VERSION = (version | get version)
 
