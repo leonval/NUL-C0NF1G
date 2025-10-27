@@ -31,6 +31,7 @@ alias yglo = yolk git log --graph $'--pretty=%Cred%h%Creset -%C(char lp)auto(cha
 alias yga = yolk git add
 alias ygaa = yolk git add -A
 alias ygr = yolk git restore
+alias ygrs = yolk git restore --staged
 alias ygc = yolk git commit --verbose
 alias ygP = yolk git push
 alias ygf = yolk git fetch

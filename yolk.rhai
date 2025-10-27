@@ -86,5 +86,10 @@ export let eggs = #{
 	"whkdrc": "~/.config/whkdrc",
 	},
 	templates: ["application.json","komorebi.json","whkdrc"],
+    },
+    glzr: #{
+	enabled: SYSTEM.platform == "Windows",
+	targets: "~/.glzr/",
+	strategy: "merge",
     }
 };
