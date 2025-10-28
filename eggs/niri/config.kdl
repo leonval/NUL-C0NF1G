@@ -78,7 +78,7 @@ input {
 }
 
 cursor {
-    xcursor-theme "oreo_spark_green_cursors"
+    xcursor-theme "BreezeX-Black"
     xcursor-size 36 
 }
 

@@ -101,12 +101,27 @@ return {
 				-- You can put your default mappings / updates / etc. in here
 				--  All the info you're looking for is in `:help telescope.setup()`
 				--
-				-- defaults = {
-				--   mappings = {
-				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-				--   },
-				-- },
-				-- pickers = {}
+				defaults = {
+					layout_strategy = "horizontal",
+					sorting_strategy = "ascending",
+					layout_config = {
+						height = vim.o.lines,
+						width = vim.o.columns,
+						prompt_position = "top",
+						preview_width = 0.6,
+					},
+					--   mappings = {
+					--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+					--   },
+				},
+				pickers = {
+					current_buffer_fuzzy_find = {
+						layout_config = {
+							anchor = "N",
+							height = 0.4,
+						},
+					},
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
@@ -136,15 +151,21 @@ return {
 			vim.keymap.set("n", "<leader><leader>", function()
 				builtin.find_files({ hidden = true, no_ignore = false })
 			end, { desc = "[ ] Search Files (including dotfiles)" })
+			vim.keymap.set(
+				"n",
+				"<C-f>",
+				builtin.current_buffer_fuzzy_find,
+				{ desc = "[C-f] Fuzzily search in current buffer" }
+			)
 
 			-- Slightly advanced example of overriding default behavior and theme
-			vim.keymap.set("n", "<C-f>", function()
-				-- You can pass additional configuration to Telescope to change the theme, layout, etc.
-				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-					winblend = 10,
-					previewer = true,
-				}))
-			end, { desc = "[C-f] Fuzzily search in current buffer" })
+			-- vim.keymap.set("n", "<C-f>", function()
+			-- 	-- You can pass additional configuration to Telescope to change the theme, layout, etc.
+			-- 	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_ivy({
+			-- 		winblend = 10,
+			-- 		previewer = true,
+			-- 	}))
+			-- end, { desc = "[C-f] Fuzzily search in current buffer" })
 
 			-- It's also possible to pass additional configuration options.
 			--  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -219,9 +240,9 @@ return {
 				mapping = cmp.mapping.preset.insert({
 					-- Select the [n]ext item
 					-- ["<C-i>"] = cmp.mapping.select_next_item(),
-					["j"] = cmp.mapping.select_next_item(),
+					-- ["j"] = cmp.mapping.select_next_item(),
 					-- Select the [p]revious item
-					["k"] = cmp.mapping.select_prev_item(),
+					-- ["k"] = cmp.mapping.select_prev_item(),
 
 					-- Scroll the documentation window [b]ack / [f]orward
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
