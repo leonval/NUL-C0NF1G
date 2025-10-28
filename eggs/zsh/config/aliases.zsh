@@ -2,9 +2,12 @@ alias sudo="sudo "
 
 # general
 alias cd="z" # zoxide
-alias lg="lazygit"
 alias vim="nvim"
 alias zsh-reload='source ~/.zshrc'
+
+# dev
+alias lg="lazygit"
+alias lq="lazysql"
 
 # bat
 alias b="bat"

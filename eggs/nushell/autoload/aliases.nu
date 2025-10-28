@@ -1,10 +1,13 @@
-# Basic Unix Navigation
+# unix navigation
 alias ll = ls -la
 alias la = ls -a
 
-# Program Aliases
-alias lg = lazygit
+# general
 alias vim = nvim
+
+# dev
+alias lg = lazygit
+alias lq = lazysql
 
 # bat
 alias b = bat
