@@ -6,6 +6,7 @@ require("config.lazy")
 require("lazy").setup(
 	{
 		{ import = "plugins" },
+		{ import = "plugins.core" },
 		{ import = "plugins.lsp" },
 		{ import = "plugins.formatting" },
 		{ import = "plugins.dev.markdown" },
