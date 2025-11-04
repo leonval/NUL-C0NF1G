@@ -11,6 +11,10 @@ setopt COMPLETE_IN_WORD
 #setopt HUP
 
 ## history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
 setopt APPEND_HISTORY
 ## for sharing history between zsh processes
 setopt INC_APPEND_HISTORY
