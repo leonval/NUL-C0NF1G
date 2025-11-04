@@ -149,6 +149,7 @@ window_rules:
   - commands: ['set-tiling']
     match:
       - window_process: { equals: 'zen' } # Zen Browser
+        window_class: { equals: 'MozillaWindowClass' }
       - window_process: { equals: 'wezterm-gui' }
 
   - commands: ['set-floating']
