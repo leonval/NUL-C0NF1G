@@ -17,7 +17,7 @@ export let eggs = #{
 	templates: [".gitconfig"],
     },
     zed: #{
-	targets: "~/.config/zed/",
+	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/Zed/" } else { "~/.config/zed/" },
     },
     yazi: #{
 	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/yazi/config/" } else { "~/.config/yazi/" },
