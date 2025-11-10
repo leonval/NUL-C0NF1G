@@ -89,5 +89,10 @@ export let eggs = #{
 	enabled: SYSTEM.platform == "Windows",
 	targets: "~/.glzr/",
 	strategy: "merge",
+    },
+    yasb: #{
+	enabled: SYSTEM.platform == "Windows",
+	targets: "~/.config/yasb/",
+	strategy: "merge",
     }
 };
