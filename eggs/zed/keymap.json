@@ -13,14 +13,18 @@
     }
   },
   {
-    "context": "Workspace",
+    "context": "(VimControl && vim_mode == normal)",
     "bindings": {
       // Find File
       "space space": "file_finder::Toggle",
 
       // Save File
-      "space f s": "workspace::Save",
-
+      "space f s": "workspace::Save"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
       // Tab Navigation
       "ctrl-tab": "pane::ActivateNextItem",
       "ctrl-shift-tab": "pane::ActivatePreviousItem"

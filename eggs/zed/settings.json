@@ -25,5 +25,10 @@
     "light": "One Light",
     "dark": "Tokyo Night"
   },
-  "relative_line_numbers": true
+  "relative_line_numbers": "enabled",
+  "format_on_save": "on",
+  "formatter": "auto",
+  "file_types": {
+    "Blade": ["*.blade.php"]
+  }
 }

@@ -69,6 +69,10 @@ export let eggs = #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.config/swaylock",
     },
+    waybar: #{
+	enabled: SYSTEM.platform == "Linux",
+	targets: "~/.config/waybar",
+    },
 
     // Windows Explicit
     nushell: #{
