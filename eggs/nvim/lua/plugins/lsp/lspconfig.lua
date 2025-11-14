@@ -7,6 +7,7 @@ return {
 			{ "mason-org/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
 			"mason-org/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			"folke/lazydev.nvim",
 
 			-- Useful status updates for LSP.
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`

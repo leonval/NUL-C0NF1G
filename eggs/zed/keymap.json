@@ -34,10 +34,10 @@
     "context": "(VimControl || (!Editor && !Terminal))",
     "bindings": {
       // Pane Navigation
-      "space h": "workspace::ActivatePaneUp",
-      "space l": "workspace::ActivatePaneRight",
-      "space k": "workspace::ActivatePaneUp",
+      "space h": "workspace::ActivatePaneLeft",
       "space j": "workspace::ActivatePaneDown",
+      "space k": "workspace::ActivatePaneUp",
+      "space l": "workspace::ActivatePaneRight",
 
       // Pane Split
       "space w s": "pane::SplitVertical",

@@ -1,6 +1,6 @@
 return { -- Fuzzy Finder (files, lsp, etc)
 	"nvim-telescope/telescope.nvim",
-	enabled = not vim.g.vscode,
+	enabled = true,
 	event = "VimEnter",
 	branch = "master",
 	dependencies = {
@@ -88,15 +88,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
 			builtin.current_buffer_fuzzy_find,
 			{ desc = "[C-f] Fuzzily search in current buffer" }
 		)
-
-		-- Slightly advanced example of overriding default behavior and theme
-		-- vim.keymap.set("n", "<C-f>", function()
-		-- 	-- You can pass additional configuration to Telescope to change the theme, layout, etc.
-		-- 	builtin.current_buffer_fuzzy_find(require("telescope.themes").get_ivy({
-		-- 		winblend = 10,
-		-- 		previewer = true,
-		-- 	}))
-		-- end, { desc = "[C-f] Fuzzily search in current buffer" })
 
 		-- It's also possible to pass additional configuration options.
 		--  See `:help telescope.builtin.live_grep()` for information about particular keys

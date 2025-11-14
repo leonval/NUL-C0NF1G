@@ -28,16 +28,13 @@ vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---  See `:help wincmd` for a list of all window commands
+-- Window keymaps
 vim.keymap.set("n", "<leader>h", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<leader>l", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<leader>j", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<leader>k", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-vim.keymap.set("n", "<leader>fs", ":w<CR>", { desc = "[W]rite current buffer" }) -- Write buffer shortcut
-vim.keymap.set("n", "<leader>fq", ":q<CR>", { desc = "[Q]uit current buffer" }) -- Quit buffer shortcut
+vim.keymap.set("n", "<leader>ws", ":vsplit", { desc = "Move focus to the left window" })
 
 -- [[ File Picker ]]
 vim.keymap.set("n", "<leader>tt", function()
@@ -46,6 +43,9 @@ end, { desc = "Open mini.files file picker" })
 vim.keymap.set("n", "<leader>to", ":Oil<CR>", { desc = "Open Oil.nvim file picker" })
 
 -- Buffer(s)
+vim.keymap.set("n", "<leader>fs", ":w<CR>", { desc = "[W]rite current buffer" }) -- Write buffer shortcut
+vim.keymap.set("n", "<leader>fq", ":q<CR>", { desc = "[Q]uit current buffer" }) -- Quit buffer shortcut
+
 vim.keymap.set("n", "<leader>bd", function()
 	require("mini.bufremove").delete(0, false)
 end, { desc = "[D]elete current [B]uffer" })
