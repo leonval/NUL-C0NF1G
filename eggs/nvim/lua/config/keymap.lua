@@ -34,7 +34,8 @@ vim.keymap.set("n", "<leader>l", "<C-w><C-l>", { desc = "Move focus to the right
 vim.keymap.set("n", "<leader>j", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<leader>k", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-vim.keymap.set("n", "<leader>ws", ":vsplit", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<leader>wv", ":vsplit<CR>", { desc = "[W]indow Split [V]ertical" })
+vim.keymap.set("n", "<leader>wh", ":split<CR>", { desc = "[W]indow Split [H]orizontal" })
 
 -- [[ File Picker ]]
 vim.keymap.set("n", "<leader>tt", function()

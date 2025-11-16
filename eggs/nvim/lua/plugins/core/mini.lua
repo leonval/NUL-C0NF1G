@@ -27,5 +27,7 @@ return { -- Collection of various small independent plugins/modules
 			},
 			options = { permanent_delete = false },
 		})
+
+		require("mini.animate").setup()
 	end,
 }
