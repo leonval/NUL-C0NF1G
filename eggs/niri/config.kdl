@@ -335,7 +335,7 @@ animations {
 // NOTE: Workspace
 workspace "PRIMUS"
 workspace "SECUNDUS"
-workspace "TERTIUS"
+// workspace "TERTIUS"
 
 // NOTE: Window Rule
 // Window rules let you adjust behavior for individual windows.
