@@ -1,414 +1,29 @@
 @define-color primarius #04ff04;
 @define-color secundarius #000000;
-@define-color bg #000000;
+@define-color tertiarus #04ff04;
+@define-color alert #f38ba8;
+@define-color bg-primarius #000000;
+@define-color bg-secundarius #04ff04;
+@define-color bg-tertiarus #04ff04;
 
 * {
-    border: none;
     border-radius: 10px;
-    font-family: "FiraCode Nerd Font";
-    font-weight: bold;
-    font-size: 12px;
-    min-height: 8px;
+    font: bold 14px "FiraCode Nerd Font";
 }
 
 window#waybar {
     background: transparent;
 }
 
-#network {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#network:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-#cava {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#cava:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-#battery {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#battery:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-#backlight:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-#backlight {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#language {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#language:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-#pulseaudio {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    padding: 8px;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#pulseaudio:hover {
-    background: @primarius;
-    color: @bg;
-}
-
-#pulseaudio.muted {
-    color: #f38ba8;
-    background: @bg;
-    border: 2px solid @primarius;
-    border-color: #f38ba8;
-    transition: 0.3s;
-}
-
-#pulseaudio.muted:hover {
-    background: #f38ba8;
-    color: @bg;
-
-}
-
-#clock {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#clock:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-#disk {
-    margin-top: 10px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#disk:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-#privacy {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#idle_inhibitor {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#idle_inhibitor.activated {
-    color: #89b4fa;
-    border-color: #89b4fa;
-}
-
-#idle_inhibitor.activated:hover {
-    background: #89b4fa;
-    color: @bg;
-    border-color: #89b4fa;
-}
-
-#idle_inhibitor.deactivated {
-    color: @primarius
-}
-
-#idle_inhibitor.deactivated:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-#memory {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    margin-bottom: 0px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#memory:hover {
-    color: @bg;
-    background: @primarius;
-
-}
-
-#cpu {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    margin-bottom: 0px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#cpu:hover {
-    color: @bg;
-    background: @primarius;
-
-}
-
-#power-profiles-daemon {
-    font-size: 14px;
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    margin-bottom: 0px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#power-profiles-daemon:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-#custom-swaync {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#custom-swaync:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-
-#custom-launcher {
-    font-size: 14px;
-    margin-top: 8px;
-    margin-left: 15px;
-    padding-left: 10px;
-    padding-right: 5px;
-    border-radius: 10px;
-    transition: none;
-    color: @primarius;
-    background: @bg;
-    transition: 0.3s;
-    border: 2px solid @primarius;
-}
-
-#custom-launcher:hover {
-    background: @primarius;
-    color: @bg;
-}
-
-#network.disconnected {
-    color: #f38ba8;
-    background: @bg;
-    border: 2px solid @primarius;
-    border-color: #f38ba8;
-}
-
-#network.disconnected:hover {
-    background: #f38ba8;
-    color: @bg;
-}
-
-#bluetooth {
-    font-size: 14px;
-    margin-top: 8px;
-    margin-left: 8px;
-    margin-right: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-}
-
-#bluetooth:hover {
-    color: @bg;
-    background: @primarius;
-}
-
-
-#custom-lock {
-    font-size: 12px;
-    margin-top: 8px;
-    margin-left: 8px;
-    margin-right: 8px;
-    padding-left: 10px;
-    padding-right: 5px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
-#custom-lock:hover {
-
-    background: #f38ba8;
-    color: @bg;
-    border-color: #f38ba8;
-
-}
-
-#custom-updates   {
-    margin-top: 8px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    transition: none;
-    background: @bg;
-    color: @primarius;
-    border: 2px solid @primarius;
-    transition: 0.3s;
-}
-
 #workspaces {
-    margin-top: 8px;
+    margin: 0 0 0 16px;
     transition: 0.3s;
 }
 
 #workspaces button {
     margin: 0 4px;
     color: @primarius;
-    border: 2px solid @primarius;
+    border: 2px solid @tertiarus;
     transition: 0.3s;
 }
 
@@ -423,54 +38,403 @@ window#waybar {
     transition: 0.3s;
 }
 
-#tray {
-    margin-top: 8px;
+#taskbar {
+    margin: 0 0 0 16px;
+}
+
+#taskbar button {
+    margin: 0 4px;
+    color: @primarius;
+    background: @bg-primarius;
+    border: 2px solid @tertiarus;
+}
+
+#taskbar button.active {
+    background: @bg-tertiarus;
+}
+
+#cava {
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: @bg;
+    background: @bg-primarius;
     color: @primarius;
-    border: 2px solid @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#cava:hover {
+    color: @secundarius;
+    background: @bg-secundarius;
+}
+
+#battery {
+    margin: 0 5px 0 8px;
+    padding: 0 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#battery:hover {
+    color: @bg-primarius;
+    background: @primarius;
+}
+
+#backlight:hover {
+    color: @bg-primarius;
+    background: @primarius;
+}
+
+#backlight {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#language {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#language:hover {
+    color: @bg-primarius;
+    background: @primarius;
+}
+
+#pulseaudio {
+    margin: 0 0 0 8px;
+    padding: 0 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    padding: 8px;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#pulseaudio:hover {
+    background: @primarius;
+    color: @bg-primarius;
+}
+
+#pulseaudio.muted {
+    color: @alert;
+    background: @bg-primarius;
+    border-color: @alert;
+    transition: 0.3s;
+}
+
+#pulseaudio.muted:hover {
+    background: @alert;
+    color: @bg-primarius;
+
+}
+
+#clock {
+    padding: 0 10px;
+    border-radius: 10px;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarius;
+    transition: none;
+    transition: 0.3s;
+}
+
+#clock:hover {
+    color: @bg-primarius;
+    background: @primarius;
+}
+
+#disk {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#disk:hover {
+    color: @secundarius;
+    background: @bg-secundarius;
+}
+
+#privacy {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#idle_inhibitor {
+    margin-left: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#idle_inhibitor.activated {
+    color: #89b4fa;
+    border-color: #89b4fa;
+}
+
+#idle_inhibitor.activated:hover {
+    background: #89b4fa;
+    color: @bg-primarius;
+    border-color: #89b4fa;
+}
+
+#idle_inhibitor.deactivated {
+    color: @primarius
+}
+
+#idle_inhibitor.deactivated:hover {
+    color: @bg-primarius;
+    background: @primarius;
+}
+
+#memory {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#memory:hover {
+    color: @bg-primarius;
+    background: @primarius;
+
+}
+
+#cpu {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#cpu:hover {
+    color: @bg-primarius;
+    background: @primarius;
+
+}
+
+#power-profiles-daemon {
+    font-size: 14px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#power-profiles-daemon:hover {
+    color: @bg-primarius;
+    background: @primarius;
+}
+
+#custom-swaync {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#custom-swaync:hover {
+    color: @bg-primarius;
+    background: @primarius;
+}
+
+#custom-launcher {
+    margin: 0 0 0 5px;
+    padding: 0 10px;
+    border-radius: 10px;
+    color: @primarius;
+    background: @bg-primarius;
+    font-size: 14px;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#custom-launcher:hover {
+    background: @primarius;
+    color: @bg-primarius;
+}
+
+#network {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    color: @primarius;
+    background: @bg-primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#network:hover {
+    color: @bg-primarius;
+    background: @primarius;
+}
+
+#network.disconnected {
+    color: @alert;
+    background: @bg-primarius;
+    border: 2px solid @tertiarus;
+    border-color: @alert;
+}
+
+#network.disconnected:hover {
+    background: @alert;
+    color: @secundarius;
+}
+
+#bluetooth {
+    margin: 0 0 0 16px;
+    padding: 0 10px;
+    border-radius: 10px;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    font-size: 14px;
+    transition: none;
+}
+
+#bluetooth:hover {
+    color: @bg-primarius;
+    background: @primarius;
+}
+
+
+#custom-lock {
+    font-size: 12px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 10px;
+    padding-right: 5px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#custom-lock:hover {
+
+    background: #f38ba8;
+    color: @bg-primarius;
+    border-color: #f38ba8;
+
+}
+
+#custom-updates   {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
+    transition: 0.3s;
+}
+
+#tray {
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: @bg-primarius;
+    color: @primarius;
+    border: 2px solid @tertiarus;
     transition: 0.3s;
 }
 
 #tray menu {
-    margin-top: 8px;
     margin-left: 8px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: @bg;
+    background: @bg-primarius;
     color: @primarius;
-    border: 2px solid @primarius;
+    border: 2px solid @tertiarus;
     transition: 0.3s;
 }
 
 #custom-power {
     font-size: 12px;
-    margin-top: 8px;
     margin-left: 2px;
     margin-right: 5px;
     padding-left: 10px;
     padding-right: 5px;
-    margin-bottom: 0px;
     border-radius: 10px;
     transition: none;
-    background: @bg;
+    background: @bg-primarius;
     color: @primarius;
-    border: 2px solid @primarius;
+    border: 2px solid @tertiarus;
     transition: 0.3s;
 }
 
 #custom-power:hover {
 
     background: #f38ba8;
-    color: @bg;
+    color: @bg-primarius;
     border-color: #f38ba8;
 
 }
