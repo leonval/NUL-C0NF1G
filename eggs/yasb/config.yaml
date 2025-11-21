@@ -59,7 +59,7 @@ widgets:
   home:
     type: "yasb.home.HomeWidget"
     options:
-      label: "<span>\udb81\udf17</span>"
+      label: "🞊"
       menu_list:
         - { title: "User Home", path: "~" }
         - { title: "Download", path: "~\\Downloads" }
