@@ -40,11 +40,23 @@
       "space l": "workspace::ActivatePaneRight",
 
       // Pane Split
-      "space w s": "pane::SplitVertical",
+      "space w v": "pane::SplitVertical",
       "space w h": "pane::SplitHorizontal",
 
       // Close Pane
-      "space f q": "pane::CloseActiveItem"
+      "space f q": "pane::CloseActiveItem",
+      "space w a": "pane::CloseAllItems",
+      "space w o": "pane::CloseOtherItems",
+
+      "space 1": ["pane::ActivateItem", 0],
+      "space 2": ["pane::ActivateItem", 1],
+      "space 3": ["pane::ActivateItem", 2],
+      "space 4": ["pane::ActivateItem", 3],
+      "space 5": ["pane::ActivateItem", 4],
+      "space 6": ["pane::ActivateItem", 5],
+      "space 7": ["pane::ActivateItem", 6],
+      "space 8": ["pane::ActivateItem", 7],
+      "space 9": "pane::ActivateLastItem"
     }
   },
   {
@@ -65,20 +77,6 @@
       "a": "project_panel::NewFile",
       "A": "project_panel::NewDirectory",
       "d": ["project_panel::Delete", { "skip_prompt": false }]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "space 1": ["pane::ActivateItem", 0],
-      "space 2": ["pane::ActivateItem", 1],
-      "space 3": ["pane::ActivateItem", 2],
-      "space 4": ["pane::ActivateItem", 3],
-      "space 5": ["pane::ActivateItem", 4],
-      "space 6": ["pane::ActivateItem", 5],
-      "space 7": ["pane::ActivateItem", 6],
-      "space 8": ["pane::ActivateItem", 7],
-      "space 9": "pane::ActivateLastItem"
     }
   }
 ]

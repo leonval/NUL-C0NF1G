@@ -8,7 +8,7 @@
 
     "custom/launcher":{
         "format": "🞊",
-        "on-click": "bash ~/.config/rofi/launcher.sh",
+        "on-click": "fuzzel",
         "on-click-right": "killall rofi",
         "tooltip": true,
         "tooltip-format": "Launch App"
@@ -54,7 +54,7 @@
     "clock": {
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
         "format-alt": "  {:%A, %d %B %Y}",
-        "format": "  {:%H:%M   %d/%m/%Y}"
+        "format": " {:%H:%M   %d/%m/%Y}"
     },
 
     "backlight": {
@@ -84,13 +84,21 @@
     "pulseaudio": {
         "scroll-step": 2, // %, can be a float
         "format": "{icon} {volume}%",
-	"format-bluetooth": "",
-        "format-muted": " ",
+	"format-bluetooth": "",
+        "format-muted": " mute",
         "format-icons": {
-            "default": [" ", " ", " "]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+	"max-volume": 150
+    },
+
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "bash ~/.config/rofi/powermenu.sh",
+        "on-click-right": "killall rofi",
+        "format": "⏻ ",
     },
 
     "custom/lock": {
@@ -109,13 +117,6 @@
             "balanced": "󰾅",
             "power-saver": "󰾆"
         }
-    },
-
-    "custom/power": {
-        "tooltip": false,
-        "on-click": "bash ~/.config/rofi/powermenu.sh",
-        "on-click-right": "killall rofi",
-        "format": "⏻ ",
     },
 
     "custom/updates": {
@@ -147,8 +148,8 @@
     "network": {
         "interface": "wlan0",
 
-        "format": "{ifname}",
-        "format-disconnected": "",
+        "format": "{ifname} {signalStrength}%",
+        "format-disconnected": "\udb82\udd2e Disconnected",
 
         "format-wifi": "  {essid}",
         "tooltip-format": "{signalStrength}%",
@@ -166,4 +167,4 @@
 	"on-click": "~/.config/rofi/bluetooth.sh",
 	"on-click-right": "blueman-manager",
     },
-},
+}
