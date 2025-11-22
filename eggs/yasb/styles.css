@@ -184,40 +184,33 @@
     border-radius: 12px;
     font-size: 14px;
     font-weight: bold;
-    transition: all 0.2s ease-in-out;
 }
 
 .glazewm-workspaces .ws-btn.active_populated {
     color: var(--secundarius);
     background: var(--bg-secundarius);
-    transition: all 0.2s ease-in-out;
 }
 
 .glazewm-workspaces .ws-btn.active_empty {
     color: var(--empty);
     background: var(--bg-secundarius);
-    transition: all 0.2s ease-in-out;
 }
 
 .glazewm-workspaces .ws-btn.populated {
     color: var(--primarius);
-    transition: all 0.2s ease-in-out;
 }
 
 .glazewm-workspaces .ws-btn.empty {
     color: var(--empty);
-    transition: all 0.2s ease-in-out;
 }
 
 .glazewm-workspaces .ws-btn.populated:hover {
     color: var(--secundarius);
     background: var(--bg-secundarius);
-    transition: all 0.2s ease-in-out;
 }
 
 .glazewm-workspaces .ws-btn.empty:hover {
     background: var(--bg-secundarius);
-    transition: all 0.2s ease-in-out;
 }
 
 .glazewm-tiling-direction {
@@ -227,24 +220,21 @@
 .glazewm-tiling-direction .btn {
     width: 14px;
     padding: 0 4px 0 4px;
-    color: #04ff04;
-    border: 2px solid #04ff04;
+    color: var(--primarius);
+    border: 2px solid var(--tertiarius);
     border-radius: 12px;
     font-size: 18px;
 }
 .glazewm-tiling-direction .btn:hover {
-    color: #000000;
-    border: 2px solid #ffffff;
-    background-color: #04ff04;
-    transition: all 0.2s ease-in-out;
+    color: var(--secundarius);
+    border: 2px solid var(--tertiarius);
+    background-color: var(--bg-secundarius);
 }
 
 /* glazewm binding mode */
 .glazewm-binding-mode {
-    background-color: var(--crust);
     margin: 4px 0;
     border-radius: 12px;
-    border: 0;
 }
 
 .glazewm-binding-mode .label {
@@ -253,26 +243,26 @@
 }
 
 .glazewm-binding-mode .label-offline {
-    color: var(--subtext0);
+    color: var(--alert);
     font-size: 10px;
 }
 
-.glazewm-binding-mode .icon.none {
-    color: var(--blue);
-}
+.glazewm-binding-mode .icon.none {}
 
-.glazewm-binding-mode .icon.resize {
-    color: var(--yellow);
-}
+.glazewm-binding-mode .icon.resize {}
 
 .glazewm-binding-mode .icon.pause {
-    color: var(--red);
+    color: var(--alert);
 }
 
 /* clock */
 .clock-widget .widget-container {}
 
 .clock-widget .widget-container:hover {}
+
+.clock-widget .icon {
+    margin: 0 8px 0 0;
+}
 
 .clock-widget .label:hover {}
 
@@ -381,7 +371,6 @@
 .systray .unpinned-visibility-btn:checked {
     color: var(--secundarius);
     background: var(--bg-secundarius);
-    cursor: grab;
 }
 
 /* wifi */
@@ -391,7 +380,7 @@
 .wifi-widget .widget-container .label.alt:hover {}
 
 .wifi-widget .widget-container .icon {
-    padding: 0 8px 0 0;
+    margin: 0 2px 0 0;
 }
 
 /* mic and volume grouper */
@@ -406,15 +395,12 @@
 
 .micvolume-grouper .grouper-button:hover {
     color: var(--secundarius);
-    background: #04ff04;
+    background: var(--bg-secundarius);
     transition: all 0.2s ease-in-out;
 }
 
 /* microphone */
-.microphone-widget .icon {
-    font-size: 18px;
-    margin: 0px 2px 0 0;
-}
+.microphone-widget .icon {}
 
 .microphone-widget .label.muted,
 .microphone-widget .icon.muted {
@@ -422,10 +408,7 @@
 }
 
 /* volume */
-.volume-widget .icon {
-    font-size: 17px;
-    margin: 0px 2px 0 0;
-}
+.volume-widget .icon {}
 
 .volume-widget .label.muted,
 .volume-widget .icon.muted {
@@ -434,13 +417,12 @@
 
 /* battery */
 .battery-widget .widget-container .icon {
-    margin: 0 2px 0 0;
+    margin: 0 4px 0 0;
 }
 
 /* notification */
 .notification-widget .icon {
-    margin: 0 4px 0 0;
-    font-size: 14px;
+    margin: 0 8px 0 0;
 }
 
 .notification-widget .icon.new-notification {}
