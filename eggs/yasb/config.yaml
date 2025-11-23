@@ -59,7 +59,7 @@ widgets:
   home:
     type: "yasb.home.HomeWidget"
     options:
-      label: "<span>🞊 </span>"
+      label: "🞊 "
       menu_list:
         - { title: "User Home", path: "~" }
         - { title: "Download", path: "~\\Downloads" }
@@ -133,7 +133,7 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "<span> </span>{%H:%M  }  <span> </span>{%d/%m/%y}"
+      label: "{ %H:%M   %d/%m/%y}"
       label_alt: "{%A, %d %B %Y %H:%M}"
       timezones: []
       calendar:
@@ -179,7 +179,7 @@ widgets:
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
-      label: "<span>{wifi_icon}</span> {wifi_name}"
+      label: "{wifi_icon}{wifi_name}"
       label_alt: "{wifi_name} {wifi_strength}%"
       update_interval: 5000
       callbacks:
@@ -222,8 +222,8 @@ widgets:
   microphone:
     type: "yasb.microphone.MicrophoneWidget"
     options:
-      label: "<span>{icon}</span> {level}"
-      label_alt: "<span>{icon}</span> {level}%"
+      label: "{icon}{level}"
+      label_alt: "{icon}{level}%"
       icons:
         normal: "\udb80\udf6c "
         muted: "\udb80\udf6d "
@@ -234,7 +234,7 @@ widgets:
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
-      label: "<span>{icon}</span> {level}"
+      label: "{icon}{level}"
       label_alt: "{volume}"
       tooltip: false
       volume_icons:
@@ -259,8 +259,8 @@ widgets:
   battery:
     type: "yasb.battery.BatteryWidget"
     options:
-      label: "<span>{icon}</span> {percent}%"
-      label_alt: "{icon} {percent}% | time: {time_remaining}"
+      label: "{icon}{percent}%"
+      label_alt: "{icon}{percent}% | time: {time_remaining}"
       update_interval: 5000
       time_remaining_natural: False
       hide_unsupported: True
@@ -284,7 +284,7 @@ widgets:
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
-      label: "<span> </span> {count}"
+      label: "  {count}"
       label_alt: "{count} notifications"
       hide_empty: true
       tooltip: false

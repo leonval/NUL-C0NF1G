@@ -11,10 +11,11 @@
 
 * {
     color: var(--primarius);
-    font: bold 14px "FiraCode Nerd Font";
+    font: bold 16px "FiraCode Nerd Font";
 }
 
 .yasb-bar {
+    padding: 0 10px;
     background: transparent;
     border-radius: 8px;
 }
@@ -39,7 +40,7 @@
     padding: 4px 0px;
     font-family: "FiraCode Nerd Font";
     font-size: 12px;
-    color: var(--text1);
+    color: var(--primarius);
 }
 
 .context-menu::right-arrow {
@@ -59,8 +60,8 @@
 
 .context-menu::item:selected,
 .context-menu .menu-checkbox:hover {
-    background-color: var(--bg-color2);
-    color: #ffffff;
+    color: var(--secundarius);
+    background-color: var(--bg-secundarius);
 }
 
 .context-menu::separator {
@@ -129,13 +130,9 @@
     background: var(--bg-secundarius);
 }
 
-.icon {
-    font-size: 16px;
-}
+.icon {}
 
-.icon:hover {
-    color: var(--secundarius);
-}
+.icon:hover {}
 
 .widget .label {}
 
@@ -144,6 +141,8 @@
 }
 
 /* home widget */
+.home-widget {}
+
 .home-menu {
     background-color: var(--bg-primarius);
     border-radius: 8px;
@@ -182,8 +181,6 @@
     color: var(--primarius);
     border: 2px solid var(--tertiarius);
     border-radius: 12px;
-    font-size: 14px;
-    font-weight: bold;
 }
 
 .glazewm-workspaces .ws-btn.active_populated {
@@ -260,9 +257,7 @@
 
 .clock-widget .widget-container:hover {}
 
-.clock-widget .icon {
-    margin: 0 8px 0 0;
-}
+.clock-widget .icon {}
 
 .clock-widget .label:hover {}
 
@@ -379,9 +374,7 @@
 .wifi-widget .widget-container .label:hover {}
 .wifi-widget .widget-container .label.alt:hover {}
 
-.wifi-widget .widget-container .icon {
-    margin: 0 2px 0 0;
-}
+.wifi-widget .widget-container .icon {}
 
 /* mic and volume grouper */
 .micvolume-grouper .container {}
@@ -396,7 +389,6 @@
 .micvolume-grouper .grouper-button:hover {
     color: var(--secundarius);
     background: var(--bg-secundarius);
-    transition: all 0.2s ease-in-out;
 }
 
 /* microphone */
@@ -416,13 +408,10 @@
 }
 
 /* battery */
-.battery-widget .widget-container .icon {
-    margin: 0 4px 0 0;
-}
+.battery-widget {}
+.battery-widget .widget-container .icon {}
 
 /* notification */
-.notification-widget .icon {
-    margin: 0 8px 0 0;
-}
+.notification-widget .icon {}
 
 .notification-widget .icon.new-notification {}
