@@ -292,6 +292,7 @@ clipboard {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
+spawn-sh-at-startup "wl-paste -t text --watch clipman store --no-persist"
 // spawn-at-startup "waybar"
 // spawn-at-startup "swaybg"
 // spawn-at-startup "swayidle"
@@ -359,6 +360,8 @@ window-rule {
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="thunar"
+    match app-id="Rofi"
     open-floating true
 }
 
@@ -664,4 +667,5 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     // mod+shift+p { power-off-monitors; }
+    mod+v { spawn-sh "clipman pick -t rofi"; }
 }
