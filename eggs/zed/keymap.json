@@ -1,25 +1,8 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
       "j j": "vim::NormalBefore"
-    }
-  },
-  {
-    "context": "(VimControl && vim_mode == normal)",
-    "bindings": {
-      // Find File
-      "space space": "file_finder::Toggle",
-
-      // Save File
-      "space f s": "workspace::Save"
     }
   },
   {
@@ -33,20 +16,25 @@
   {
     "context": "(VimControl || (!Editor && !Terminal))",
     "bindings": {
-      // Pane Navigation
-      "space h": "workspace::ActivatePaneLeft",
-      "space j": "workspace::ActivatePaneDown",
-      "space k": "workspace::ActivatePaneUp",
-      "space l": "workspace::ActivatePaneRight",
+      // Find File
+      "space space": "file_finder::Toggle",
 
       // Pane Split
       "space w v": "pane::SplitVertical",
       "space w h": "pane::SplitHorizontal",
 
-      // Close Pane
-      "space f q": "pane::CloseActiveItem",
-      "space w a": "pane::CloseAllItems",
-      "space w o": "pane::CloseOtherItems",
+      // Pane (Buffer) Save and Close
+      "space f s": "workspace::Save",
+      "space f S": "workspace::SaveWithoutFormat",
+      "space b d": "pane::CloseActiveItem",
+      "space b a": "pane::CloseAllItems",
+      "space b o": "pane::CloseOtherItems",
+
+      // Pane (Buffer) Navigation
+      "space h": "workspace::ActivatePaneLeft",
+      "space j": "workspace::ActivatePaneDown",
+      "space k": "workspace::ActivatePaneUp",
+      "space l": "workspace::ActivatePaneRight",
 
       "space 1": ["pane::ActivateItem", 0],
       "space 2": ["pane::ActivateItem", 1],
@@ -77,6 +65,14 @@
       "a": "project_panel::NewFile",
       "A": "project_panel::NewDirectory",
       "d": ["project_panel::Delete", { "skip_prompt": false }]
+    }
+  },
+  {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      // mini.ai plugin behavior
+      "q": "vim::MiniQuotes",
+      "b": "vim::MiniBrackets"
     }
   }
 ]
