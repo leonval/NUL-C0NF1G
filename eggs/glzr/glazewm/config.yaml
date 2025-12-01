@@ -186,7 +186,6 @@ window_rules:
         window_class: { regex: 'HwndWrapper' }
       - window_process: { equals: 'FxSound' }
       - window_process: { equals: 'Zoom' }
-        window_class: { equals: 'zBubbleBaseClass' }
       - window_process: { equals: 'BongoCat' }
       - window_process: { equals: 'Resolve'} # DaVinci Resolve Project Manager
         window_class: { equals: 'Qt5152QWindow' }
@@ -255,16 +254,16 @@ keybindings:
 
   # Change tiling direction. This determines where new tiling windows will
   # be inserted.
-  - commands: ['toggle-tiling-direction']
-    bindings: ['alt+v']
+  # - commands: ['toggle-tiling-direction']
+  #   bindings: ['alt+v']
 
   # Change focus from tiling windows -> floating -> fullscreen
   - commands: ['wm-cycle-focus']
     bindings: ['alt+z']
 
   # Change the focused window to be floating.
-  # - commands: ['toggle-floating --centered']
-  #   bindings: ['alt+shift+space']
+  - commands: ['toggle-floating --centered']
+    bindings: ['alt+v']
 
   # Change the focused window to be tiling.
   - commands: ['toggle-tiling']
