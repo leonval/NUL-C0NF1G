@@ -179,7 +179,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 2
+        width 1
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -187,7 +187,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#04ff04"
+        active-color "#048004"
 
         // Color of the ring on inactive monitors.
         //
@@ -317,7 +317,7 @@ prefer-no-csd
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/Screenshot from %d-%m-%Y %H-%M-%S.png"
 
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
@@ -362,6 +362,7 @@ window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     match app-id="thunar"
     match app-id="Rofi"
+    match app-id="blueman-manager"
     open-floating true
 }
 
@@ -413,6 +414,7 @@ binds {
     alt+return hotkey-overlay-title="Run Terminal: Wezterm" { spawn "wezterm"; }
     alt+ctrl+a { spawn "keepassxc"; }
     alt+space hotkey-overlay-title="Run Appfinder: fuzzel" { spawn "fuzzel"; }
+    // alt+space hotkey-overlay-title="Run Appfinder: rofi" { spawn-sh "pkill rofi || rofi -show drun"; }
     alt+e hotkey-overlay-title="Run File Manager: Thunar" { spawn "thunar"; }
     alt+b hotkey-overlay-title="Run Browser: Zen Browser" { spawn "zen-browser"; }
     super+l hotkey-overlay-title="Lock the Screen: Swaylock" { spawn "swaylock"; }
@@ -667,5 +669,6 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     // mod+shift+p { power-off-monitors; }
-    mod+v { spawn-sh "clipman pick -t rofi"; }
+    mod+v { spawn-sh "clipman pick -t CUSTOM --tool-args='fuzzel -d'"; }
+    mod+semicolon { spawn-sh "fuzzel -d"; }
 }

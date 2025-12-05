@@ -69,6 +69,10 @@ export let eggs = #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.config/swaylock",
     },
+    fuzzel: #{
+	enabled: SYSTEM.platform == "Linux",
+	targets: "~/.config/fuzzel",
+    },
     waybar: #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.config/waybar",
