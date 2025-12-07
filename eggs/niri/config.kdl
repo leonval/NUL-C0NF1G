@@ -360,9 +360,12 @@ window-rule {
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+
     match app-id="thunar"
     match app-id="Rofi"
     match app-id="blueman-manager"
+    match app-id="org.pulseaudio.pavucontrol"
+
     open-floating true
 }
 

@@ -155,16 +155,14 @@
         "tooltip-format": "{signalStrength}%",
         "tooltip-format-wifi": "{essid} {signalStrength}%",
         "tooltip-format-disconnected": "No Connection",
-        "on-click": "networkmanager_dmenu",
+        "on-click": "~/.dotfiles/bin/wifi-picker.sh",
         "on-click-right": "nm-connection-manager"
     },
 
     "bluetooth": {
 	"controller": "blueman",
-	"format": "",
-	"format-disabled": "",
-	"format-off": " off",
+	"format": " {status}",
+	"format-disabled": " off",
 	"on-click": "blueman-manager"
-	// "on-click-right": "blueman-manager",
     }
 }
