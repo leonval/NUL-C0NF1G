@@ -18,7 +18,7 @@
   tab										[
   caps
   lsft
-  						ralt	rctl
+  lctl						ralt	rctl
 )
 
 (deflayer PRIMUS
@@ -26,7 +26,7 @@
   @tab										@rld
   ctl
   @lsf
-  						ret	bspc
+  `						ret	bspc
 )
 
 ;; Variables

@@ -77,6 +77,10 @@ export let eggs = #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.config/waybar",
     },
+    tealdeer: #{
+	enabled: SYSTEM.platform == "Linux",
+	targets: "~/.config/tealdeer",
+    },
 
     // Windows Explicit
     nushell: #{

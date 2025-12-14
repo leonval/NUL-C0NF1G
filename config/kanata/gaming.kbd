@@ -18,7 +18,7 @@
   `
   tab										[
   caps
-  					ralt	rctl
+  lctl					ralt	rctl
 )
 
 (deflayer PRIMUS
@@ -26,7 +26,7 @@
   esc
   @tab										@rld
   ctl
-  					ret	bspc
+  `					ret	bspc
 )
 
 (defalias
