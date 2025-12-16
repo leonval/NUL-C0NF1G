@@ -1,16 +1,16 @@
 :root {
-    --primarius: #04ff04;
-    --secundarius: #000000;
-    --tertiarius: #04ff04;
-    --bg-primarius: #000000;
-    --bg-secundarius: #04ff04;
-    --bg-tertiarius: #505050;
-    --empty: #505050;
-    --alert: #f38ba8;
+    --pri: #04ff04;
+    --sec: #000000;
+    --ter: #04ff04;
+    --bg-pri: #000000;
+    --bg-sec: #04ff04;
+    --bg-ter: #505050;
+    --disabled: #505050;
+    --danger: #f38ba8;
 }
 
 * {
-    color: var(--primarius);
+    color: var(--pri);
     font: bold 16px "FiraCode Nerd Font";
 }
 
@@ -24,23 +24,23 @@
 .tooltip {
     margin-top: 4px;
     padding: 5px 10px;
-    color: var(--primarius);
-    background: var(--bg-primarius);
-    border: 2px solid var(--tertiarius);
+    color: var(--pri);
+    background: var(--bg-pri);
+    border: 2px solid var(--ter);
     border-radius: 8px;
-    font-size: 12px;
+    font-size: 14px;
     font-family: "FiraCode Nerd Font";
 }
 
 /* Global context menu style */
 .context-menu,
 .context-menu .menu-checkbox {
-    background-color: var(--bg-color1);
+    color: var(--pri);
+    background-color: var(--bg-pri);
     border: none;
     padding: 4px 0px;
     font-family: "FiraCode Nerd Font";
     font-size: 12px;
-    color: var(--primarius);
 }
 
 .context-menu::right-arrow {
@@ -60,8 +60,8 @@
 
 .context-menu::item:selected,
 .context-menu .menu-checkbox:hover {
-    color: var(--secundarius);
-    background-color: var(--bg-secundarius);
+    color: var(--sec);
+    background-color: var(--bg-sec);
 }
 
 .context-menu::separator {
@@ -121,13 +121,13 @@
 
 .widget .widget-container {
     padding: 0 8px;
-    background: var(--bg-primarius);
-    border: 2px solid var(--tertiarius);
+    background: var(--bg-pri);
+    border: 2px solid var(--ter);
     border-radius: 12px;
 }
 
 .widget .widget-container:hover {
-    background: var(--bg-secundarius);
+    background: var(--bg-sec);
 }
 
 .icon {}
@@ -137,27 +137,27 @@
 .widget .label {}
 
 .widget .label:hover {
-    color: var(--secundarius);
+    color: var(--sec);
 }
 
 /* home widget */
 .home-widget {}
 
 .home-menu {
-    background-color: var(--bg-primarius);
+    background-color: var(--bg-pri);
     border-radius: 8px;
-    border: 2px solid var(--tertiarius);
+    border: 2px solid var(--ter);
 }
 
 .home-menu .menu-item {
     padding: 8px 48px 9px 16px;
     font: bold 12px "FiraCode Nerd Font";
-    color: var(--primarius);
+    color: var(--pri);
 }
 
 .home-menu .menu-item:hover {
-    color: var(--secundarius);
-    background: var(--bg-secundarius);
+    color: var(--sec);
+    background: var(--bg-sec);
 }
 
 .home-menu .separator {
@@ -178,36 +178,36 @@
     height: 100%;
     margin: 0 4px;
     padding: 0 8px;
-    color: var(--primarius);
-    border: 2px solid var(--tertiarius);
+    color: var(--pri);
+    border: 2px solid var(--ter);
     border-radius: 12px;
 }
 
 .glazewm-workspaces .ws-btn.active_populated {
-    color: var(--secundarius);
-    background: var(--bg-secundarius);
+    color: var(--sec);
+    background: var(--bg-sec);
 }
 
 .glazewm-workspaces .ws-btn.active_empty {
-    color: var(--empty);
-    background: var(--bg-secundarius);
+    color: var(--disabled);
+    background: var(--bg-sec);
 }
 
 .glazewm-workspaces .ws-btn.populated {
-    color: var(--primarius);
+    color: var(--pri);
 }
 
 .glazewm-workspaces .ws-btn.empty {
-    color: var(--empty);
+    color: var(--disabled);
 }
 
 .glazewm-workspaces .ws-btn.populated:hover {
-    color: var(--secundarius);
-    background: var(--bg-secundarius);
+    color: var(--sec);
+    background: var(--bg-sec);
 }
 
 .glazewm-workspaces .ws-btn.empty:hover {
-    background: var(--bg-secundarius);
+    background: var(--bg-sec);
 }
 
 .glazewm-tiling-direction {
@@ -217,15 +217,15 @@
 .glazewm-tiling-direction .btn {
     width: 14px;
     padding: 0 4px 0 4px;
-    color: var(--primarius);
-    border: 2px solid var(--tertiarius);
+    color: var(--pri);
+    border: 2px solid var(--ter);
     border-radius: 12px;
     font-size: 18px;
 }
 .glazewm-tiling-direction .btn:hover {
-    color: var(--secundarius);
-    border: 2px solid var(--tertiarius);
-    background-color: var(--bg-secundarius);
+    color: var(--sec);
+    border: 2px solid var(--ter);
+    background-color: var(--bg-sec);
 }
 
 /* glazewm binding mode */
@@ -240,7 +240,7 @@
 }
 
 .glazewm-binding-mode .label-offline {
-    color: var(--alert);
+    color: var(--danger);
     font-size: 10px;
 }
 
@@ -249,7 +249,7 @@
 .glazewm-binding-mode .icon.resize {}
 
 .glazewm-binding-mode .icon.pause {
-    color: var(--alert);
+    color: var(--danger);
 }
 
 /* clock */
@@ -262,24 +262,24 @@
 .clock-widget .label:hover {}
 
 .calendar {
-    background-color: var(--bg-primarius);
+    background-color: var(--bg-pri);
     border-radius: 12px;
-    border: 2px solid var(--tertiarius);
+    border: 2px solid var(--ter);
 }
 
 .calendar .calendar-table,
 .calendar .calendar-table::item {
     margin: 0;
     padding: 0;
-    color: var(--primarius);
-    background: var(--bg-primarius);
+    color: var(--pri);
+    background: var(--bg-pri);
     border: none;
     outline: none;
 }
 
 .calendar .calendar-table::item:selected {
-    color: var(--secundarius);
-    background-color: var(--bg-secundarius);
+    color: var(--sec);
+    background-color: var(--bg-sec);
     border-radius: 8px;
 }
 
@@ -294,7 +294,7 @@
 .calendar .holiday-label {
     min-width: 180px;
     max-width: 180px;
-    color: var(--primarius);
+    color: var(--pri);
     font: bold 16px "FiraCode Nerd Font";
 }
 
@@ -322,12 +322,12 @@
 
 /* systray */
 .systray .widget-container:hover {
-    background: var(--bg-primarius);
+    background: var(--bg-pri);
 }
 
 .systray .unpinned-container {
     padding: 0 8px;
-    background: var(--empty);
+    background: var(--disabled);
     border-radius: 8px;
 }
 
@@ -336,7 +336,7 @@
 }
 
 .systray .pinned-container[forceshow="true"] {
-    background: var(--alert);
+    background: var(--danger);
 }
 
 .systray .button {
@@ -345,7 +345,7 @@
 }
 
 .systray .button:hover {
-    background: var(--bg-secundarius);
+    background: var(--bg-sec);
 }
 
 .systray .button[dragging="true"] {
@@ -358,14 +358,14 @@
     height: 20px;
     margin: 0 0 0 4px;
     padding 0 8px;
-    border: 2px solid var(--tertiarius);
+    border: 2px solid var(--ter);
     border-radius: 8px;
 }
 
 .systray .unpinned-visibility-btn:hover,
 .systray .unpinned-visibility-btn:checked {
-    color: var(--secundarius);
-    background: var(--bg-secundarius);
+    color: var(--sec);
+    background: var(--bg-sec);
 }
 
 /* wifi */
@@ -382,13 +382,13 @@
 .micvolume-grouper .grouper-button {
     width: 24px;
     height: 24px;
-    border: 2px solid var(--tertiarius);
+    border: 2px solid var(--ter);
     border-radius: 8px;
 }
 
 .micvolume-grouper .grouper-button:hover {
-    color: var(--secundarius);
-    background: var(--bg-secundarius);
+    color: var(--sec);
+    background: var(--bg-sec);
 }
 
 /* microphone */
@@ -396,7 +396,7 @@
 
 .microphone-widget .label.muted,
 .microphone-widget .icon.muted {
-    color: var(--alert);
+    color: var(--danger);
 }
 
 /* volume */
@@ -404,7 +404,7 @@
 
 .volume-widget .label.muted,
 .volume-widget .icon.muted {
-    color: var(--alert);
+    color: var(--danger);
 }
 
 /* battery */
