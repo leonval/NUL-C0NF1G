@@ -59,7 +59,7 @@ widgets:
   home:
     type: "yasb.home.HomeWidget"
     options:
-      label: "🞊 "
+      label: "󰖳 "
       menu_list:
         - { title: "User Home", path: "~" }
         - { title: "Download", path: "~\\Downloads" }
@@ -286,7 +286,7 @@ widgets:
     options:
       label: "  {count}"
       label_alt: "{count} notifications"
-      hide_empty: true
+      hide_empty: false
       tooltip: false
       callbacks:
         on_left: "toggle_notification"
