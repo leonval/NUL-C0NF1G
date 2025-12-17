@@ -18,5 +18,8 @@
 #     config nu --doc | nu-highlight | less -R
 
 $env.config.buffer_editor = 'nvim'
+$env.config.show_banner = false
 
 $env.config.shell_integration.osc133 = false
+
+fastfetch
