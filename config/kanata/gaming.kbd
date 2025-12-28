@@ -1,35 +1,46 @@
 (defcfg
-  process-unmapped-keys no
-  concurrent-tap-hold yes
+  process-unmapped-keys yes
 )
 
 (defvar
+  streak-count 3
+  streak-time 325
+  tap-timeout 200
+  hold-timeout 500
   chord-timeout 50
+)
+
+(deftemplate charmod (char mod)
+  (switch 
+    ((key-timing $streak-count less-than $streak-time)) $char break
+    () (tap-hold-release-timeout $tap-timeout $hold-timeout $char $mod $char) break
+  )
 )
 
 (defchords gaming $chord-timeout
   (tab  ) tab
-  (  [) -
+  (  [) del
   (tab [) lrld-next
 )
 
 (defsrc
-  1	2	3	4	5	6	7	8	9	0	-	=
   `
-  tab										[
+  tab [
   caps
-  lctl					ralt	rctl
+  v
+  ralt rctl
 )
 
-(deflayer PRIMUS
-  _	_	_	_	_	_	_	_	_	_	_	_
-  esc
-  @tab										@rld
-  ctl
-  `					ret	bspc
-)
-
-(defalias
+(deflayermap (PRIMUS)
+  ` esc
   tab (chord gaming tab)
-  rld (chord gaming [)
+  caps ctl
+  v (t! charmod v (layer-while-held SECUNDUS))
+  [ (chord gaming [)
+  ralt ret
+  rctl bspc
+)
+
+(deflayermap (SECUNDUS)
+  ` `
 )

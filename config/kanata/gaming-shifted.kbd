@@ -1,52 +1,58 @@
 (defcfg
-  process-unmapped-keys no
-  concurrent-tap-hold yes
+  process-unmapped-keys yes
 )
 
 (defvar
+  streak-count 3
+  streak-time 325
+  tap-timeout 200
+  hold-timeout 500
   chord-timeout 50
+  medium-timeout 200
+  brief-timeout 100
+)
+
+(deftemplate charmod (char mod)
+  (switch 
+    ((key-timing $streak-count less-than $streak-time)) $char break
+    () (tap-hold-release-timeout $tap-timeout $hold-timeout $char $mod $char) break
+  )
 )
 
 (defchords gaming $chord-timeout
   (tab  ) tab
-  (  [) -
+  (  [) del
   (tab [) lrld-next
 )
 
 (defsrc
-  `	1	2	3	4	5	6	7	8	9	0	-	=
-  tab										[
+  `
+  tab [
   caps
-  lsft
-  lctl						ralt	rctl
+  lsft v
+  ralt rctl
 )
 
-(deflayer PRIMUS
-  esc	_	_	_	_	_	_	_	_	_	_	_	_
-  @tab										@rld
-  ctl
-  @lsf
-  `						ret	bspc
+(deflayermap (PRIMUS)
+  ` esc
+  tab (chord gaming tab)
+  caps ctl
+  v (t! charmod v (layer-while-held SECUNDUS))
+  [ (chord gaming [)
+  lsft @lsf
+  ralt ret
+  rctl bspc
 )
 
-;; Variables
-(defvar
-	medium-timeout 200
-	brief-timeout 100
+(deflayermap (SECUNDUS)
+  ` `
 )
 
 (defvirtualkeys
 	sft lsft
 )
 
-;; Aliases
 (defalias
-  tab (chord gaming tab)
-  rld (chord gaming [)
-
-  ;; add timeout to lalt
-  lalt (one-shot-release 500 lalt)
-
   ;; toggle shift key
   lsf (on-press toggle-vkey sft)
 )

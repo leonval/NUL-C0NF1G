@@ -4,9 +4,10 @@
 )
 
 (defsrc
-  `    q w e r t y u i o p [
-  tab  a s d f g h j k l ;
-  caps z x c v b n m , . /
+  `
+  tab q w e r t y u i o p [
+  caps a s d f g h j k l ;
+  z x c v b n m , . /
          spc ralt rctl
 )
 
@@ -55,10 +56,10 @@
   k (t! charmod-notime k rsft)
   l (t! charmod-notime l lalt)
   ; (t! charmod-notime ; rmet)
-  z (t! charmod z lctl) 
+  z (t! charmod z lctl)
   x (t! charmod x ralt)
   v (t! charmod v (layer-while-held TERTIUS))
-  m (t! charmod m (layer-while-held TERTIUS))
+  n (t! charmod n (layer-while-held TERTIUS))
   . (t! charmod . ralt)
   / (t! charmod / rctl)
   spc (t! charmod-notime spc (multi (layer-switch SECUNDUS) (on-release tap-virtualkey clear)))
@@ -68,7 +69,6 @@
 )
 
 (deflayermap (SECUNDUS)
-  ` esc
   caps ctl
   e (layer-switch TERTIUS)
   r (on-press press-virtualkey shift)
@@ -98,7 +98,7 @@
 )
 
 (deflayermap (TERTIUS)
-  ` esc
+  ` `
   caps ctl
   q 1
   w 2
