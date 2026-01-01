@@ -130,6 +130,7 @@
   , [
   . (t! charmod ] ralt)
   / (t! charmod \ lctl)
+  [ [
   ralt ret
   rctl bspc
 )
