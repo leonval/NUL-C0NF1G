@@ -143,7 +143,7 @@ workspaces:
   - name: '5'
     display_name: 'QUINTUS'
     keep_alive: true
-    bind_to_monitor: 0
+    bind_to_monitor: 1
 
 window_rules:
   - commands: ['set-tiling']
