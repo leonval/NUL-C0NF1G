@@ -3,7 +3,7 @@ alias ll = ls -la
 alias la = ls -a
 
 # general
-alias vim = nvim
+alias v = nvim
 
 # dev
 alias lg = lazygit

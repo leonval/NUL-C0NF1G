@@ -2,7 +2,7 @@ alias sudo="sudo "
 
 # general
 alias cd="z" # zoxide
-alias vim="nvim"
+alias v="nvim"
 alias zsh-reload='source ~/.zshrc'
 
 # dev
