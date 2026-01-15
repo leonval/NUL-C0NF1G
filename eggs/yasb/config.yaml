@@ -22,7 +22,7 @@ bars:
       border_color: "system"
     window_flags:
       always_on_top: false
-      windows_app_bar: true
+      windows_app_bar: false
     dimensions:
       width: "100%"
       height: 42

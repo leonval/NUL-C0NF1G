@@ -41,14 +41,14 @@ general:
 
 gaps:
   # Whether to scale the gaps with the DPI of the monitor.
-  scale_with_dpi: false
+  scale_with_dpi: true
 
   # Gap between adjacent windows.
   inner_gap: '8px'
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '12px'
+    top: '48px'
     right: '12px'
     bottom: '12px'
     left: '12px'
@@ -122,27 +122,27 @@ window_behavior:
 workspaces:
   - name: '1'
     display_name: 'PRIMUS'
-    keep_alive: true
+    keep_alive: false
     bind_to_monitor: 0
 
   - name: '2'
     display_name: 'SECUNDUS'
-    keep_alive: true
+    keep_alive: false
     bind_to_monitor: 0
 
   - name: '3'
     display_name: 'TERTIUS'
-    keep_alive: true
+    keep_alive: false
     bind_to_monitor: 0
 
   - name: '4'
     display_name: 'QUARTUS'
-    keep_alive: true
+    keep_alive: false
     bind_to_monitor: 0
 
   - name: '5'
     display_name: 'QUINTUS'
-    keep_alive: true
+    keep_alive: false
     bind_to_monitor: 1
 
 window_rules:
@@ -228,14 +228,14 @@ keybindings:
     bindings: ['alt+u']
   
   # Move focused window in a given direction.
-  # - commands: ['move --direction left']
-  #   bindings: ['alt+shift+h']
-  # - commands: ['move --direction right']
-  #   bindings: ['alt+shift+l']
-  # - commands: ['move --direction up']
-  #   bindings: ['alt+shift+k']
-  # - commands: ['move --direction down']
-  #   bindings: ['alt+shift+j']
+  - commands: ['move --direction left']
+    bindings: ['alt+shift+h']
+  - commands: ['move --direction right']
+    bindings: ['alt+shift+l']
+  - commands: ['move --direction up']
+    bindings: ['alt+shift+i']
+  - commands: ['move --direction down']
+    bindings: ['alt+shift+u']
 
   # Resize focused window by a percentage or pixel amount.
   #- commands: ['resize --width -2%']
@@ -332,14 +332,14 @@ keybindings:
   
   # Move the focused window's parent workspace to a monitor in a given
   # direction.
-  #- commands: ['move-workspace --direction left']
-  #  bindings: ['alt+shift+a']
-  #- commands: ['move-workspace --direction right']
-  #  bindings: ['alt+shift+f']
-  #- commands: ['move-workspace --direction up']
-  #  bindings: ['alt+shift+d']
-  #- commands: ['move-workspace --direction down']
-  #  bindings: ['alt+shift+s']
+  # - commands: ['move-workspace --direction left']
+  #   bindings: ['alt+shift+h']
+  # - commands: ['move-workspace --direction right']
+  #   bindings: ['alt+shift+l']
+  # - commands: ['move-workspace --direction up']
+  #   bindings: ['alt+shift+u']
+  # - commands: ['move-workspace --direction down']
+  #   bindings: ['alt+shift+i']
 
   # Move focused window to a next or previous workspaces.
   - commands: ['move --next-workspace', 'focus --next-active-workspace']
