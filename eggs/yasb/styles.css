@@ -168,10 +168,12 @@
 /* glazewm workspaces */
 .glazewm-workspaces .widget-container {
     border: none;
+    background: transparent;
 }
 
 .glazewm-workspaces .widget-container:hover {
-    background: inherit;
+    border: none;
+    background: transparent;
 }
 
 .glazewm-workspaces .ws-btn {
@@ -179,6 +181,7 @@
     margin: 0 4px;
     padding: 0 8px;
     color: var(--pri);
+    background: var(--bg-pri);
     border: 2px solid var(--ter);
     border-radius: 12px;
 }
@@ -382,6 +385,7 @@
 .micvolume-grouper .grouper-button {
     width: 24px;
     height: 24px;
+    background: var(--bg-pri);
     border: 2px solid var(--ter);
     border-radius: 8px;
 }
