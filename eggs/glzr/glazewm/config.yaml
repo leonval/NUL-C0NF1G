@@ -165,6 +165,8 @@ window_rules:
       - window_process: { equals: 'kdenlive' }
       - window_process: { equals: 'laragon' }
       - window_process: { equals: 'heidisql' }
+      - window_process: { equals: 'wezterm-gui' }
+        window_title: { regex: 'Yazi'}
 
   - commands: ['set-floating --width 958 --height 618']
     match:
@@ -305,7 +307,7 @@ keybindings:
     bindings: ['alt+b']
   
   # Launch Explorer
-  - commands: ['shell-exec explorer']
+  - commands: ['shell-exec wezterm-gui.exe start -- yazi']
     bindings: ['alt+e']
 
   # Focus the next/previous active workspace defined in `workspaces` config.
