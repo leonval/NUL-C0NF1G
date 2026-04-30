@@ -165,8 +165,6 @@ window_rules:
       - window_process: { equals: 'kdenlive' }
       - window_process: { equals: 'laragon' }
       - window_process: { equals: 'heidisql' }
-      - window_process: { equals: 'wezterm-gui' }
-        window_title: { regex: 'Yazi'}
 
   - commands: ['set-floating --width 958 --height 618']
     match:
