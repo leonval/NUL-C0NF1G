@@ -6,17 +6,33 @@ $bg-pri: #000000;
 $bg-sec: #04ff04;
 $bg-ter: #04ff04;
 
-$mv-sm: 0 4px;
-$mb-lg: 0 0 0 16px;
+$mh-sm: 0 4px;
+$mb-lg: 0 0 0 8px;
 $pv-md: 0 10px;
 
 * {
     border-radius: 10px;
-    font: bold 14px "FiraCode Nerd Font";
+    font: bold 12px "FiraCode Nerd Font";
 }
 
 window#waybar {
     background: transparent;
+}
+
+#custom-launcher {
+    margin: $mh-sm;
+    padding: $pv-md;
+    border-radius: 10px;
+    color: $pri;
+    background: $bg-pri;
+    font-size: 14px;
+    border: 2px solid $ter;
+    transition: 0.3s;
+}
+
+#custom-launcher:hover {
+    background: $pri;
+    color: $bg-pri;
 }
 
 #workspaces {
@@ -25,7 +41,7 @@ window#waybar {
 }
 
 #workspaces button {
-    margin: $mv-sm;
+    margin: $mh-sm;
     color: $pri;
     border: 2px solid $ter;
     transition: 0.3s;
@@ -47,7 +63,7 @@ window#waybar {
 }
 
 #taskbar button {
-    margin: $mv-sm;
+    margin: $mh-sm;
     color: $pri;
     background: $bg-pri;
     border: 2px solid $ter;
@@ -57,8 +73,23 @@ window#waybar {
     background: $bg-ter;
 }
 
-#cava {
-    margin-left: 8px;
+#clock {
+    padding: $pv-md;
+    border-radius: 10px;
+    background: $bg-pri;
+    color: $pri;
+    border: 2px solid $ter;
+    transition: none;
+    transition: 0.3s;
+}
+
+#clock:hover {
+    color: $bg-pri;
+    background: $pri;
+}
+
+#tray {
+    margin: $mh-sm;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px;
@@ -69,63 +100,73 @@ window#waybar {
     transition: 0.3s;
 }
 
-#cava:hover {
+#tray menu {
+    margin: $mh-sm;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    background: $bg-pri;
+    color: $pri;
+    border: 2px solid $ter;
+    transition: 0.3s;
+}
+
+#bluetooth {
+    margin: $mh-sm;
+    padding: $pv-md;
+    border-radius: 10px;
+    color: $pri;
+    background: $bg-pri;
+    border: 2px solid $ter;
+    transition: 0.3s;
+}
+
+#bluetooth:hover {
+    color: $pri;
+    background: $bg-sec;
+}
+
+#bluetooth.disabled {
+    color: $danger;
+    background: $bg-pri;
+    border-color: $danger;
+}
+
+#bluetooth.disabled:hover {
+    color: $sec;
+    background: $danger;
+}
+
+#network {
+    margin: $mh-sm;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: none;
+    color: $pri;
+    background: $bg-pri;
+    border: 2px solid $ter;
+    transition: 0.3s;
+}
+
+#network:hover {
     color: $sec;
     background: $bg-sec;
 }
 
-#battery {
-    margin: 0 5px 0 8px;
-    padding: $pv-md;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
+#network.disconnected {
+    color: $danger;
+    border-color: $danger;
 }
 
-#battery:hover {
-    color: $bg-pri;
-    background: $pri;
-}
-
-#backlight:hover {
-    color: $bg-pri;
-    background: $pri;
-}
-
-#backlight {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#language {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#language:hover {
-    color: $bg-pri;
-    background: $pri;
+#network.disconnected:hover {
+    background: $danger;
+    color: $sec;
 }
 
 #pulseaudio {
-    margin: 0 0 0 8px;
+    margin: $mh-sm;
     padding: $pv-md;
     border-radius: 10px;
     transition: none;
@@ -153,297 +194,18 @@ window#waybar {
 
 }
 
-#clock {
+#battery {
+    margin: $mh-sm;
     padding: $pv-md;
     border-radius: 10px;
+    transition: none;
     background: $bg-pri;
     color: $pri;
     border: 2px solid $ter;
-    transition: none;
     transition: 0.3s;
 }
 
-#clock:hover {
+#battery:hover {
     color: $bg-pri;
     background: $pri;
-}
-
-#disk {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#disk:hover {
-    color: $sec;
-    background: $bg-sec;
-}
-
-#privacy {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#idle_inhibitor {
-    margin-left: 8px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#idle_inhibitor.activated {
-    color: #89b4fa;
-    border-color: #89b4fa;
-}
-
-#idle_inhibitor.activated:hover {
-    background: #89b4fa;
-    color: $bg-pri;
-    border-color: #89b4fa;
-}
-
-#idle_inhibitor.deactivated {
-    color: $pri
-}
-
-#idle_inhibitor.deactivated:hover {
-    color: $bg-pri;
-    background: $pri;
-}
-
-#memory {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#memory:hover {
-    color: $bg-pri;
-    background: $pri;
-
-}
-
-#cpu {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#cpu:hover {
-    color: $bg-pri;
-    background: $pri;
-
-}
-
-#power-profiles-daemon {
-    font-size: 14px;
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#power-profiles-daemon:hover {
-    color: $bg-pri;
-    background: $pri;
-}
-
-#custom-swaync {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#custom-swaync:hover {
-    color: $bg-pri;
-    background: $pri;
-}
-
-#custom-launcher {
-    margin: 0 0 0 5px;
-    padding: $pv-md;
-    border-radius: 10px;
-    color: $pri;
-    background: $bg-pri;
-    font-size: 14px;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#custom-launcher:hover {
-    background: $pri;
-    color: $bg-pri;
-}
-
-#network {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    color: $pri;
-    background: $bg-pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#network:hover {
-    color: $sec;
-    background: $bg-sec;
-}
-
-#network.disconnected {
-    color: $danger;
-    border-color: $danger;
-}
-
-#network.disconnected:hover {
-    background: $danger;
-    color: $sec;
-}
-
-#bluetooth {
-    margin: $mb-lg;
-    padding: $pv-md;
-    border-radius: 10px;
-    color: $pri;
-    background: $bg-pri;
-    border: 2px solid $ter;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-#bluetooth:hover {
-    color: $pri;
-    background: $bg-sec;
-}
-
-#bluetooth.disabled {
-    color: $danger;
-    background: $bg-pri;
-    border-color: $danger;
-}
-
-#bluetooth.disabled:hover {
-    color: $sec;
-    background: $danger;
-}
-
-#custom-lock {
-    font-size: 12px;
-    margin-left: 8px;
-    margin-right: 8px;
-    padding-left: 10px;
-    padding-right: 5px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#custom-lock:hover {
-    background: #f38ba8;
-    color: $bg-pri;
-    border-color: #f38ba8;
-
-}
-
-#custom-updates   {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#tray {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#tray menu {
-    margin-left: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#custom-power {
-    font-size: 12px;
-    margin-left: 2px;
-    margin-right: 5px;
-    padding-left: 10px;
-    padding-right: 5px;
-    border-radius: 10px;
-    transition: none;
-    background: $bg-pri;
-    color: $pri;
-    border: 2px solid $ter;
-    transition: 0.3s;
-}
-
-#custom-power:hover {
-    background: #f38ba8;
-    color: $bg-pri;
-    border-color: #f38ba8;
-
 }

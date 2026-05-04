@@ -1,14 +1,30 @@
 * {
   border-radius: 10px;
-  font: bold 14px "FiraCode Nerd Font";
+  font: bold 12px "FiraCode Nerd Font";
 }
 
 window#waybar {
   background: transparent;
 }
 
+#custom-launcher {
+  margin: 0 4px;
+  padding: 0 10px;
+  border-radius: 10px;
+  color: #04ff04;
+  background: #000000;
+  font-size: 14px;
+  border: 2px solid #04ff04;
+  transition: 0.3s;
+}
+
+#custom-launcher:hover {
+  background: #04ff04;
+  color: #000000;
+}
+
 #workspaces {
-  margin: 0 0 0 16px;
+  margin: 0 0 0 8px;
   transition: 0.3s;
 }
 
@@ -31,7 +47,7 @@ window#waybar {
 }
 
 #taskbar {
-  margin: 0 0 0 16px;
+  margin: 0 0 0 8px;
 }
 
 #taskbar button {
@@ -45,46 +61,23 @@ window#waybar {
   background: #04ff04;
 }
 
-#cava {
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#cava:hover {
-  color: #000000;
-  background: #04ff04;
-}
-
-#battery {
-  margin: 0 5px 0 8px;
+#clock {
   padding: 0 10px;
   border-radius: 10px;
-  transition: none;
   background: #000000;
   color: #04ff04;
   border: 2px solid #04ff04;
+  transition: none;
   transition: 0.3s;
 }
 
-#battery:hover {
+#clock:hover {
   color: #000000;
   background: #04ff04;
 }
 
-#backlight:hover {
-  color: #000000;
-  background: #04ff04;
-}
-
-#backlight {
-  margin-left: 8px;
+#tray {
+  margin: 0 4px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
@@ -95,8 +88,8 @@ window#waybar {
   transition: 0.3s;
 }
 
-#language {
-  margin-left: 8px;
+#tray menu {
+  margin: 0 4px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
@@ -107,13 +100,61 @@ window#waybar {
   transition: 0.3s;
 }
 
-#language:hover {
+#bluetooth {
+  margin: 0 4px;
+  padding: 0 10px;
+  border-radius: 10px;
+  color: #04ff04;
+  background: #000000;
+  border: 2px solid #04ff04;
+  transition: 0.3s;
+}
+
+#bluetooth:hover {
+  color: #04ff04;
+  background: #04ff04;
+}
+
+#bluetooth.disabled {
+  color: #f38ba8;
+  background: #000000;
+  border-color: #f38ba8;
+}
+
+#bluetooth.disabled:hover {
+  color: #000000;
+  background: #f38ba8;
+}
+
+#network {
+  margin: 0 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  transition: none;
+  color: #04ff04;
+  background: #000000;
+  border: 2px solid #04ff04;
+  transition: 0.3s;
+}
+
+#network:hover {
   color: #000000;
   background: #04ff04;
+}
+
+#network.disconnected {
+  color: #f38ba8;
+  border-color: #f38ba8;
+}
+
+#network.disconnected:hover {
+  background: #f38ba8;
+  color: #000000;
 }
 
 #pulseaudio {
-  margin: 0 0 0 8px;
+  margin: 0 4px;
   padding: 0 10px;
   border-radius: 10px;
   transition: none;
@@ -140,295 +181,20 @@ window#waybar {
   color: #000000;
 }
 
-#clock {
+#battery {
+  margin: 0 4px;
   padding: 0 10px;
   border-radius: 10px;
+  transition: none;
   background: #000000;
   color: #04ff04;
   border: 2px solid #04ff04;
-  transition: none;
   transition: 0.3s;
 }
 
-#clock:hover {
+#battery:hover {
   color: #000000;
   background: #04ff04;
-}
-
-#disk {
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#disk:hover {
-  color: #000000;
-  background: #04ff04;
-}
-
-#privacy {
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#idle_inhibitor {
-  margin-left: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#idle_inhibitor.activated {
-  color: #89b4fa;
-  border-color: #89b4fa;
-}
-
-#idle_inhibitor.activated:hover {
-  background: #89b4fa;
-  color: #000000;
-  border-color: #89b4fa;
-}
-
-#idle_inhibitor.deactivated {
-  color: #04ff04;
-}
-
-#idle_inhibitor.deactivated:hover {
-  color: #000000;
-  background: #04ff04;
-}
-
-#memory {
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#memory:hover {
-  color: #000000;
-  background: #04ff04;
-}
-
-#cpu {
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#cpu:hover {
-  color: #000000;
-  background: #04ff04;
-}
-
-#power-profiles-daemon {
-  font-size: 14px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#power-profiles-daemon:hover {
-  color: #000000;
-  background: #04ff04;
-}
-
-#custom-swaync {
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#custom-swaync:hover {
-  color: #000000;
-  background: #04ff04;
-}
-
-#custom-launcher {
-  margin: 0 0 0 5px;
-  padding: 0 10px;
-  border-radius: 10px;
-  color: #04ff04;
-  background: #000000;
-  font-size: 14px;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#custom-launcher:hover {
-  background: #04ff04;
-  color: #000000;
-}
-
-#network {
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  color: #04ff04;
-  background: #000000;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#network:hover {
-  color: #000000;
-  background: #04ff04;
-}
-
-#network.disconnected {
-  color: #f38ba8;
-  border-color: #f38ba8;
-}
-
-#network.disconnected:hover {
-  background: #f38ba8;
-  color: #000000;
-}
-
-#bluetooth {
-  margin: 0 0 0 16px;
-  padding: 0 10px;
-  border-radius: 10px;
-  color: #04ff04;
-  background: #000000;
-  border: 2px solid #04ff04;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-#bluetooth:hover {
-  color: #04ff04;
-  background: #04ff04;
-}
-
-#bluetooth.disabled {
-  color: #f38ba8;
-  background: #000000;
-  border-color: #f38ba8;
-}
-
-#bluetooth.disabled:hover {
-  color: #000000;
-  background: #f38ba8;
-}
-
-#custom-lock {
-  font-size: 12px;
-  margin-left: 8px;
-  margin-right: 8px;
-  padding-left: 10px;
-  padding-right: 5px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#custom-lock:hover {
-  background: #f38ba8;
-  color: #000000;
-  border-color: #f38ba8;
-}
-
-#custom-updates {
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#tray {
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#tray menu {
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#custom-power {
-  font-size: 12px;
-  margin-left: 2px;
-  margin-right: 5px;
-  padding-left: 10px;
-  padding-right: 5px;
-  border-radius: 10px;
-  transition: none;
-  background: #000000;
-  color: #04ff04;
-  border: 2px solid #04ff04;
-  transition: 0.3s;
-}
-
-#custom-power:hover {
-  background: #f38ba8;
-  color: #000000;
-  border-color: #f38ba8;
 }
 
 /*# sourceMappingURL=style.css.map */

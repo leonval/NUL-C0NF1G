@@ -9,9 +9,25 @@
     "custom/launcher":{
         "format": "🞊",
         "on-click": "fuzzel",
-        "on-click-right": "killall rofi",
+        "on-click-right": "thunar",
         "tooltip": true,
-        "tooltip-format": "Launch App"
+        "tooltip-format": "Left Click: Launch App\nRight Click: File Manager"
+    },
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "PRIMUS",
+            "2": "SECUNDUS",
+            "3": "TERTIUS",
+            "4": "QUARTUS",
+            "5": "QUINTUS",
+            // "urgent": "",
+            // "active": " ",
+            // "default": ""
+         },
+	 "on-scroll-up": "niri msg action focus-workspace-up",
+	 "on-scroll-down": "niri msg action focus-workspace-down"
     },
 
     "wlr/taskbar": {
@@ -32,20 +48,10 @@
 	}
     },
 
-    "niri/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "1": "PRIMUS",
-            "2": "SECUNDUS",
-            "3": "TERTIUS",
-            "4": "QUARTUS",
-            "5": "QUINTUS",
-            // "urgent": "",
-            // "active": " ",
-            // "default": ""
-         },
-	 "on-scroll-up": "niri msg action focus-workspace-up",
-	 "on-scroll-down": "niri msg action focus-workspace-down"
+    "clock": {
+        "tooltip-format": "{calendar}",
+        "format-alt": "  {:%A, %d %B %Y}",
+        "format": " {:%H:%M   %d/%m/%Y}"
     },
 
     "tray": {
@@ -53,98 +59,24 @@
         "spacing": 10
     },
 
-    "clock": {
-        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
-        "format-alt": "  {:%A, %d %B %Y}",
-        "format": " {:%H:%M   %d/%m/%Y}"
-    },
-
-    "backlight": {
-        "device": "intel_backlight",
-        "rotate": 0,
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-click": "brightnessctl -r",
-	"on-scroll-up": "brightnessctl set 2%+",
-        "on-scroll-down": "brightnessctl set 2%-",
-        "min-length": 6
-    },
-
-    "battery": {
-	"interval": 30,
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon}",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
-    "pulseaudio": {
-        "scroll-step": 2, // %, can be a float
-        "format": "{icon} {volume}%",
-	"format-bluetooth": "{icon} {volume}%",
-        "format-muted": " mute",
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol",
-        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-	"max-volume": 150
-    },
-
-    "custom/power": {
-        "tooltip": false,
-        "on-click": "bash ~/.config/rofi/powermenu.sh",
-        "on-click-right": "killall rofi",
-        "format": "⏻ ",
-    },
-
-    "custom/lock": {
-        "tooltip": false,
-        "on-click": "bash ~/.config/rofi/powermenu.sh",
-        "on-click-right": "killall rofi",
-        "format": "⏻ "
-    },
-    
-    "power-profiles-daemon": {
-        "format": "{icon}",
-        "tooltip-format": "{profile}",
-        "tooltip": true,
-        "format-icons": {
-            "performance": "󰓅",
-            "balanced": "󰾅",
-            "power-saver": "󰾆"
-        }
-    },
-
-    "custom/updates": {
-        "format": "  {}",
-        "escape": true,
-        "return-type": "text",
-        "exec": "~/.config/waybar/update.sh",
-        "restart-interval": 60,
-        "on-click": "kitty -e sudo pacman -Syu",
-    },
-
-    "niri/language": {
-        "format": "  {short}",
-    },
-
     "group/connection": {
 	"orientation": "inherit",
 	"drawer": {
 	    "transition-duration": 250,
 	    "children-class": "not-network",
-	    "transition-left-to-right": false,
+	    "transition-left-to-right": false
 	},
 	"modules": [
 	    "network",
-	    "bluetooth",
+	    "bluetooth"
 	]
+    },
+
+    "bluetooth": {
+	"controller": "blueman",
+	"format": " {status}",
+	"format-disabled": " off",
+	"on-click": "blueman-manager"
     },
 
     "network": {
@@ -161,10 +93,29 @@
         "on-click-right": "nm-connection-manager"
     },
 
-    "bluetooth": {
-	"controller": "blueman",
-	"format": " {status}",
-	"format-disabled": " off",
-	"on-click": "blueman-manager"
+    "pulseaudio": {
+        "scroll-step": 2, // %, can be a float
+        "format": "{icon} {volume}%",
+	"format-bluetooth": "{icon} {volume}%",
+        "format-muted": " mute",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+	"max-volume": 150
+    },
+
+    "battery": {
+	"interval": 30,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     }
 }
