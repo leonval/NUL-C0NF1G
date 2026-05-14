@@ -2,7 +2,6 @@
 
 # Script from
 # https://github.com/ericmurphyxyz/rofi-wifi-menu.git
-notify-send "Getting list of available Wi-Fi networks..."
 # Get a list of available wifi connections and morph it into a nice-looking list
 wifi_list=$(nmcli --fields "SECURITY,SSID" device wifi list | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d")
 
@@ -14,7 +13,7 @@ elif [[ "$connected" =~ "disabled" ]]; then
 fi
 
 # Use rofi to select wifi network
-chosen_network=$(echo -e "$toggle\n$wifi_list" | uniq -u | fuzzel -dp "Wi-Fi SSID: " --select-index=1 )
+chosen_network=$(echo -e "$toggle\n$wifi_list" | uniq -u | fuzzel --config "$HOME/.dotfiles/config/fuzzel/wifi.ini" -dp "Wi-Fi SSID: " --select-index=1 )
 # Get name of connection
 read -r chosen_id <<< "${chosen_network:3}"
 
