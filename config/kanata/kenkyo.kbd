@@ -82,7 +82,7 @@
   s lalt
   d lsft
   f lctl
-  g comp ;; Enable if not MacOS.
+  g caps
   j left
   k down
   l rght
