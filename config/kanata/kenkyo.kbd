@@ -87,12 +87,12 @@
   k down
   l rght
   ; pgdn
-  z mute
-  x vold
-  c volu
+  x brdn
+  c brup
   v pp
-  , brdn
-  . brup
+  m mute
+  , vold
+  . volu
   ralt ret
   rctl bspc
 )
