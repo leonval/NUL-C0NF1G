@@ -1,0 +1,36 @@
+#!/bin/bash
+
+case "$1" in
+    up)
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+        ;;
+    down)
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+        ;;
+    mute)
+        wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+        ;;
+esac
+
+# Extract volume percentage and mute status
+VOLUME_RAW=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
+
+# Check if muted
+if echo "$VOLUME_RAW" | grep -q "MUTED"; then
+    dunstify -a "Volume" -h string:x-dunst-stack-tag:volume -i audio-volume-muted "Muted" -h int:value:0 --timeout=1500
+else
+    # Parse volume float (e.g., 0.45 -> 45)
+    VOLUME=$(echo "$VOLUME_RAW" | awk '{print $2 * 100}')
+
+    # Choose an icon based on volume level
+    if [ "$VOLUME" -lt 33 ]; then
+        ICON="audio-volume-low"
+    elif [ "$VOLUME" -lt 66 ]; then
+        ICON="audio-volume-medium"
+    else
+        ICON="audio-volume-high"
+    fi
+
+    # Send the notification to Dunst with the progress bar hint
+    dunstify -a "Volume" -h string:x-dunst-stack-tag:volume -i "$ICON" "Level: ${VOLUME}%" -h int:value:"$VOLUME" --timeout=1500
+fi

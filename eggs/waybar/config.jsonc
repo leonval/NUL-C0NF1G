@@ -89,7 +89,7 @@
         "tooltip-format": "{signalStrength}%",
         "tooltip-format-wifi": "{essid} {signalStrength}%",
         "tooltip-format-disconnected": "No Connection",
-        "on-click": "~/.dotfiles/bin/wifi-picker.sh",
+        "on-click": "~/.dotfiles/bin/wifi-picker",
         "on-click-right": "nm-connection-manager"
     },
 

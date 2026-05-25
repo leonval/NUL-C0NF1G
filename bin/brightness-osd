@@ -1,0 +1,24 @@
+#!/bin/bash
+
+case "$1" in
+    up)
+        brightnessctl set +5%
+	;;
+    down)
+        brightnessctl set 5%-
+        ;;
+esac
+
+# Get current brightness percentage
+BRIGHTNESS=$(brightnessctl info | grep -oP '\(\K[0-9]+(?=%\))')
+
+# Choose an icon based on brightness level
+if [ "$BRIGHTNESS" -lt 34 ]; then
+    ICON="display-brightness-low"
+elif [ "$BRIGHTNESS" -lt 67 ]; then
+    ICON="display-brightness-medium"
+else
+    ICON="display-brightness-high"
+fi
+
+dunstify -a "Brightness" -h string:x-dunst-stack-tag:brightness -i "$ICON" "Level: ${BRIGHTNESS}%" -h int:value:"$BRIGHTNESS" --timeout=1500
