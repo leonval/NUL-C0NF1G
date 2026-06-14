@@ -416,7 +416,7 @@ binds {
     //	Suggested binds for running programs: terminal, app launcher, screen locker.
     alt+return hotkey-overlay-title="Run Terminal: Wezterm" { spawn "wezterm"; }
     alt+ctrl+a { spawn "keepassxc"; }
-    alt+space hotkey-overlay-title="Run Appfinder: fuzzel" { spawn-sh r#"fuzzel --config "$HOME/.dotfiles/config/fuzzel/fuzzel.ini""#; }
+    alt+space hotkey-overlay-title="Run Appfinder: fuzzel" { spawn-sh r#"fuzzel --config "$HOME/.dotfiles/eggs/fuzzel/fuzzel.ini""#; }
     // alt+space hotkey-overlay-title="Run Appfinder: rofi" { spawn-sh "pkill rofi || rofi -show drun"; }
     super+e hotkey-overlay-title="Run File Manager: Thunar" { spawn "thunar"; }
     alt+e hotkey-overlay-title="Run Yazi" { spawn-sh "wezterm start -- yazi"; }
@@ -673,6 +673,6 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     // mod+shift+p { power-off-monitors; }
-    mod+v { spawn-sh "clipman pick -t CUSTOM --tool-args='fuzzel -d'"; }
-    mod+semicolon { spawn-sh r#"BEMOJI_PICKER_CMD="rg . | fuzzel -d --config "$HOME/.dotfiles/config/fuzzel/emoji.ini" bemoji" bemoji -t"#; }
+    mod+v { spawn-sh "clipman pick -t CUSTOM --tool-args='fuzzel -d --config '$HOME/.dotfiles/eggs/fuzzel/clipboard.ini''"; }
+    mod+semicolon { spawn-sh r#"BEMOJI_PICKER_CMD="rg . | fuzzel -d --config "$HOME/.dotfiles/eggs/fuzzel/emoji.ini" bemoji" bemoji -t"#; }
 }

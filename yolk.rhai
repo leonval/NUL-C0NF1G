@@ -1,5 +1,8 @@
 import "theme" as theme;
 
+let font = theme::font;
+let palette = theme::palette;
+
 export let eggs = #{
     wezterm: #{
 	enabled: io::command_available("wezterm"),
@@ -71,7 +74,12 @@ export let eggs = #{
     },
     waybar: #{
 	enabled: SYSTEM.platform == "Linux",
-	targets: "~/.config/waybar",
+	targets: "~/.config/waybar/",
+	templates: ["style.scss"]
+    },
+    fuzzel: #{
+	enabled: SYSTEM.platform == "Linux",
+	templates: ["fuzzel.ini", "clipboard.ini", "emoji.ini", "wifi.ini"]
     },
     tealdeer: #{
 	enabled: SYSTEM.platform == "Linux",

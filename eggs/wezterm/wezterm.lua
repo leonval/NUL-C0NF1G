@@ -13,7 +13,7 @@ config.colors = { background = "black" }
 -- {% else %}
 config.default_prog = { "zsh" }
 -- {% end %}
-config.font = wezterm.font_with_fallback({ "FiraCode Nerd Font", "Cascadia Code", "JetBrains Mono" })
+config.font = wezterm.font_with_fallback({ '0xProto Nerd Font', "Cascadia Code", "JetBrains Mono" }) -- {< replace_in(`'`, font) >}
 --<yolk> config.window_decorations = "RESIZE" -- {< if SYSTEM.platform == "Windows" >}
 config.window_background_opacity = 0.75
 
