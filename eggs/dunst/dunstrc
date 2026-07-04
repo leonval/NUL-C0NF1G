@@ -9,33 +9,34 @@ gap_size = 5
 fullscreen = delay
 
 # color
-frame_color = "#04ff04"
+frame_color = "#04ff04" # {< replace_color(palette.hex.neonGreen) >}
 separator_color = frame
-highlight = "#04ff04"
-background = "#000000"
-foreground = "#04ff04"
+highlight = "#04ff04" # {< replace_color(palette.hex.neonGreen) >}
+background = "#000000" # {< replace_color(palette.hex.black) >}
+foreground = "#04ff04" # {< replace_color(palette.hex.neonGreen) >}
 
 # text
 format = "<b>%a</b>\n\n%s\n<i>%b</i>"
-font = "Fira Sans 12"
-icon_theme = "Papirus-Dark"
+font = "0xProto Nerd Font" # {< replace_quoted(font) >}
+icon_theme = "Papirus-Dark" # {< replace_quoted(icon.dark) >}
+enable_recursive_icon_lookup = true
 
 # action
 mouse_right_click = context, close_current
 dmenu = /usr/bin/fuzzel -d
 
 [urgency_low]
-foreground = "#ffffff"
-frame_color = "#ffffff"
-# default_icon = "~/.config/dunst/icons/bell-badge-low.svg"
+foreground = "#ffffff" # {< replace_color(palette.hex.white) >}
+frame_color = "#ffffff" # {< replace_color(palette.hex.white) >}
+default_icon = "~/.config/dunst/icons/bell-badge-low.svg"
 
 [urgency_normal]
-foreground = "#04ff04"
-frame_color = "#04ff04"
-# default_icon = "~/.config/dunst/icons/bell-badge.svg"
+foreground = "#04ff04" # {< replace_color(palette.hex.neonGreen) >}
+frame_color = "#04ff04" # {< replace_color(palette.hex.neonGreen) >}
+default_icon = "~/.config/dunst/icons/bell-badge.svg"
 
 [urgency_critical]
-foreground = "#f38ba8"
-frame_color = "#f38ba8"
-# default_icon = "~/.config/dunst/icons/alert-decagram.svg"
+foreground = "#f38ba8" # {< replace_color(palette.hex.danger) >}
+frame_color = "#f38ba8" # {< replace_color(palette.hex.danger) >}
+default_icon = "~/.config/dunst/icons/alert-decagram.svg"
 timeout = 0

@@ -1,6 +1,7 @@
 import "theme" as theme;
 
 let font = theme::font;
+let icon = theme::icon;
 let palette = theme::palette;
 
 export let eggs = #{
@@ -67,6 +68,7 @@ export let eggs = #{
     dunst: #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.config/dunst",
+	templates: ["dunstrc"]
     },
     swaylock: #{
 	enabled: SYSTEM.platform == "Linux",

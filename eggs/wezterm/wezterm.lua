@@ -7,7 +7,7 @@ local config = wezterm.config_builder()
 -- Config
 config.allow_win32_input_mode = false
 config.color_scheme = "tokyonight_night"
-config.colors = { background = "black" }
+config.colors = { background = "#000000" } -- {< replace_color(palette.hex.black) >}
 -- {% if SYSTEM.platform == "Windows" %}
 --<yolk> config.default_prog = { "nu" }
 -- {% else %}
@@ -27,7 +27,7 @@ end)
 -- Map Leader Key
 -- config.leader = { mods = "CTRL", key = "Space", timeout_milliseconds = 500 }
 
--- tmux
+-- Keybinding
 config.keys = {
 	{
 		mods = "CTRL",
@@ -72,22 +72,12 @@ config.keys = {
 	{
 		mods = "CTRL",
 		key = "LeftArrow",
-		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
+		action = wezterm.action.SendString '\x1bb',
 	},
 	{
 		mods = "CTRL",
 		key = "RightArrow",
-		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
-	},
-	{
-		mods = "CTRL",
-		key = "DownArrow",
-		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
-	},
-	{
-		mods = "CTRL",
-		key = "UpArrow",
-		action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
+		action = wezterm.action.SendString '\x1bf',
 	},
 	{
 		mods = "CTRL",
@@ -124,23 +114,22 @@ config.keys = {
 		key = "^",
 		action = wezterm.action.MoveTab(5),
 	},
+	{
+		key = "Home",
+		action = wezterm.action.SendString '\x01',
+	},
+	{
+		key = "End",
+		action = wezterm.action.SendString '\x05',
+	}
 }
 
-for i = 0, 8 do
-	-- leader + number to activate that tab
-	table.insert(config.keys, {
-		key = tostring(i + 1),
-		mods = "CTRL",
-		action = wezterm.action.ActivateTab(i),
-	})
-end
-
--- tab bar
+-- Tab Bar
 config.hide_tab_bar_if_only_one_tab = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 
--- tmux status
+-- Tmux Status
 wezterm.on("update-right-status", function(window, _)
 	local SOLID_LEFT_ARROW = ""
 	local ARROW_FOREGROUND = { Foreground = { Color = "#333333" } }
