@@ -30,6 +30,7 @@ window#waybar {
 
 #workspaces button {
   margin: 0 4px;
+  background: #000000;
   color: #04ff04;
   border: 2px solid #04ff04;
   transition: 0.3s;

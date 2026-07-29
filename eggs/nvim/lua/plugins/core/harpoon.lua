@@ -21,7 +21,7 @@ return {
 		desc = "[A]dd Buffer To Harpoon list",
 	    },
 	    {
-		"<leader>h<leader>",
+		"<leader>hh",
 		function()
 		    harpoon.ui:toggle_quick_menu(harpoon:list())
 		end,
