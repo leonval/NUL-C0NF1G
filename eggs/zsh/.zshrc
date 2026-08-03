@@ -6,9 +6,7 @@ export PATH="$HOME/.dotfiles/bin/:$PATH"
 # yolk dotfile manager
 export YOLK_DIR="$HOME/.dotfiles"
 
-for FILE in ~/.dotfiles/eggs/zsh/config/*; do  
-    source $FILE  
+for file in ~/.dotfiles/eggs/zsh/conf.d/*.zsh(Nn); do
+    source "$file"
 done
 
-# bun completions
-[ -s "/home/nnoel/.bun/_bun" ] && source "/home/nnoel/.bun/_bun"

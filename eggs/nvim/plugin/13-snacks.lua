@@ -3,7 +3,10 @@ vim.pack.add {{ src = gh 'folke/snacks.nvim' }}
 require 'snacks' .setup({
     picker = {
 	enabled = true,
-	matcher = { frecency = true },
+	matcher = {
+	    frecency = true,
+	    history_bonus = true,
+	},
 	sources = {
 	    lines = {
 		layout = { preset = "dropdown" }
@@ -33,18 +36,16 @@ local keys = {
 	"n",
 	"<leader><space>",
 	function()
-	    Snacks.picker.smart()
+	    Snacks.picker.files({ hidden = true })
 	end,
-	{ desc = "Smart Find Files" },
+	{ desc = "Find Files" },
     },
     {
 	"n",
 	"<leader>,",
 	function()
 	    Snacks.picker.buffers({
-		on_show = function()
-		    vim.cmd.stopinsert()
-		end,
+		focus = 'list',
 	    })
 	end,
 	{ desc = "[,] Buffers" },
@@ -83,7 +84,7 @@ local keys = {
 	function()
 	    Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
 	end,
-	{ desc = "[F]ind [N]eovim Config" },
+	{ desc = "[f]ind [n]eovim Config" },
     },
     {
 	"n",
@@ -91,7 +92,7 @@ local keys = {
 	function()
 	    Snacks.picker.files()
 	end,
-	{ desc = "[F]ind [F]iles" },
+	{ desc = "[f]ind [f]iles" },
     },
     {
 	"n",
@@ -99,7 +100,7 @@ local keys = {
 	function()
 	    Snacks.picker.git_files()
 	end,
-	{ desc = "[F]ind [G]it Files" },
+	{ desc = "[f]ind [g]it Files" },
     },
     {
 	"n",
@@ -107,7 +108,7 @@ local keys = {
 	function()
 	    Snacks.picker.projects()
 	end,
-	{ desc = "[F]ind [P]rojects" },
+	{ desc = "[f]ind [p]rojects" },
     },
     {
 	"n",
@@ -115,7 +116,7 @@ local keys = {
 	function()
 	    Snacks.picker.keymaps()
 	end,
-	{ desc = "[F]ind [K]eymaps" },
+	{ desc = "[f]ind [k]eymaps" },
     },
     {
 	"n",
@@ -123,7 +124,7 @@ local keys = {
 	function()
 	    Snacks.picker.qflist()
 	end,
-	{ desc = "[Q]uickfix List" },
+	{ desc = "[q]uickfix List" },
     },
     {
 	"n",
@@ -131,7 +132,7 @@ local keys = {
 	function()
 	    Snacks.picker.lines()
 	end,
-	{ desc = "Find In Current Buffer" },
+	{ desc = "Find in Current Buffer" },
     },
     {
 	"n",
@@ -139,7 +140,7 @@ local keys = {
 	function()
 	    Snacks.picker.help()
 	end,
-	{ desc = "[F]ind [H]elp" },
+	{ desc = "[f]ind [h]elp" },
     },
 
     -- LSP
@@ -149,7 +150,7 @@ local keys = {
 	function()
 	    Snacks.picker.lsp_definitions()
 	end,
-	{ desc = "[G]oto [D]efinition" },
+	{ desc = "[g]oto [d]efinition" },
     },
     {
 	"n",
@@ -157,7 +158,7 @@ local keys = {
 	function()
 	    Snacks.picker.lsp_declarations()
 	end,
-	{ desc = "[G]oto [D]eclaration" },
+	{ desc = "[g]oto [D]eclaration" },
     },
     {
 	"n",
@@ -165,7 +166,7 @@ local keys = {
 	function()
 	    Snacks.picker.lsp_references()
 	end,
-	{ desc = "[G]oto [R]eferences", nowait = true },
+	{ desc = "[g]oto [r]eferences", nowait = true },
     },
     {
 	"n",
@@ -173,7 +174,7 @@ local keys = {
 	function()
 	    Snacks.picker.lsp_implementations()
 	end,
-	{ desc = "[G]oto [I]mplementation" },
+	{ desc = "[g]oto [I]mplementation" },
     },
     {
 	"n",
@@ -181,7 +182,7 @@ local keys = {
 	function()
 	    Snacks.picker.lsp_type_definitions()
 	end,
-	{ desc = "[G]oto T[y]pe Definition" },
+	{ desc = "[g]oto T[y]pe Definition" },
     },
     {
 	"n",
@@ -189,7 +190,7 @@ local keys = {
 	function()
 	    Snacks.picker.lsp_symbols()
 	end,
-	{ desc = "[G]oto LSP [S]ymbols" },
+	{ desc = "[g]oto LSP [s]ymbols" },
     },
     {
 	"n",
@@ -197,7 +198,7 @@ local keys = {
 	function()
 	    Snacks.picker.lsp_workspace_symbols()
 	end,
-	{ desc = "[G]oto LSP Workspace [S]ymbols" },
+	{ desc = "[g]oto LSP Workspace [S]ymbols" },
     },
 }
 

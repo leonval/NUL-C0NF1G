@@ -3,9 +3,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local keys = {
-    -- Clear highlights on search when pressing <Esc> in normal mode
-    --  See `:help hlsearch`
-    {"n", "<Esc>", "<cmd>nohlsearch<CR>"},
+    {"n", "<Esc>", "<cmd>nohlsearch<CR>"}, -- Clear highlights on search when pressing <Esc> in normal mode
 
     -- Diagnostic keymaps
     -- {"n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" }},
@@ -17,13 +15,7 @@ local keys = {
     -- or just use <C-\><C-n> to exit terminal mode
     {"t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }},
 
-    -- TIP: Disable arrow keys in normal mode
-    {"n", "<left>", '<cmd>echo "Use h to move!!"<CR>'},
-    {"n", "<right>", '<cmd>echo "Use l to move!!"<CR>'},
-    {"n", "<up>", '<cmd>echo "Use k to move!!"<CR>'},
-    {"n", "<down>", '<cmd>echo "Use j to move!!"<CR>'},
-
-    -- Window keymaps
+    -- WINDOW
     {"n", "<leader>h", "<C-w><C-h>", { desc = "Move focus to the left window" }},
     {"n", "<leader>l", "<C-w><C-l>", { desc = "Move focus to the right window" }},
     {"n", "<leader>j", "<C-w><C-j>", { desc = "Move focus to the lower window" }},
@@ -32,16 +24,15 @@ local keys = {
     {"n", "<leader>wv", ":vsplit<CR>", { desc = "[W]indow Split [V]ertical" }},
     {"n", "<leader>wh", ":split<CR>", { desc = "[W]indow Split [H]orizontal" }},
 
+    -- # BUFFERS
     {"n", "<leader>fs", ":w<CR>", { desc = "[W]rite current buffer" }}, -- Write buffer shortcut
     {"n", "<leader>fq", ":q<CR>", { desc = "[Q]uit current buffer" }}, -- Quit buffer shortcut
 
-    -- Mini.file
-    {"n", "<leader>tt", function() require("mini.files").open() end, { desc = "Toggle mini.files file picker" }},
-
-    -- Buffers
-    {"n", "<leader>bd", function()
-	require("mini.bufremove").delete(0, false)
-    end, { desc = "[D]elete current [B]uffer" }},
+    -- Disable arrow keys in normal mode
+    {"n", "<left>", '<cmd>echo "Use h to move!!"<CR>'},
+    {"n", "<right>", '<cmd>echo "Use l to move!!"<CR>'},
+    {"n", "<up>", '<cmd>echo "Use k to move!!"<CR>'},
+    {"n", "<down>", '<cmd>echo "Use j to move!!"<CR>'},
 
     -- Exit insert mode modification
     {"i", "jj", "<C-[>", { desc = "Exit insert mode" }},

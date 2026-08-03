@@ -17,13 +17,13 @@ alias bp="bat --plain"
 alias bpl="bat --plain --line-range"
 alias bl="bat --line-range"
 
-# eza 
-alias x="eza --icons"
-alias xa="eza --icons --all"
-alias xl="eza --icons --long"
-alias xla="eza --icons --long --all"
-alias xt="eza --icons --tree"
-alias xta="eza --icons --tree --all"
+# eza
+alias x="eza --icons --hyperlink --group-directories-first"
+alias xa="eza --icons --all --hyperlink --group-directories-first"
+alias xl="eza --icons --long --hyperlink --group-directories-first"
+alias xla="eza --icons --long --all --hyperlink --group-directories-first"
+alias xt="eza --icons --tree --hyperlink --group-directories-first"
+alias xta="eza --icons --tree --all --hyperlink --group-directories-first"
 
 # git
 alias gs="git status --short --branch"
