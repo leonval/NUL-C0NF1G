@@ -146,27 +146,39 @@ config.hide_tab_bar_if_only_one_tab = false
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 
--- Tmux Status
-wezterm.on("update-right-status", function(window, _)
-	local SOLID_LEFT_ARROW = ""
-	local ARROW_FOREGROUND = { Foreground = { Color = "#333333" } }
-	local prefix = ""
+-- Status & Vi Mode Indicator (Both on the Left)
+wezterm.on("update-right-status", function(window, pane)
+    local vi_mode = pane:get_user_vars().VI_MODE or "INSERT"
 
-	if window:leader_is_active() then
-		prefix = " " .. utf8.char(0x5350) -- Swastika symbol 😋
-		SOLID_LEFT_ARROW = utf8.char(0xe0b2)
-	end
+    local mode_text = ""
+    local mode_background = "#333333"
+    local mode_foreground = "#000000"
 
-	if window:active_tab():tab_id() ~= 0 then
-		ARROW_FOREGROUND = { Foreground = { Color = "#04ff04" } }
-	end -- arrow color based on if tab is first pane
+    if vi_mode == "NORMAL" then
+	mode_text = " NORMAL "
+	mode_foreground = "#04ff04" -- {< replace_color(palette.hex.neonGreen) >}
+	mode_background = "#000000" -- {< replace_color(palette.hex.black) >}
+    elseif vi_mode == "INSERT" then
+	mode_text = " INSERT "
+	mode_foreground = "#000000" -- {< replace_color(palette.hex.black) >}
+	mode_background = "#04ff04" -- {< replace_color(palette.hex.neonGreen) >}
+    end
 
-	window:set_left_status(wezterm.format({
-		{ Background = { Color = "#101010" } },
-		{ Text = prefix },
-		ARROW_FOREGROUND,
-		{ Text = SOLID_LEFT_ARROW },
-	}))
+    local leader_prefix = ""
+    if window:leader_is_active() then
+	leader_prefix = " " .. 'LEADER' .. " " -- Leader active icon
+    end
+
+    -- Render BOTH on the left status
+    window:set_left_status(wezterm.format({
+	{ Background = { Color = mode_background } },
+	{ Foreground = { Color = mode_foreground } },
+	{ Attribute = { Intensity = "Bold" } },
+	{ Text = mode_text },
+	{ Background = { Color = "#000000" } }, -- {< replace_color(palette.hex.black) >}
+	{ Foreground = { Color = "#f38ba8" } }, -- {< replace_color(palette.hex.danger) >}
+	{ Text = leader_prefix },
+    }))
 end)
 
 -- and finally, return the configuration to wezterm

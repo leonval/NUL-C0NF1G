@@ -54,7 +54,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
 		end
 	end,
 })
-
 -- remove the highlight when entering insert mode
 vim.api.nvim_create_autocmd("InsertEnter", {
 	group = "LspReferenceHighlight",

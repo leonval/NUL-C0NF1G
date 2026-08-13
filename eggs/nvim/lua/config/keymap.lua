@@ -5,8 +5,13 @@ vim.g.maplocalleader = " "
 local keys = {
     {"n", "<Esc>", "<cmd>nohlsearch<CR>"}, -- Clear highlights on search when pressing <Esc> in normal mode
 
-    -- Diagnostic keymaps
+    -- DIAGNOSTIC
     -- {"n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" }},
+    {"n", "gl", function() vim.diagnostic.open_float({ focus = true }) end, { desc = "Open and focus diagnostic float" }},
+
+    -- LSP
+    {"n", "<leader>cr", function() vim.lsp.buf.rename() end, { desc = "LSP [r]ename" }},
+    {"n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "LSP [c]ode [a]ction" }},
 
     -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
     -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -25,8 +30,9 @@ local keys = {
     {"n", "<leader>wh", ":split<CR>", { desc = "[W]indow Split [H]orizontal" }},
 
     -- # BUFFERS
-    {"n", "<leader>fs", ":w<CR>", { desc = "[W]rite current buffer" }}, -- Write buffer shortcut
-    {"n", "<leader>fq", ":q<CR>", { desc = "[Q]uit current buffer" }}, -- Quit buffer shortcut
+    {"n", "<leader>fs", "<cmd>write<CR>", { desc = "[W]rite current buffer" }}, -- Write buffer shortcut
+    {"n", "<leader>fS", "<cmd>noautocmd w<CR>", { desc = "[W]rite current buffer" }}, -- Write buffer shortcut
+    {"n", "<leader>fq", "<cmd>quit<CR>", { desc = "[Q]uit current buffer" }}, -- Quit buffer shortcut
 
     -- Disable arrow keys in normal mode
     {"n", "<left>", '<cmd>echo "Use h to move!!"<CR>'},

@@ -3,19 +3,10 @@ vim.pack.add {{ src = gh 'folke/snacks.nvim' }}
 require 'snacks' .setup({
     picker = {
 	enabled = true,
-	matcher = {
-	    frecency = true,
-	    history_bonus = true,
-	},
 	sources = {
 	    lines = {
 		layout = { preset = "dropdown" }
 	    }
-	},
-	formatters = {
-	    file = {
-		filename_first = true,
-	    },
 	},
 	win = {
 	    input = {
@@ -36,16 +27,24 @@ local keys = {
 	"n",
 	"<leader><space>",
 	function()
-	    Snacks.picker.files({ hidden = true })
+	    Snacks.picker.files({
+		hidden = true,
+		matcher = {
+		    frecency = true,
+		    history_bonus = true,
+		},
+	    })
 	end,
-	{ desc = "Find Files" },
+	{ desc = "Find files" },
     },
     {
 	"n",
 	"<leader>,",
 	function()
-	    Snacks.picker.buffers({
-		focus = 'list',
+	    Snacks.picker.buffers({ 
+		on_show = function()
+		    vim.cmd.stopinsert()
+		end,
 	    })
 	end,
 	{ desc = "[,] Buffers" },
@@ -68,7 +67,7 @@ local keys = {
 		end,
 	    })
 	end,
-	{ desc = "[:] Command History" },
+	{ desc = "[:] Command history" },
     },
     {
 	"n",
@@ -76,7 +75,15 @@ local keys = {
 	function()
 	    Snacks.picker.recent()
 	end,
-	{ desc = "[.] Recent Files" },
+	{ desc = "[.] Recent files" },
+    },
+    {
+	"n",
+	"<leader>fd",
+	function()
+	    Snacks.picker.diagnostics()
+	end,
+	{ desc = "[f]ind [d]iagnostics" },
     },
     {
 	"n",
@@ -84,15 +91,15 @@ local keys = {
 	function()
 	    Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
 	end,
-	{ desc = "[f]ind [n]eovim Config" },
+	{ desc = "[f]ind [n]eovim config" },
     },
     {
 	"n",
 	"<leader>ff",
 	function()
-	    Snacks.picker.files()
+	    Snacks.picker.files({ hidden = true, ignored = true })
 	end,
-	{ desc = "[f]ind [f]iles" },
+	{ desc = "[f]ind [f]iles without filter" },
     },
     {
 	"n",
@@ -182,7 +189,7 @@ local keys = {
 	function()
 	    Snacks.picker.lsp_type_definitions()
 	end,
-	{ desc = "[g]oto T[y]pe Definition" },
+	{ desc = "[g]oto t[y]pe definition" },
     },
     {
 	"n",
@@ -198,7 +205,7 @@ local keys = {
 	function()
 	    Snacks.picker.lsp_workspace_symbols()
 	end,
-	{ desc = "[g]oto LSP Workspace [S]ymbols" },
+	{ desc = "[g]oto LSP workspace [S]ymbols" },
     },
 }
 

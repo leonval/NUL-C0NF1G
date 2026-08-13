@@ -62,6 +62,6 @@ vim.opt.cursorline = true -- Show cursor line position
 
 require('vim._core.ui2').enable() -- Use experimental ui2
 
--- ## POPUP
+-- ## POPUP MENU
 vim.o.pumheight = 10
 vim.o.pumborder = "rounded"
