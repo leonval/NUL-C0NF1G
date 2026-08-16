@@ -3,6 +3,8 @@ export let palette = #{
 	    "black": "#000000",
 	    "white": "#ffffff",
 	    "neonGreen": "#04ff04",
+	    "darkGreen": "048004ff",
+	    "gray": "#505050",
 
 	    "danger": "#f38ba8",
 	},

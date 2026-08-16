@@ -102,7 +102,7 @@ function M.apply_to_config(config)
 		-- Launcher
 		{
 			mods = "CTRL",
-			key = "p",
+			key = "Space",
 			action = action.ShowLauncher,
 		},
 	}

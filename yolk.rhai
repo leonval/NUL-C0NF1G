@@ -8,7 +8,7 @@ export let eggs = #{
     wezterm: #{
 	enabled: io::command_available("wezterm"),
 	targets: "~/.config/wezterm/",
-	templates: ["wezterm.lua"],
+	templates: ["wezterm.lua", "keymap.lua", "appearance.lua"],
     },
     nvim: #{
 	enabled: io::command_available("nvim"),
