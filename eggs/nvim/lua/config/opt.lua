@@ -38,7 +38,7 @@ vim.opt.inccommand = "split" -- Preview subtitution live when typing
 vim.opt.scrolloff = 10 -- Minimal number of screen lines to keep above and below the cursor
 
 -- # COMPLETION
-vim.o.completeopt = 'menuone,noinsert,fuzzy,nosort'
+vim.o.completeopt = "menuone,noinsert,fuzzy,nosort"
 
 -- # FORMATTING
 -- ## WINDOW
@@ -56,11 +56,14 @@ vim.opt.signcolumn = "yes" -- Enable signcolumn
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
 vim.opt.shiftwidth = 4
 
 vim.opt.cursorline = true -- Show cursor line position
 
-require('vim._core.ui2').enable() -- Use experimental ui2
+require("vim._core.ui2").enable() -- Use experimental ui2
 
 -- ## POPUP MENU
 vim.o.pumheight = 10

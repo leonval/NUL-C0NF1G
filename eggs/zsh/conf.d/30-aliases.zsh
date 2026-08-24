@@ -113,3 +113,6 @@ alias ygs="yolk git status --short --branch"
 alias ygst="yolk git status"
 alias ygsw="yolk git switch"
 alias ygswc="yolk git switch --create"
+alias ylg="lazygit -g ~/.dotfiles/.yolk_git"
+
+
