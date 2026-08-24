@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+zsh +m -i -c 'alias' 2>/dev/null | fzf \
+  --prompt="Aliases > " \
+  --query="$1" \
+  --height=40% \
+  --reverse \
+  --preview-window=wrap
