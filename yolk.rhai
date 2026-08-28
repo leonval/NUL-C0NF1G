@@ -26,6 +26,9 @@ export let eggs = #{
     yazi: #{
 	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/yazi/config/" } else { "~/.config/yazi/" },
     },
+    lazygit: #{
+	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/Local/lazygit/" } else { "~/.config/lazygit/" },
+    },
 
     // Linux Explicit
     bash: #{
