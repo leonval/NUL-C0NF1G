@@ -1,0 +1,53 @@
+layout {
+    gaps 8
+
+    center-focused-column "never"
+    always-center-single-column
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
+
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
+
+    default-column-width { proportion 1.0; }
+
+    focus-ring {
+        // Uncomment this line to disable the focus ring.
+        // off
+
+        width 1
+        active-color "#048004"
+        inactive-color "#000000"
+    }
+
+    border {
+        // If you enable the border, you probably want to disable the focus ring.
+        off
+
+        width 4
+        active-color "#ffc87f"
+        inactive-color "#505050"
+
+        // Color of the border around windows that request your attention.
+        urgent-color "#9b0000"
+    }
+
+    shadow {
+        softness 30
+
+        spread 5
+
+        offset x=0 y=5
+
+        color "#0007"
+    }
+}

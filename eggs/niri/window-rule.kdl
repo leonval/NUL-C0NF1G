@@ -1,0 +1,47 @@
+// Open terminal floating, centered, and sized correctly
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+
+    default-column-width { proportion 0.66667; }
+}
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen"# title="^Picture-in-Picture$"
+
+    open-floating true
+    default-floating-position x=12 y=12 relative-to="bottom-right" 
+}
+
+// Open floating
+window-rule {
+    match app-id="thunar"
+    match app-id="Rofi"
+    match app-id="blueman-manager"
+    match app-id="org.pulseaudio.pavucontrol"
+
+    open-floating true
+}
+
+// Block out two password managers from screen capture.
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+    open-floating true
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+// Enable rounded corners for all windows.
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+

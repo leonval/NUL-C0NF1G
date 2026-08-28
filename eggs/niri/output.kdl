@@ -1,0 +1,10 @@
+output "eDP-1" {
+    // Uncomment this line to disable this output.
+	// off
+
+    mode "1920x1080"
+    scale 1
+    transform "normal"
+    position x=1280 y=0
+    background-color "#000000"
+}
