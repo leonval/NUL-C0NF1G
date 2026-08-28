@@ -18,12 +18,12 @@ alias bpl = bat --plain --line-range
 alias bl = bat --line-range
 
 # eza 
-alias x = eza --icons
-alias xa = eza --icons --all
-alias xl = eza --icons --long
-alias xla = eza --icons --long --all
-alias xt = eza --icons --tree
-alias xta = eza --icons --tree --all
+alias x = eza --icons --hyperlink
+alias xa = eza --icons --all --hyperlink
+alias xl = eza --icons --long --hyperlink
+alias xla = eza --icons --long -- --hyperlinkall
+alias xt = eza --icons --tree --hyperlink
+alias xta = eza --icons --tree --all --hyperlink
 
 # git
 alias gs = git status --short --branch

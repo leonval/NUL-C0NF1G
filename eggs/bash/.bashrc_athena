@@ -13,10 +13,13 @@ append_path "$HOME/bin"
 append_path "$HOME/.local/bin"
 
 ### EXPORT ### Should be before the change of the shell
+export EDITOR=/usr/bin/nvim
+export VISUAL='nano'
 export HISTCONTROL=ignoreboth:erasedups:ignorespace
 HISTSIZE=100000
 HISTFILESIZE=2000000
 shopt -s histappend
+export PAGER='most'
 
 export TERM=xterm-256color
 export SHELL=$(which zsh)

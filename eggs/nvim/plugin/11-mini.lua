@@ -23,13 +23,6 @@ end
 
 require("mini.bufremove").setup()
 
-require("mini.files").setup({
-	mappings = {
-		close = "<Esc>",
-	},
-	options = { permanent_delete = false },
-})
-
 require("mini.animate").setup()
 
 -- disable completion while snack picker is visible
@@ -41,6 +34,12 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("mini.completion").setup({})
+
+require("mini.indentscope").setup({ symbol = "|" })
+
+require("mini.notify").setup()
+
+require("mini.git").setup()
 
 local keys = {
 	{
@@ -89,7 +88,5 @@ local keys = {
 		{ desc = "[d]elete [o]ther buffers" },
 	},
 }
-
-require("mini.git").setup()
 
 set_keymaps(keys)
