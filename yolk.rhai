@@ -53,7 +53,7 @@ export let eggs = #{
     niri: #{
 	enabled: io::command_available("niri"),
 	targets: "~/.config/niri/",
-	templates: ["config.kdl"],
+	templates: ["config.kdl", "layout.kdl", "output.kdl"],
     },
     systemd: #{
 	enabled: SYSTEM.platform == "Linux",

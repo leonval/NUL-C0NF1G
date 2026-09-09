@@ -2,6 +2,9 @@
 
 overview {
     backdrop-color "#000000"
+	workspace-shadow {
+		softness 12
+	}
 }
 
 workspace "PRIMUS"
@@ -22,6 +25,8 @@ include "output.kdl"
 include "layout.kdl"
 include "startup.kdl"
 include "animation.kdl"
+include "gestures.kdl"
+include "layer-rule.kdl"
 include "window-rule.kdl"
 include "keymap.kdl"
 include "misc.kdl"

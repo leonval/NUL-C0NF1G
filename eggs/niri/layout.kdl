@@ -1,4 +1,5 @@
 layout {
+	background-color "transparent"
     gaps 8
 
     center-focused-column "never"
@@ -20,34 +21,33 @@ layout {
 
     default-column-width { proportion 1.0; }
 
-    focus-ring {
-        // Uncomment this line to disable the focus ring.
-        // off
-
-        width 1
-        active-color "#048004"
-        inactive-color "#000000"
-    }
-
-    border {
-        // If you enable the border, you probably want to disable the focus ring.
-        off
-
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+	focus-ring {
+		off
+        width 2
+        active-color "#048004" // {< replace_color(palette.hex.darkGreen) >}
+        inactive-color "#505050" // {< replace_color(palette.hex.gray) >}
 
         // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
-    }
+        urgent-color "#f38ba8" // {< replace_color(palette.hex.danger) >}
+	}
 
-    shadow {
-        softness 30
+	border {
+		on
+        width 2
+        active-color "#048004" // {< replace_color(palette.hex.darkGreen) >}
+        inactive-color "#505050" // {< replace_color(palette.hex.gray) >}
 
-        spread 5
+        // Color of the border around windows that request your attention.
+        urgent-color "#f38ba8" // {< replace_color(palette.hex.danger) >}
+	}
 
-        offset x=0 y=5
+	shadow {
+		off
 
-        color "#0007"
-    }
+		softness 30
+	}
+
+	insert-hint {
+		color "#04ff0470" // {< replace_color(palette.hexOpacity.neonGreen70) >}
+	}
 }

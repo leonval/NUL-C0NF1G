@@ -3,6 +3,10 @@ window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
 
     default-column-width { proportion 0.66667; }
+
+	background-effect {
+        blur true
+    }
 }
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {

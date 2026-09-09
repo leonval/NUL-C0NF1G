@@ -6,4 +6,9 @@ hotkey-overlay {
     skip-at-startup
 }
 
+blur {
+	passes 2
+	offset 5
+}
+
 prefer-no-csd
