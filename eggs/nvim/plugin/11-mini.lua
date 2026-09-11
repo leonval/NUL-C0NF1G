@@ -55,7 +55,7 @@ local keys = {
 		"n",
 		"<leader>bd",
 		"<Cmd>lua MiniBufremove.delete()<CR>",
-		{ desc = "[d]elete Current [b]uffer" },
+		{ desc = "[b]uffer [d]elete current" },
 	},
 	{
 		"n",
@@ -71,7 +71,7 @@ local keys = {
 				MiniBufremove.delete(current, false)
 			end
 		end,
-		{ desc = "[d]elete [a]ll buffers" },
+		{ desc = "[b]uffers delete [a]ll " },
 	},
 	-- Delete all buffers EXCEPT current active one
 	{
@@ -85,7 +85,15 @@ local keys = {
 				end
 			end
 		end,
-		{ desc = "[d]elete [o]ther buffers" },
+		{ desc = "[b]uffers delete [o]ther" },
+	},
+	{
+		"n",
+		"<leader>tn",
+		function()
+			MiniNotify.show_history()
+		end,
+		{ desc = "[t]oggle [n]otification history" },
 	},
 }
 
