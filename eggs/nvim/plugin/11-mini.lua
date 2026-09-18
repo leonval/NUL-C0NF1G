@@ -1,12 +1,14 @@
 vim.pack.add({ gh("nvim-mini/mini.nvim") })
 
-require("mini.icons").setup()
-
 require("mini.ai").setup({ n_lines = 500 })
-
-require("mini.surround").setup()
-
+require("mini.animate").setup()
+require("mini.bufremove").setup()
+require("mini.git").setup()
+require("mini.icons").setup()
+require("mini.indentscope").setup({ symbol = "|" })
+require("mini.notify").setup()
 require("mini.pairs").setup()
+require("mini.surround").setup()
 
 local statusline = require("mini.statusline")
 
@@ -21,10 +23,6 @@ statusline.section_location = function()
 	return "%2l:%-2v"
 end
 
-require("mini.bufremove").setup()
-
-require("mini.animate").setup()
-
 -- disable completion while snack picker is visible
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "snacks_picker_input",
@@ -32,32 +30,17 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("user_mini", {}),
 	command = "lua vim.b.minicompletion_disable=true",
 })
-
 require("mini.completion").setup({})
 
-require("mini.indentscope").setup({ symbol = "|" })
-
-require("mini.notify").setup()
-
-require("mini.git").setup()
-
 local keys = {
-	{
-		"i",
-		"<Tab>",
-		function()
-			-- Returns <C-y> (or <C-n>) when popup is open, otherwise sends literal
-			return vim.fn.pumvisible() == 1 and "<C-y>" or "<Tab>"
-		end,
-		{ expr = true, desc = "Accept Completion" },
-	},
+	-- Buffer
 	{
 		"n",
 		"<leader>bd",
 		"<Cmd>lua MiniBufremove.delete()<CR>",
 		{ desc = "[b]uffer [d]elete current" },
 	},
-	{
+	{ -- Delete all buffers
 		"n",
 		"<leader>ba",
 		function()
@@ -73,8 +56,7 @@ local keys = {
 		end,
 		{ desc = "[b]uffers delete [a]ll " },
 	},
-	-- Delete all buffers EXCEPT current active one
-	{
+	{ -- Delete all buffers EXCEPT current active one
 		"n",
 		"<leader>bo",
 		function()
@@ -87,6 +69,19 @@ local keys = {
 		end,
 		{ desc = "[b]uffers delete [o]ther" },
 	},
+
+	-- Completion
+	{
+		"i",
+		"<Tab>",
+		function()
+			-- Returns <C-y> (or <C-n>) when popup is open, otherwise sends literal
+			return vim.fn.pumvisible() == 1 and "<C-y>" or "<Tab>"
+		end,
+		{ expr = true, desc = "Accept Completion" },
+	},
+
+	-- Notify
 	{
 		"n",
 		"<leader>tn",

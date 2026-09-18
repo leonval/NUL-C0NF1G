@@ -5,9 +5,26 @@ vim.g.maplocalleader = " "
 local keys = {
     {"n", "<Esc>", "<cmd>nohlsearch<CR>"}, -- Clear highlights on search when pressing <Esc> in normal mode
 
-    -- DIAGNOSTIC
+    -- Disable arrow keys in normal mode
+    {"n", "<left>", '<cmd>echo "Use h to move!!"<CR>'},
+    {"n", "<right>", '<cmd>echo "Use l to move!!"<CR>'},
+    {"n", "<up>", '<cmd>echo "Use k to move!!"<CR>'},
+    {"n", "<down>", '<cmd>echo "Use j to move!!"<CR>'},
+
+    {"i", "jj", "<C-[>", { desc = "Exit insert mode" }}, -- Exit insert mode modification
+
+    -- Buffers
+    {"n", "<leader>fs", "<cmd>write<CR>", { desc = "[W]rite current buffer" }}, -- Write buffer shortcut
+    {"n", "<leader>fS", "<cmd>noautocmd w<CR>", { desc = "[W]rite current buffer" }}, -- Write buffer shortcut
+    {"n", "<leader>fq", "<cmd>quit<CR>", { desc = "[Q]uit current buffer" }}, -- Quit buffer shortcut
+
+    -- Diagnostic
     -- {"n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" }},
     {"n", "gl", function() vim.diagnostic.open_float({ focus = true }) end, { desc = "Open and focus diagnostic float" }},
+
+	-- Diff
+    {"n", "<leader>dw", "<cmd>windo diffthis<CR>", { desc = "[d]iff this [w]indow" }},
+    {"n", "<leader>do", "<cmd>diffoff!<CR>", { desc = "[d]iff [o]ff" }},
 
     -- LSP
     {"n", "<leader>cr", function() vim.lsp.buf.rename() end, { desc = "LSP [r]ename" }},
@@ -20,7 +37,7 @@ local keys = {
     -- or just use <C-\><C-n> to exit terminal mode
     {"t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }},
 
-    -- WINDOW
+    -- Window
     {"n", "<leader>h", "<C-w><C-h>", { desc = "Move focus to the left window" }},
     {"n", "<leader>l", "<C-w><C-l>", { desc = "Move focus to the right window" }},
     {"n", "<leader>j", "<C-w><C-j>", { desc = "Move focus to the lower window" }},
@@ -28,20 +45,6 @@ local keys = {
 
     {"n", "<leader>wh", "<cmd>vsplit<CR>", { desc = "[W]indow Split [V]ertical" }},
     {"n", "<leader>wv", "<cmd>split<CR>", { desc = "[W]indow Split [H]orizontal" }},
-
-    -- # BUFFERS
-    {"n", "<leader>fs", "<cmd>write<CR>", { desc = "[W]rite current buffer" }}, -- Write buffer shortcut
-    {"n", "<leader>fS", "<cmd>noautocmd w<CR>", { desc = "[W]rite current buffer" }}, -- Write buffer shortcut
-    {"n", "<leader>fq", "<cmd>quit<CR>", { desc = "[Q]uit current buffer" }}, -- Quit buffer shortcut
-
-    -- Disable arrow keys in normal mode
-    {"n", "<left>", '<cmd>echo "Use h to move!!"<CR>'},
-    {"n", "<right>", '<cmd>echo "Use l to move!!"<CR>'},
-    {"n", "<up>", '<cmd>echo "Use k to move!!"<CR>'},
-    {"n", "<down>", '<cmd>echo "Use j to move!!"<CR>'},
-
-    -- Exit insert mode modification
-    {"i", "jj", "<C-[>", { desc = "Exit insert mode" }},
 }
 
 function set_keymaps(keys)
