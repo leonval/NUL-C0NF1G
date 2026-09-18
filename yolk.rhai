@@ -27,7 +27,7 @@ export let eggs = #{
 	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/yazi/config/" } else { "~/.config/yazi/" },
     },
     lazygit: #{
-	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/Local/lazygit/" } else { "~/.config/lazygit/" },
+	targets: "~/.config/lazygit/"
     },
 
     // Linux Explicit

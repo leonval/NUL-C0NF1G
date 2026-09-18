@@ -56,10 +56,15 @@ function M.apply_to_config(config)
 	}
 
 	-- ## OPACITY
+	-- {% if SYSTEM.platform == "Windows" %}
+	--<yolk> config.window_background_opacity = 0
+	-- {% else %}
 	config.window_background_opacity = 0.85
+	-- {% end %}
 	config.inactive_pane_hsb = {
 		brightness = 0.4,
 	}
+	--<yolk> config.win32_system_backdrop = "Tabbed" -- {< if SYSTEM.platform == "Windows" >}
 
 	-- ## TAB BAR
 	config.hide_tab_bar_if_only_one_tab = false
