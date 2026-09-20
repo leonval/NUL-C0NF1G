@@ -1,1 +1,2 @@
 spawn-sh-at-startup "wl-paste -t text --watch clipman store --no-persist"
+// spawn-at-startup "vicinae" "server"

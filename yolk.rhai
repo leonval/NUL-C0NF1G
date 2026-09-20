@@ -5,29 +5,29 @@ let icon = theme::icon;
 let palette = theme::palette;
 
 export let eggs = #{
-    wezterm: #{
-	enabled: io::command_available("wezterm"),
-	targets: "~/.config/wezterm/",
-	templates: ["wezterm.lua", "keymap.lua", "appearance.lua"],
-    },
-    nvim: #{
-	enabled: io::command_available("nvim"),
-	targets: "~/.config/nvim/",
-    },
     git: #{
 	targets: #{
 	".gitconfig": "~/.gitconfig",
 	},
 	templates: [".gitconfig"],
     },
-    zed: #{
-	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/Zed/" } else { "~/.config/zed/" },
+    lazygit: #{
+	targets: "~/.config/lazygit/"
+    },
+    nvim: #{
+	enabled: io::command_available("nvim"),
+	targets: "~/.config/nvim/",
+    },
+    wezterm: #{
+	enabled: io::command_available("wezterm"),
+	targets: "~/.config/wezterm/",
+	templates: ["wezterm.lua", "keymap.lua", "appearance.lua"],
     },
     yazi: #{
 	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/yazi/config/" } else { "~/.config/yazi/" },
     },
-    lazygit: #{
-	targets: "~/.config/lazygit/"
+    zed: #{
+	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/Zed/" } else { "~/.config/zed/" },
     },
 
     // Linux Explicit
@@ -40,29 +40,6 @@ export let eggs = #{
 	}, 
 	templates: [".bash_aliases",".bash_profile",".bashrc"],
     },
-    zsh: #{
-	enabled: SYSTEM.platform == "Linux",
-	targets: #{
-	".zshenv": "~/.zshenv",
-	".zprofile": "~/.zprofile",
-	".zshrc": "~/.zshrc",
-	}, 
-	templates: [".zshenv",".zprofile",".zshrc"],
-	main_file: "config"
-    },
-    niri: #{
-	enabled: io::command_available("niri"),
-	targets: "~/.config/niri/",
-	templates: ["config.kdl", "layout.kdl", "output.kdl"],
-    },
-    systemd: #{
-	enabled: SYSTEM.platform == "Linux",
-	targets: #{
-	"user": "~/.config/systemd/user",
-	},
-	templates: ["user"],
-	strategy: "merge",
-    },
     desktop: #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.local/share/applications/",
@@ -73,28 +50,53 @@ export let eggs = #{
 	targets: "~/.config/dunst",
 	templates: ["dunstrc"]
     },
+    fuzzel: #{
+	enabled: SYSTEM.platform == "Linux",
+	templates: ["fuzzel.ini", "clipboard.ini", "emoji.ini", "wifi.ini"]
+    },
+    niri: #{
+	enabled: io::command_available("niri"),
+	targets: "~/.config/niri/",
+	templates: ["config.kdl", "layout.kdl", "output.kdl"],
+    },
     swaylock: #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.config/swaylock",
     },
+    systemd: #{
+	enabled: SYSTEM.platform == "Linux",
+	targets: #{ "user": "~/.config/systemd/user", },
+	},
+    tealdeer: #{
+	enabled: SYSTEM.platform == "Linux",
+	targets: "~/.config/tealdeer",
+	templates: ["user"],
+	strategy: "merge",
+    },
+	vicinae: #{
+	enabled: SYSTEM.platform == "Linux",
+	targets: "~/.config/vicinae",
+	},
     waybar: #{
 	enabled: SYSTEM.platform == "Linux",
 	targets: "~/.config/waybar/",
 	templates: ["style.scss"]
     },
-    fuzzel: #{
+    zsh: #{
 	enabled: SYSTEM.platform == "Linux",
-	templates: ["fuzzel.ini", "clipboard.ini", "emoji.ini", "wifi.ini"]
-    },
-    tealdeer: #{
-	enabled: SYSTEM.platform == "Linux",
-	targets: "~/.config/tealdeer",
+	targets: #{
+	".zshenv": "~/.zshenv",
+	".zprofile": "~/.zprofile",
+	".zshrc": "~/.zshrc",
+	}, 
+	templates: [".zshenv",".zprofile",".zshrc"],
+	main_file: "config"
     },
 
     // Windows Explicit
-    nushell: #{
+    glzr: #{
 	enabled: SYSTEM.platform == "Windows",
-	targets: "~/.config/nushell/",
+	targets: "~/.glzr/",
 	strategy: "merge",
     },
     komorebi: #{
@@ -106,9 +108,9 @@ export let eggs = #{
 	},
 	templates: ["application.json","komorebi.json","whkdrc"],
     },
-    glzr: #{
+    nushell: #{
 	enabled: SYSTEM.platform == "Windows",
-	targets: "~/.glzr/",
+	targets: "~/.config/nushell/",
 	strategy: "merge",
     },
     yasb: #{
