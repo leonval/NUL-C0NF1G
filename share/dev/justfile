@@ -1,0 +1,77 @@
+# Default recipe: list available commands
+default:
+    @just --list
+
+# Start MariaDB if stopped, stop if running
+mariadb-toggle:
+    #!/usr/bin/env zsh
+    GREEN='\033[1;32m'
+    RED='\033[1;31m'
+    YELLOW='\033[1;33m'
+    CYAN='\033[1;36m'
+    NC='\033[0m'
+
+    if systemctl is-active --quiet mariadb.service; then
+        echo "${YELLOW}🔄 MariaDB is running. Stopping service...${NC}"
+        if systemctl stop mariadb.service; then
+            echo "${GREEN}✅ MariaDB stopped successfully!${NC}"
+        else
+            echo "${RED}❌ Failed to stop MariaDB service.${NC}" >&2
+            exit 1
+        fi
+    else
+        echo "${CYAN}🚀 MariaDB is not running. Starting service...${NC}"
+        if systemctl start mariadb.service; then
+            echo "${GREEN}✅ MariaDB started successfully!${NC}"
+        else
+            echo "${RED}❌ Failed to start MariaDB service.${NC}" >&2
+            exit 1
+        fi
+    fi
+
+# Display status of MariaDB
+mariadb-status:
+    #!/usr/bin/env zsh
+    GREEN='\033[1;32m'
+    RED='\033[1;31m'
+    NC='\033[0m'
+
+    if systemctl is-active --quiet mariadb.service; then
+        echo "${GREEN}● MariaDB is ACTIVE (running)${NC}\n"
+    else
+        echo "${RED}○ MariaDB is INACTIVE (stopped)${NC}\n"
+    fi
+    systemctl status mariadb.service --no-pager -n 5 || true
+
+# Run Laravel dev server
+serve:
+    php artisan serve
+
+# Run Vite dev server
+npm:
+    npm run dev
+
+# Run dev environment (Laravel + Vite concurrently)
+dev:
+    npx concurrently "php artisan serve" "npm run dev" --names=server,vite -c blue,yellow
+
+# Clear Laravel cache, routes, config, and views
+clear-cache:
+    php artisan cache:clear
+    php artisan route:clear
+    php artisan config:clear
+    php artisan view:clear
+
+# Run php artisan make [<type>] [<name>] [flags]
+# Examples: `just make`, `just make controller`, `just make controller UserController --model`
+make type="" *args:
+    php artisan make{{ if type != "" { ":" + type } else { "" } }} {{ args }}
+
+# Run php artisan migrate [<command>] [flags]
+# Examples: `just migrate`, `just migrate --seed`, `just migrate fresh --seed`, `just migrate rollback --step=2`
+migrate *args:
+    php artisan migrate{{ if args == "" { "" } else if args =~ "^-" { " " + args } else { ":" + args } }}
+
+# Run any arbitrary php artisan command
+artisan *args:
+    php artisan {{ args }}
