@@ -1,7 +1,6 @@
 [General]
 AutoGeneratePasswordForNewEntries=true
 AutoSaveAfterEveryChange=false
-AutoTypeEntryTitleMatch=false
 BackupBeforeSave=true
 BackupFilePathPattern=old\\{DB_FILENAME}-{TIME}.old.kdbx
 ConfigVersion=2
@@ -14,7 +13,7 @@ UpdateCheckMessageShown=true
 
 [Browser]
 CustomProxyLocation=
-Enabled=false
+Enabled=true
 
 [GUI]
 ApplicationTheme=dark
@@ -23,7 +22,7 @@ HideGroupPanel=false
 HidePreviewPanel=true
 MinimizeOnStartup=true
 MinimizeToTray=true
-ShowTrayIcon=false
+ShowTrayIcon=true
 TrayIconAppearance=colorful
 
 [KeeShare]
@@ -34,11 +33,11 @@ QuietSuccess=true
 [PasswordGenerator]
 AdditionalChars=
 AdvancedMode=true
-Dashes=false
+Dashes=true
 ExcludedChars="^`~\\/|<>+=*"
-Length=32
+Length=20
 Logograms=true
-Math=false
+Math=true
 
 [Security]
 EnableCopyOnDoubleClick=true
