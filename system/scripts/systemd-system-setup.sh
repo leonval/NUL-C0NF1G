@@ -2,44 +2,40 @@
 set -euo pipefail
 
 SERVICES=(
-    "keepassxc.service"
-    "swaybg.service"
-    "swayidle.service"
-    "swayosd-server.service"
-    "waybar.service"
+    "swayosd-libinput-backend.service"
 )
 
 action="${1:-}"
 
 enable_services() {
-    echo "⚙️ Checking and enabling systemd user services..."
-    systemctl --user daemon-reload
+    echo "⚙️ Checking and enabling systemd system services..."
+    systemctl daemon-reload
 
     for service in "${SERVICES[@]}"; do
         # Check if the service is already enabled
-        if systemctl --user is-enabled "$service" >/dev/null 2>&1; then
+        if systemctl is-enabled "$service" >/dev/null 2>&1; then
             echo "  [INFO] $service is already enabled."
         else
             echo "  [+] Enabling and starting $service..."
-            systemctl --user enable --now "$service"
+            systemctl enable --now "$service"
         fi
     done
-    echo "✨ User services check & enable complete."
+    echo "✨ System Services check & enable complete."
 }
 
 disable_services() {
-    echo "⚙️ Checking and disabling systemd user services..."
+    echo "⚙️ Checking and disabling systemd system services..."
 
     for service in "${SERVICES[@]}"; do
         # Check if the service is currently enabled or active
-        if systemctl --user is-enabled "$service" >/dev/null 2>&1 || systemctl --user is-active "$service" >/dev/null 2>&1; then
+        if systemctl is-enabled "$service" >/dev/null 2>&1 || systemctl is-active "$service" >/dev/null 2>&1; then
             echo "  [-] Stopping and disabling $service..."
-            systemctl --user disable --now "$service" || true
+            systemctl disable --now "$service" || true
         else
             echo "  [INFO] $service is already disabled/inactive."
         fi
     done
-    echo "🧹 User services disable complete."
+    echo "🧹 System services disable complete."
 }
 
 case "$action" in

@@ -1,0 +1,61 @@
+$pri: #04ff04; // {< replace_color(palette.hex.neonGreen) >}
+$sec: #000000; // {< replace_color(palette.hex.black) >}
+$ter: #04ff04; // {< replace_color(palette.hex.neonGreen) >}
+$danger: #f38ba8; // {< replace_color(palette.hex.danger) >}
+$inactive: #505050; // {< replace_color(palette.hex.gray) >}
+$bg-pri: #000000; // {< replace_color(palette.hex.black) >}
+$bg-sec: #04ff04; // {< replace_color(palette.hex.neonGreen) >}
+$bg-ter: #04ff04; // {< replace_color(palette.hex.neonGreen) >}
+
+$mh-sm: 0 4px;
+$mb-lg: 0 0 0 8px;
+$pv-md: 0 10px;
+
+window#osd {
+  border-radius: 10px;
+  border: 2px solid $ter;
+  background: $bg-pri;
+
+  #container {
+    margin: 16px;
+  }
+
+  image,
+  label {
+    color: $pri;
+  }
+
+  progressbar:disabled,
+  image:disabled {
+    opacity: 0.5;
+  }
+
+  progressbar,
+  segmentedprogress {
+    min-height: 6px;
+    border-radius: 10;
+    background: transparent;
+    border: none;
+  }
+  trough,
+  segment {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: $inactive;
+  }
+  progress,
+  segment.active {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: $pri;
+  }
+
+  segment {
+    margin-left: 8px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

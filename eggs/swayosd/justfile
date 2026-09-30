@@ -1,0 +1,13 @@
+# Print help
+default:
+    @just --list
+
+# Build style.css file from style.scss
+build:
+	@sassc style.scss style.css || { printf "\033[31m✘ Failed to build style.css\033[0m\n"; exit 1; }
+	@printf "\033[32m✔ Successfully built style.css\033[0m\n"
+
+# Reload waybar service
+reload:
+	@systemctl --user restart swayosd-server.service || { printf "\033[31m✘ Failed to reload Swayosd-server"; exit 1; }
+	@printf "\033[32m✔ Swayosd-server reloaded\033[0m\n"

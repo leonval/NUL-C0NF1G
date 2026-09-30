@@ -1,0 +1,7 @@
+ignore-empty-password
+
+image=~/.dotfiles/share/wallpaper/temple-compressed.png
+
+show-failed-attempts
+
+daemonize

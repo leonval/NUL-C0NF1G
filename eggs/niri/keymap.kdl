@@ -19,7 +19,7 @@ binds {
     alt+space hotkey-overlay-title="Run Appfinder: fuzzel" { spawn-sh r#"fuzzel --config "$HOME/.dotfiles/eggs/fuzzel/fuzzel.ini""#; }
 	// mod+space repeat=false hotkey-overlay-title="Run Appfinder: vicinae" { spawn "vicinae" "toggle"; }
     super+e hotkey-overlay-title="Run File Manager: Thunar" { spawn "thunar"; }
-    alt+e hotkey-overlay-title="Run Yazi" { spawn-sh "wezterm start -- yazi"; }
+    // alt+e hotkey-overlay-title="Run Yazi" { spawn-sh "wezterm start -- yazi"; }
     alt+b hotkey-overlay-title="Run Browser: Zen Browser" { spawn "zen-browser"; }
     super+l hotkey-overlay-title="Lock the Screen: Swaylock" { spawn "swaylock"; }
 
@@ -30,14 +30,14 @@ binds {
 
     // NOTE: Volume Binding
     //	The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "~/.dotfiles/bin/volume-osd" "up"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "~/.dotfiles/bin/volume-osd" "down"; }
-    XF86AudioMute        allow-when-locked=true { spawn "~/.dotfiles/bin/volume-osd" "mute"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume raise --max-volume 120"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "swayosd-client --output-volume lower --max-volume 120"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "swayosd-client --output-volume mute-toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "swayosd-client --input-volume mute-toggle"; }
 
     // NOTE: Brightness Binding
-    XF86MonBrightnessUp allow-when-locked=true { spawn "~/.dotfiles/bin/brightness-osd" "up"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "~/.dotfiles/bin/brightness-osd" "down"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "swayosd-client --brightness raise"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "swayosd-client --brightness lower"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
