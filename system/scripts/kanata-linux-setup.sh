@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/sh
 
 # ==============================================================================
 # Script to set up Kanata with dedicated user and hardened systemd service

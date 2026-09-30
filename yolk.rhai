@@ -15,20 +15,23 @@ export let eggs = #{
 	targets: "~/.config/lazygit/"
     },
     nvim: #{
-	enabled: io::command_available("nvim"),
 	targets: "~/.config/nvim/",
     },
     wezterm: #{
-	enabled: io::command_available("wezterm"),
 	targets: "~/.config/wezterm/",
-	templates: ["wezterm.lua", "keymap.lua", "appearance.lua"],
+	templates: ["*.lua"],
     },
     yazi: #{
 	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/yazi/config/" } else { "~/.config/yazi/" },
     },
     zed: #{
+	enabled: io::command_available("nvim"),
 	targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/Zed/" } else { "~/.config/zed/" },
     },
+	zen: #{
+	enabled: false,
+	targets: "~/.config/zen/*.Default (release)"
+	},
 
     // Linux Explicit
     bash: #{
@@ -50,14 +53,19 @@ export let eggs = #{
 	targets: "~/.config/dunst",
 	templates: ["dunstrc"]
     },
+    environment: #{
+	enabled: SYSTEM.platform == "Linux",
+	targets: "~/.config/environment.d",
+	templates: ["dunstrc"]
+    },
     fuzzel: #{
 	enabled: SYSTEM.platform == "Linux",
-	templates: ["fuzzel.ini", "clipboard.ini", "emoji.ini", "wifi.ini"]
+	templates: ["*.ini"]
     },
     niri: #{
 	enabled: io::command_available("niri"),
 	targets: "~/.config/niri/",
-	templates: ["config.kdl", "layout.kdl", "output.kdl"],
+	templates: ["*.kdl"],
     },
     swaylock: #{
 	enabled: SYSTEM.platform == "Linux",
@@ -65,7 +73,10 @@ export let eggs = #{
     },
     systemd: #{
 	enabled: SYSTEM.platform == "Linux",
-	targets: #{ "user": "~/.config/systemd/user", },
+	targets: #{
+	"keepassxc.service": "~/.config/systemd/user/keepassxc.service",
+	"swaybg.service": "~/.config/systemd/user/swaybg.service",
+	},
 	},
     tealdeer: #{
 	enabled: SYSTEM.platform == "Linux",
@@ -74,7 +85,7 @@ export let eggs = #{
 	strategy: "merge",
     },
 	vicinae: #{
-	enabled: SYSTEM.platform == "Linux",
+	enabled: false,
 	targets: "~/.config/vicinae",
 	},
     waybar: #{

@@ -6,3 +6,6 @@ Requisite=graphical-session.target
 [Service]
 ExecStart=/usr/bin/swaybg -i /home/nnoel/.dotfiles/share/wallpaper/temple-compressed.png
 Restart=on-failure
+
+[Install]
+WantedBy=niri.service
