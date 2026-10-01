@@ -104,6 +104,7 @@ export let eggs = #{
 		enabled: SYSTEM.platform == "Linux",
 		targets: #{
 		"style.css": "~/.config/waybar/style.css",
+		"config.jsonc": "~/.config/waybar/config.jsonc",
 		},
 		templates: ["*.scss"]
     },
