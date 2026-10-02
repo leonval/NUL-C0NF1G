@@ -26,13 +26,14 @@ window-rule {
     match app-id="Rofi"
     match app-id="blueman-manager"
     match app-id="org.pulseaudio.pavucontrol"
+    match app-id="syncthingtray-qt6"
 
     open-floating true
 }
 
 // Block out two password managers from screen capture.
 window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
     block-out-from "screen-capture"

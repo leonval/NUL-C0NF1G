@@ -12,7 +12,7 @@ workspace "SECUNDUS"
 // workspace "TERTIUS"
 
 cursor {
-    xcursor-theme "BreezeX-Black"
+    xcursor-theme "breeze_cursors"
     xcursor-size 36
 }
 
