@@ -2,3 +2,4 @@
 /.deployed_cache
 /.yolk_git
 /eggs/nushell/autoload/local.nu
+/eggs/zsh/local.d/

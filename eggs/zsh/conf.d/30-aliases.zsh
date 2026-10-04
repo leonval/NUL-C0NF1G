@@ -32,6 +32,8 @@ alias gb="git branch"
 alias gba="git branch --all"
 alias gbd="git branch --delete"
 alias gc="git commit --verbose"
+alias gcf="git config"
+alias gcfl="git config --list"
 alias gd="git diff"
 alias gf="git fetch"
 alias gl="git log --graph"
@@ -64,13 +66,14 @@ alias jjbsab='jj bookmark set --allow-backwards'
 alias jjbt='jj bookmark track'
 alias jjbu='jj bookmark untrack'
 alias jjc='jj commit'
+alias jjcf='jj config'
+alias jjcfl='jj config list'
 alias jjcmsg='jj commit --message'
 alias jjd='jj diff'
 alias jjdr='jj diff --revisions'
 alias jjdmsg='jj desc --message'
 alias jjds='jj desc'
 alias jje='jj edit'
-alias jjgcl='jj git clone'
 alias jjgf='jj git fetch'
 alias jjgfa='jj git fetch --all-remotes'
 alias jjgP='jj git push'
@@ -91,6 +94,10 @@ alias jjsp='jj split'
 alias jjsq='jj squash'
 alias jjs='jj status'
 
+# workspace
+alias todo="tuxedo $TODO"
+alias buylist="tuxedo $BUYLIST"
+
 # yolk dotfiles
 alias yga="yolk git add"
 alias ygaa="yolk git add -A"
@@ -98,6 +105,8 @@ alias ygb="yolk git branch"
 alias ygba="yolk git branch --all"
 alias ygbd="yolk git branch --delete"
 alias ygc="yolk git commit --verbose"
+alias ygcf="yolk git config"
+alias ygcfl="yolk git config --list"
 alias ygd="yolk git diff"
 alias ygf="yolk git fetch"
 alias ygl="yolk git log --graph"
@@ -115,5 +124,3 @@ alias ygst="yolk git status"
 alias ygsw="yolk git switch"
 alias ygswc="yolk git switch --create"
 alias ylg="lazygit -g ~/.dotfiles/.yolk_git"
-
-

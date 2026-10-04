@@ -5,6 +5,9 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='moor'
 
+# bob
+. "/home/nnoel/.local/share/bob/env/env.sh"
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -13,7 +16,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/go/bin/:$PATH"
 
 # rust
-. "$HOME/.cargo/env"
+export PATH="$HOME/.cargo/bin/:$PATH"
 
-# bob
-. "/home/nnoel/.local/share/bob/env/env.sh"
+for file in ~/.dotfiles/eggs/zsh/local.d/*.zsh(Nn); do
+    source "$file"
+done
