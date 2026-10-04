@@ -11,6 +11,11 @@ export let eggs = #{
 		},
 		templates: [".gitconfig"],
     },
+	jj: #{
+		targets: #{
+		"config.toml": "~/.config/jj/config.toml"
+		}
+	},
     lazygit: #{
 		targets: "~/.config/lazygit/"
     },
@@ -45,8 +50,11 @@ export let eggs = #{
     },
     desktop: #{
 		enabled: SYSTEM.platform == "Linux",
-		targets: "~/.local/share/applications/",
-		strategy: "merge",
+		targets: #{
+		"shutdown.desktop": "~/.local/share/applications/shutdown.desktop",
+		"shutdown-10-min.desktop": "~/.local/share/applications/shutdown-10-min.desktop",
+		"restart.desktop": "~/.local/share/applications/restart.desktop",
+		}, 
     },
     dunst: #{
 		enabled: SYSTEM.platform == "Linux",
@@ -93,8 +101,6 @@ export let eggs = #{
     tealdeer: #{
 		enabled: SYSTEM.platform == "Linux",
 		targets: "~/.config/tealdeer",
-		templates: ["user"],
-		strategy: "merge",
     },
 	vicinae: #{
 		enabled: false,
@@ -108,6 +114,12 @@ export let eggs = #{
 		},
 		templates: ["*.scss"]
     },
+	xdg: #{
+		enabled: SYSTEM.platform == "Linux",
+		targets: #{
+		"portals.conf": "~/.config/xdg-dekstop-portal/portals.conf",
+		},
+	},
     zsh: #{
 		enabled: SYSTEM.platform == "Linux",
 		targets: #{
