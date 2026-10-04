@@ -268,6 +268,6 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     // mod+shift+p { power-off-monitors; }
-    mod+v { spawn-sh "clipman pick -t CUSTOM --tool-args='fuzzel -d --config '$HOME/.dotfiles/eggs/fuzzel/clipboard.ini''"; }
-    mod+semicolon { spawn-sh r#"BEMOJI_PICKER_CMD="rg . | fuzzel -d --config "$HOME/.dotfiles/eggs/fuzzel/emoji.ini" bemoji" bemoji -t"#; }
+    mod+v { spawn-sh "copyq show"; }
+    mod+semicolon { spawn-sh r#"rofimoji --selector-args="--config $HOME/.dotfiles/eggs/fuzzel/emoji.ini""#; }
 }
