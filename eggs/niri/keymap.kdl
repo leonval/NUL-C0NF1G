@@ -20,7 +20,7 @@ binds {
 	// mod+space repeat=false hotkey-overlay-title="Run Appfinder: vicinae" { spawn "vicinae" "toggle"; }
     super+e hotkey-overlay-title="Run File Manager: Thunar" { spawn "thunar"; }
     // alt+e hotkey-overlay-title="Run Yazi" { spawn-sh "wezterm start -- yazi"; }
-    alt+b hotkey-overlay-title="Run Browser: Zen Browser" { spawn "zen-browser"; }
+    mod+b hotkey-overlay-title="Run Browser: Zen Browser" { spawn "zen-browser"; }
     mod+alt+l hotkey-overlay-title="Lock the Screen: Swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.

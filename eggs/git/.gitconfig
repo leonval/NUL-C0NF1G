@@ -6,8 +6,8 @@
 	default = simple
 	autoSetupRemote = true
 [pager]
-	diff = riff
-	show = riff
-	log = riff
+	diff = delta
+	show = delta
+	log = delta
 [interactive]
-	diffFilter = riff --color=on
+	diffFilter = delta
