@@ -70,6 +70,14 @@ export let eggs = #{
 		enabled: SYSTEM.platform == "Linux",
 		templates: ["*.ini"]
     },
+	kanatatray: #{
+		enabled: SYSTEM.platform == "Linux",
+		targets: "~/.config/kanata-tray",
+	},
+	MangoHud: #{
+		enabled: SYSTEM.platform == "Linux",
+		targets: "~/.config/MangoHud",
+	},
     niri: #{
 		enabled: SYSTEM.platform == "Linux",
 		targets: "~/.config/niri/",
@@ -92,6 +100,7 @@ export let eggs = #{
     systemd: #{
 		enabled: SYSTEM.platform == "Linux",
 		targets: #{
+		"kanata-tray.service": "~/.config/systemd/user/kanata-tray.service",
 		"keepassxc.service": "~/.config/systemd/user/keepassxc.service",
 		"swaybg.service": "~/.config/systemd/user/swaybg.service",
 		"swayidle.service": "~/.config/systemd/user/swayidle.service",

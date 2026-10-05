@@ -1,0 +1,12 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+Environment=KANATA_TRAY_LOG_DIR=%h/.local/bin
+ExecStart=kanata-tray-linux
+Restart=no
+
+[Install]
+WantedBy=niri.service
