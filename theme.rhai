@@ -17,6 +17,7 @@ export let palette = #{
 	    "gray": "#505050ff",
 	    "danger": "#f38ba8ff",
 
+	    "black85": "#000000D9",
 	    "neonGreen70": "#04ff0470",
 	}
 };

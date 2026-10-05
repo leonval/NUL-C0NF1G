@@ -12,7 +12,7 @@ fullscreen = delay
 frame_color = "#04ff04" # {< replace_color(palette.hex.neonGreen) >}
 separator_color = frame
 highlight = "#04ff04" # {< replace_color(palette.hex.neonGreen) >}
-background = "#000000" # {< replace_color(palette.hex.black) >}
+background = "#000000D9" # {< replace_color(palette.hexOpacity.black85) >} # FIX: background is not transparent
 foreground = "#04ff04" # {< replace_color(palette.hex.neonGreen) >}
 
 # text
@@ -23,7 +23,7 @@ enable_recursive_icon_lookup = true
 
 # action
 mouse_right_click = context, close_current
-dmenu = /usr/bin/fuzzel -d
+dmenu = fuzzel -d --config=$HOME/.dotfiles/eggs/fuzzel/dunst.ini
 
 [urgency_low]
 foreground = "#ffffff" # {< replace_color(palette.hex.white) >}

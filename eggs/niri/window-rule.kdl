@@ -8,7 +8,7 @@ window-rule {
         blur true
     }
 }
-// Open the Firefox picture-in-picture player as floating by default.
+// Open the picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
@@ -18,6 +18,18 @@ window-rule {
 
     open-floating true
     default-floating-position x=12 y=12 relative-to="bottom-right" 
+}
+
+// Block out password managers from screen capture.
+window-rule {
+    match app-id=r#"KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+    open-floating true
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
 }
 
 // Open floating
@@ -30,18 +42,6 @@ window-rule {
     match app-id="com.github.hluk.copyq"
 
     open-floating true
-}
-
-// Block out two password managers from screen capture.
-window-rule {
-    match app-id=r#"KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
-    block-out-from "screen-capture"
-    open-floating true
-
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
 }
 
 // Enable rounded corners for all windows.
