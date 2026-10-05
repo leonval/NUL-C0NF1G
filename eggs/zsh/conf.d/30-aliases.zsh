@@ -3,7 +3,7 @@ alias sudo="sudo "
 # general
 alias cd="z" # zoxide
 alias v="nvim"
-alias zsh-reload='source ~/.zshrc'
+alias z-reload='source ~/.zshrc'
 
 # dev
 alias lg="lazygit"

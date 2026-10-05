@@ -6,7 +6,7 @@ export VISUAL='nvim'
 export PAGER='moor'
 
 # bob
-. "/home/nnoel/.local/share/bob/env/env.sh"
+. "$HOME/.local/share/bob/env/env.sh"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

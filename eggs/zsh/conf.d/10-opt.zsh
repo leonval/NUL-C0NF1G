@@ -1,4 +1,3 @@
-setopt COMPLETE_IN_WORD # Allow tab completion in the middle of a word
 
 # VIM MODE CONFIG - START
 bindkey -v
@@ -41,29 +40,23 @@ bindkey -M viins '\eb' backward-word # press Ctrl+ArrowLeft to go left one word
 bindkey -M viins '\ef' forward-word # press Ctrl+ArrowRight to go right one word
 # VIM MODE CONFIG - END
 
-## keep background processes at full speed
-#setopt NOBGNICE
-## restart running processes on exit
-#setopt HUP
-
-## history
+# history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+# [SHELL BEHAVIOUR]
+setopt COMPLETE_IN_WORD # Allow tab completion in the middle of a word
 setopt APPEND_HISTORY
-## for sharing history between zsh processes
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY # for sharing history between zsh processes
+setopt SHARE_HISTORY # for sharing history between zsh processes
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
 
-## never ever beep ever
-#setopt NO_BEEP
-
-## automatically decide when to page a list of completions
-#LISTMAX=0
-
-## disable mail checking
-#MAILCHECK=0
+setopt AUTOCD
+setopt NUMERIC_GLOB_SORT
 
 # autoload -U colors
 #colors
