@@ -78,6 +78,10 @@ export let eggs = #{
 		enabled: SYSTEM.platform == "Linux",
 		targets: "~/.config/MangoHud",
 	},
+	ncdu: #{
+		enabled: SYSTEM.platform == "Linux",
+		targets: "~/.config/ncdu",
+	},
     niri: #{
 		enabled: SYSTEM.platform == "Linux",
 		targets: "~/.config/niri/",
