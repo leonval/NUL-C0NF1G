@@ -1,44 +1,25 @@
+bindkey -e
 
-# VIM MODE CONFIG - START
-bindkey -v
-export KEYTIMEOUT=1
-
-# Change cursor shape depending on Vi mode in WezTerm
-function update_vi_mode_ui {
-    local mode="INSERT"
-    if [[ ${KEYMAP} == vicmd ]]; then
-	mode="NORMAL"
-	echo -ne '\e[2 q' # Solid Block cursor (█) for Normal Mode
-    else
-	echo -ne '\e[6 q' # Steady Beam cursor (|) for Insert Mode
-    fi
-
-    # Send user variable VI_MODE to WezTerm via OSC 1337
-    printf "\033]1337;SetUserVar=%s=%s\007" "VI_MODE" $(echo -n "$mode" | base64)
-}
-
-function zle-keymap-select {
-    update_vi_mode_ui
-}
-zle -N zle-keymap-select
-
-function zle-line-init {
-    update_vi_mode_ui
-}
-zle -N zle-line-init
-
-# Reset state when running a command
-function preexec {
-    echo -ne '\e[6 q' # Reset cursor to beam
-    printf "\033]1337;SetUserVar=%s=%s\007" "VI_MODE" $(echo -n "RUNNING" | base64)
-}
-
-## Rebind Vim keys
-bindkey -M viins '^A' beginning-of-line # press Home to go to beginning of line
-bindkey -M viins '^E' end-of-line # press End to go to end of line
-bindkey -M viins '\eb' backward-word # press Ctrl+ArrowLeft to go left one word
-bindkey -M viins '\ef' forward-word # press Ctrl+ArrowRight to go right one word
-# VIM MODE CONFIG - END
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey "\e[1~" beginning-of-line
+bindkey "\e[4~" end-of-line
+bindkey "\e[5~" beginning-of-history
+bindkey "\e[6~" end-of-history
+bindkey "\e[7~" beginning-of-line
+bindkey "\e[3~" delete-char
+bindkey "\e[2~" quoted-insert
+bindkey "\e[5C" forward-word
+bindkey "\e[5D" backward-word
+bindkey "\e\e[C" forward-word
+bindkey "\e\e[D" backward-word
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
+bindkey "\e[8~" end-of-line
+bindkey "\eOH" beginning-of-line
+bindkey "\eOF" end-of-line
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
 
 # history
 HISTFILE=~/.zsh_history

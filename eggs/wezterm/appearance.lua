@@ -24,6 +24,9 @@ function M.apply_to_config(config)
 	-- ## FONT
 	config.font = wezterm.font_with_fallback({ "0xProto Nerd Font", "Cascadia Code", "JetBrains Mono" }) -- {< replace_in(`'`, font) >}
 
+	-- CURSOR
+	config.default_cursor_style = "SteadyBar"
+
 	-- ## CONTENT ALIGNMENT
 	config.window_content_alignment = {
 		horizontal = "Center",
@@ -109,47 +112,21 @@ function M.apply_to_config(config)
 		}
 	end)
 
-	-- Leader Status & Vi Mode Indicator
+	-- Leader Status
 	wezterm.on("update-status", function(window, pane)
 		LEADER_ICON = "LEADER"
 
-		local mode_text = ""
-		local mode_background = M.THEME.pri
-		local mode_foreground = M.THEME.sec
-
-		local process_name = pane:get_foreground_process_name() or ""
-		local is_zsh = process_name:match("zsh$") ~= nil
-
-		if is_zsh then
-			local vi_mode = pane:get_user_vars().VI_MODE or "INSERT"
-			if vi_mode == "NORMAL" then
-				mode_text = " NORMAL "
-				mode_foreground = M.THEME.pri
-				mode_background = M.THEME.bg_pri
-			elseif vi_mode == "INSERT" then
-				mode_text = " INSERT "
-				mode_foreground = M.THEME.sec
-				mode_background = M.THEME.bg_sec
-			end
-		end
-
 		local leader = window:leader_is_active() and " " .. LEADER_ICON .. " " or ""
-
 		local status_elements = {}
 
-		if is_zsh then
-			table.insert(status_elements, { Background = { Color = mode_background } })
-			table.insert(status_elements, { Foreground = { Color = mode_foreground } })
+		if window:leader_is_active() then
+			table.insert(status_elements, { Background = { Color = M.THEME.bg_pri } })
+			table.insert(status_elements, { Foreground = { Color = M.THEME.danger } })
 			table.insert(status_elements, { Attribute = { Intensity = "Bold" } })
-			table.insert(status_elements, { Text = mode_text })
+			table.insert(status_elements, { Text = leader })
+			table.insert(status_elements, { Background = { Color = M.THEME.bg_pri } })
+			table.insert(status_elements, { Text = " " })
 		end
-
-		table.insert(status_elements, { Background = { Color = M.THEME.bg_pri } })
-		table.insert(status_elements, { Foreground = { Color = M.THEME.danger } })
-		table.insert(status_elements, { Text = leader })
-
-		table.insert(status_elements, { Background = { Color = M.THEME.bg_pri } })
-		table.insert(status_elements, { Text = " " })
 
 		window:set_left_status(wezterm.format(status_elements))
 	end)
