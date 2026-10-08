@@ -4,23 +4,17 @@ layer-rule {
     place-within-backdrop true
 }
 
+// Block waybar from screencast
 layer-rule {
     match namespace="waybar"
 
     block-out-from "screencast"
 }
 
+// Blur fuzzel background
 layer-rule {
     match namespace="^launcher$"
 
-	background-effect {
-        blur true
-    }
-}
-layer-rule {
-    match namespace="notifications"
-
-    block-out-from "screencast"
 	background-effect {
         blur true
     }
