@@ -98,6 +98,7 @@ export let eggs = #{
 		enabled: SYSTEM.platform == "Linux",
 		targets: #{
 		"style.css": "~/.config/swayosd/style.css",
+		"config.toml": "~/.config/swayosd/config.toml",
 		},
 		templates: ["*.scss"],
     },

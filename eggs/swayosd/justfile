@@ -2,6 +2,10 @@
 default:
     @just --list
 
+# Build style.scss and reload
+rerun: build reload
+	@printf "\033[32m✔ Successfully rerun swayosd-server\033[0m\n"
+
 # Build style.css file from style.scss
 build:
 	@sassc style.scss style.css || { printf "\033[31m✘ Failed to build style.css\033[0m\n"; exit 1; }
