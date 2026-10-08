@@ -3,6 +3,8 @@ alias sudo="sudo "
 # general
 alias cd="z" # zoxide
 alias v="nvim"
+alias open="xdg-open"
+alias cls='clear'
 alias z-reload='source ~/.zshrc'
 
 # dev

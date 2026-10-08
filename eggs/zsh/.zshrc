@@ -1,5 +1,3 @@
-source ~/.bashrc
-
 # bin files
 export PATH="$HOME/.dotfiles/bin/:$PATH"
 
@@ -7,6 +5,7 @@ export PATH="$HOME/.dotfiles/bin/:$PATH"
 export YOLK_DIR="$HOME/.dotfiles"
 
 for file in ~/.dotfiles/eggs/zsh/conf.d/*.zsh(Nn); do
-    source "$file"
+	source "$file"
 done
 
+[[ -o interactive ]] && fastfetch
