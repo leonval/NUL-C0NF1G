@@ -4,6 +4,7 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
+Environment="GSK_RENDERER=gl"
 ExecStart=swayosd-server
 Restart=on-failure
 
