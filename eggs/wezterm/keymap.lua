@@ -100,11 +100,11 @@ function M.apply_to_config(config)
 			action = action.SendString("\x1bf"),
 		},
 		-- Launcher
-		{
-			mods = "CTRL",
-			key = "Space",
-			action = action.ShowLauncher,
-		},
+		-- {
+		-- 	mods = "CTRL",
+		-- 	key = "Space",
+		-- 	action = action.ShowLauncher,
+		-- },
 	}
 
 	-- Activate tab 1-9 with Ctrl+1-9

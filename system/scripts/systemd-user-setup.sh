@@ -3,6 +3,7 @@ set -euo pipefail
 
 SERVICES=(
     "keepassxc.service"
+    "mpd.service"
     "swaybg.service"
     "swayidle.service"
     "swayosd-server.service"

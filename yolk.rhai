@@ -19,9 +19,15 @@ export let eggs = #{
     lazygit: #{
 		targets: "~/.config/lazygit/"
     },
+    mpd: #{
+		targets: "~/.config/mpd/",
+    },
     nvim: #{
 		targets: "~/.config/nvim/",
     },
+	rmpc: #{
+		targets: "~/.config/rmpc/",
+	},
     wezterm: #{
 		targets: "~/.config/wezterm/",
 		templates: ["*.lua"],
