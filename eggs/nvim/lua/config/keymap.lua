@@ -26,6 +26,10 @@ local keys = {
     {"n", "<leader>dw", "<cmd>windo diffthis<CR>", { desc = "[d]iff this [w]indow" }},
     {"n", "<leader>do", "<cmd>diffoff!<CR>", { desc = "[d]iff [o]ff" }},
 
+	-- Indent
+    {"v", ">", ">gv", { desc = "Indent and keep selection" }},
+    {"v", "<", "<gv", { desc = "Unindent and keep selection" }},
+
     -- LSP
     {"n", "<leader>cr", function() vim.lsp.buf.rename() end, { desc = "LSP [r]ename" }},
     {"n", "<leader>ca", function() vim.lsp.buf.code_action() end, { desc = "LSP [c]ode [a]ction" }},
