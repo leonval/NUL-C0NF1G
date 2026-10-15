@@ -5,5 +5,6 @@ require("mason-lspconfig").setup({
 		"bashls",
 		"lua_ls",
 		"stylua",
+		"markdown_oxide",
 	},
 })
