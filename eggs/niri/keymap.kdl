@@ -21,7 +21,7 @@ binds {
     mod+b hotkey-overlay-title="Run Browser: Zen Browser" { spawn "zen-browser"; }
     mod+alt+l hotkey-overlay-title="Lock the Screen: Swaylock" { spawn "swaylock"; }
     mod+v { spawn-sh "copyq show"; }
-    mod+semicolon { spawn-sh r#"rofimoji --selector-args="--config $HOME/.dotfiles/eggs/fuzzel/emoji.ini""#; }
+    mod+semicolon { spawn-sh r#"rofimoji -a copy --selector-args="--config $HOME/.dotfiles/eggs/fuzzel/emoji.ini""#; }
 
     // Volume Binding
     // The allow-when-locked=true property makes them work even when the session is locked.

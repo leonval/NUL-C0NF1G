@@ -47,6 +47,14 @@ layout {
 		softness 30
 	}
 
+	tab-indicator {
+		width 12
+		gap -12
+		position "left"
+		corner-radius 24
+		place-within-column
+	}
+
 	insert-hint {
 		color "#04ff0470" // {< replace_color(palette.hexOpacity.neonGreen70) >}
 	}

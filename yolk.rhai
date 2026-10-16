@@ -113,6 +113,7 @@ export let eggs = #{
 		targets: #{
 		"kanata-tray.service": "~/.config/systemd/user/kanata-tray.service",
 		"keepassxc.service": "~/.config/systemd/user/keepassxc.service",
+		"startup-sound.service": "~/.config/systemd/user/startup-sound.service",
 		"swaybg.service": "~/.config/systemd/user/swaybg.service",
 		"swayidle.service": "~/.config/systemd/user/swayidle.service",
 		"swayosd-server.service": "~/.config/systemd/user/swayosd-server.service",

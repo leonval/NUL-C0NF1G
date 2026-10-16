@@ -1,0 +1,10 @@
+[Unit]
+Description=Play login sound
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=pw-play %h/.dotfiles/share/sounds/system/startup.wav
+
+[Install]
+WantedBy=niri.service
