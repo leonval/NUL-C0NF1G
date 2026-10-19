@@ -12,7 +12,7 @@ vim.schedule(function()
 end)
 
 -- # UNDO HISTORY
--- vim.opt.undofile = true
+vim.opt.undofile = true
 
 -- # SEARCH
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term

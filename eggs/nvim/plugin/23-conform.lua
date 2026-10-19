@@ -5,6 +5,7 @@ require("conform").setup({
 		blade = { "blade-formatter" },
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		lua = { "stylua" },
+		md = { "prettierd", "prettier", stop_after_first = true },
 		php = { "pint" },
 		zsh = { "shfmt" },
 	},
