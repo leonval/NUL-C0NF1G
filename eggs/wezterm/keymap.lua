@@ -22,12 +22,12 @@ function M.apply_to_config(config)
 		},
 		{
 			mods = "LEADER",
-			key = "h",
+			key = "v",
 			action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 		},
 		{
 			mods = "LEADER",
-			key = "v",
+			key = "s",
 			action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
 		},
 		{

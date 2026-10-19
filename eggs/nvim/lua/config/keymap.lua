@@ -46,9 +46,6 @@ local keys = {
     {"n", "<leader>l", "<C-w><C-l>", { desc = "Move focus to the right window" }},
     {"n", "<leader>j", "<C-w><C-j>", { desc = "Move focus to the lower window" }},
     {"n", "<leader>k", "<C-w><C-k>", { desc = "Move focus to the upper window" }},
-
-    {"n", "<leader>wh", "<cmd>vsplit<CR>", { desc = "[W]indow Split [V]ertical" }},
-    {"n", "<leader>wv", "<cmd>split<CR>", { desc = "[W]indow Split [H]orizontal" }},
 }
 
 function set_keymaps(keys)

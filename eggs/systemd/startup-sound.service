@@ -1,9 +1,11 @@
 [Unit]
 Description=Play login sound
-After=graphical-session.target
+After=pipewire.service pipewire-pulse.service wireplumber.service graphical-session.target
+Wants=pipewire.service wireplumber.service
 
 [Service]
 Type=oneshot
+ExecStartPre=sleep 1
 ExecStart=pw-play %h/.dotfiles/share/sounds/system/startup.wav
 
 [Install]
