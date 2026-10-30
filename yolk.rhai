@@ -35,8 +35,10 @@ export let eggs = #{
     yazi: #{
 		targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/yazi/config/" } else { "~/.config/yazi/" },
     },
+    ytdlp: #{
+		targets: "~/.config/yt-dlp/",
+    },
     zed: #{
-		enabled: io::command_available("nvim"),
 		targets: if SYSTEM.platform == "Windows" { "~/AppData/Roaming/Zed/" } else { "~/.config/zed/" },
     },
 	zen: #{
