@@ -182,6 +182,11 @@ binds {
     ctrl+print { screenshot; }
     print { screenshot-screen; }
     alt+print { screenshot-window; }
+	shift+print { spawn-sh r#"region=$(slurp) || exit; tmp=$(mktemp --suffix=.png); grim -g "$region" "$tmp"; result=$(zbarimg -q --raw "$tmp"); rm -f "$tmp"; if [ -n "$result" ]; then printf %s "$result" | wl-copy; dunstify 'QR Code Scanned' "$result"; else dunstify 'QR Scanner' 'No QR code found'; fi"#; }
+
+	// screencast
+	mod+c { set-dynamic-cast-window; }
+	mod+shift+c { clear-dynamic-cast-target; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

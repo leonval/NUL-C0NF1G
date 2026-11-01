@@ -1,4 +1,25 @@
 // Open terminal floating, centered, and sized correctly
+
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    border {
+		on
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+}
+
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
 
@@ -34,14 +55,22 @@ window-rule {
 
 // Open floating
 window-rule {
-    match app-id="thunar"
     match app-id="Rofi"
-    match app-id="blueman-manager"
-    match app-id="org.pulseaudio.pavucontrol"
-    match app-id="syncthingtray"
     match app-id="com.github.hluk.copyq"
 
     open-floating true
+}
+
+// Open floating and set size
+window-rule {
+    match app-id="thunar"
+    match app-id="blueman-manager"
+    match app-id="org.pulseaudio.pavucontrol"
+    match app-id="syncthingtray"
+
+    open-floating true
+	default-column-width { fixed 960; }
+    default-window-height { fixed 720; }
 }
 
 // Default column to tabbed
