@@ -12,18 +12,20 @@ discord
 dunst
 eza
 fd
-flat-remix-icon-theme
-flat-remix-theme
+flat-remix
+flat-remix-gtk
 flatpak
 flatseal
 fzf
 gimp
 git-delta
+grim
 heroic
 just
 keepassxc
 lazygit
 libreoffice
+localsend
 make
 mangohud
 mariadb
@@ -40,6 +42,7 @@ restic
 ripgrep
 rofimoji
 rustup
+slurp
 steam
 swaybg
 swayidle
@@ -53,4 +56,5 @@ wezterm
 wl-clipboard
 yazi
 ydotool
+zbar
 zen-browser

@@ -3,11 +3,11 @@ default:
     @just --list
 
 # Orchestrates the entire machine configuration
-setup: check-tools safeguard sync
+setup: dependencies safeguard sync
     @echo "✨ Machine setup completed successfully!"
 
-# Check all necessary tools and list any missing ones at once
-check-tools:
+# Check all necessary tools and list any missing ones
+dependencies:
 	#!/usr/bin/env bash
 	echo "🔍 Checking necessary tools..."
 	MISSING=""
@@ -41,6 +41,7 @@ sync:
 checkhealth: package-linux
 	@echo "Checking system health..."
 
+# Checkhealth for linux packages (arch pacman)
 package-linux:
 	@echo "Checking linux packages..."
 	@zsh ./system/scripts/missing-packages-linux.sh ./export/packages/linux
@@ -49,24 +50,30 @@ package-linux:
 # 	@echo "Checking flatpak packages..."
 # 	@zsh ./system/scripts/missing-packages.sh ./export/packages/flatpak
 
+# Setup systemd services
 systemd-setup: systemd-user-setup systemd-system-setup
 	@echo "Running systemd setup..."
 
+# Setup systemd user services
 systemd-user-setup:
 	@echo "Running systemd user setup..."
 	@zsh ./system/scripts/systemd-user-setup.sh enable
 
+# Setup systemd system services
 systemd-system-setup:
 	@echo "Running systemd system setup..."
 	@zsh ./system/scripts/systemd-system-setup.sh enable
 
+# Prune systemd services
 systemd-prune: systemd-user-prune systemd-system-prune
 	@echo "Prunning systemd setup..."
 
+# Prune systemd user services
 systemd-user-prune:
 	@echo "Prunning systemd user setup..."
 	@zsh ./system/scripts/systemd-user-setup.sh disable
 
+# Prune systemd system services
 systemd-system-prune:
 	@echo "Prunning systemd system setup..."
 	@zsh ./system/scripts/systemd-system-setup.sh disable
