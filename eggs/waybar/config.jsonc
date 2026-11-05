@@ -8,44 +8,46 @@
 
     "custom/launcher":{
         "format": "🞊",
-        "on-click": "fuzzel",
+        "on-click": "fuzzel --config $HOME/.dotfiles/eggs/fuzzel/fuzzel.ini",
         "on-click-right": "thunar",
         "tooltip": true,
         "tooltip-format": "Left Click: Launch App\nRight Click: File Manager"
     },
 
     "niri/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "1": "PRIMUS",
-            "2": "SECUNDUS",
-            "3": "TERTIUS",
-            "4": "QUARTUS",
-            "5": "QUINTUS",
-            // "urgent": "",
-            // "active": " ",
-            // "default": ""
-         },
-	 "on-scroll-up": "niri msg action focus-workspace-up",
-	 "on-scroll-down": "niri msg action focus-workspace-down"
+		"format": "{icon}",
+		"format-icons": {
+			"1": "PRIMUS",
+			"2": "SECUNDUS",
+			"3": "TERTIUS",
+			"4": "QUARTUS",
+			"5": "QUINTUS",
+			"urgent": "⚠",
+			// "active": "",
+			"empty": "",
+			"default": ""
+		 },
+		 "hide-empty": true,
+		 "on-scroll-up": "niri msg action focus-workspace-up",
+		 "on-scroll-down": "niri msg action focus-workspace-down"
     },
 
     "wlr/taskbar": {
-	"format": "{icon}",
-	"icon-size": 18,
-	"tooltip-format": "{name}",
-	"on-click": "activate",
-	"on-click-middle": "close",
-	"ignore-list": [
-	    "Alacritty"
-	],
-	"app_ids-mapping": {
-	    "firefoxdeveloperedition": "firefox-developer-edition"
-	},
-	"rewrite": {
-	    "Firefox Web Browser": "Firefox",
-	    "Foot Server": "Terminal"
-	}
+		"format": "{icon}",
+		"icon-size": 18,
+		"tooltip-format": "{name}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"ignore-list": [
+			"Alacritty"
+		],
+		"app_ids-mapping": {
+			"firefoxdeveloperedition": "firefox-developer-edition"
+		},
+		"rewrite": {
+			"Firefox Web Browser": "Firefox",
+			"Foot Server": "Terminal"
+		}
     },
 
     "clock": {
@@ -60,23 +62,23 @@
     },
 
     "group/connection": {
-	"orientation": "inherit",
-	"drawer": {
-	    "transition-duration": 250,
-	    "children-class": "not-network",
-	    "transition-left-to-right": false
-	},
-	"modules": [
-	    "network",
-	    "bluetooth"
-	]
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 250,
+			"children-class": "not-network",
+			"transition-left-to-right": false
+		},
+		"modules": [
+			"network",
+			"bluetooth"
+		]
     },
 
     "bluetooth": {
-	"controller": "blueman",
-	"format": " {status}",
-	"format-disabled": " off",
-	"on-click": "blueman-manager"
+		"controller": "blueman",
+		"format": " {status}",
+		"format-disabled": " off",
+		"on-click": "blueman-manager"
     },
 
     "network": {
@@ -96,22 +98,22 @@
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
         "format": "{icon} {volume}%",
-	"format-bluetooth": "{icon} {volume}%",
+		"format-bluetooth": "{icon} {volume}%",
         "format-muted": " mute",
         "format-icons": {
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-	"max-volume": 150
+		"max-volume": 150
     },
 
     "battery": {
-	"interval": 30,
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
+		"interval": 30,
+		"states": {
+			"warning": 20,
+			"critical": 10
+		},
         "format": "{icon} {capacity}%",
         "format-charging": "󰂄 {capacity}%",
         "format-plugged": " {capacity}%",

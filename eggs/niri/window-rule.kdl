@@ -57,6 +57,7 @@ window-rule {
 window-rule {
     match app-id="Rofi"
     match app-id="com.github.hluk.copyq"
+    match app-id="com.github.wwmm.easyeffects"
 
     open-floating true
 }

@@ -10,6 +10,8 @@ overview {
 workspace "PRIMUS"
 workspace "SECUNDUS"
 // workspace "TERTIUS"
+// workspace "QUARTUS"
+// workspace "QUINTUS"
 
 cursor {
     xcursor-theme "breeze_cursors"
