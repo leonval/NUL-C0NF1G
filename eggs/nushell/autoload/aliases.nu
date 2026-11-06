@@ -20,8 +20,8 @@ alias bl = bat --line-range
 # eza 
 alias x = eza --icons --hyperlink --group-directories-first
 alias xa = eza --icons --all --hyperlink --group-directories-first
-alias xl = eza --icons --long --hyperlink --group-directories-first
-alias xla = eza --icons --long --all --hyperlink --group-directories-first
+alias xl = eza --icons --long --smart-group --hyperlink --group-directories-first
+alias xla = eza --icons --long --smart-group --all --hyperlink --group-directories-first
 alias xt = eza --icons --tree --hyperlink --group-directories-first
 alias xta = eza --icons --tree --all --hyperlink --group-directories-first
 

@@ -62,6 +62,7 @@ export let eggs = #{
 		"shutdown.desktop": "~/.local/share/applications/shutdown.desktop",
 		"shutdown-10-min.desktop": "~/.local/share/applications/shutdown-10-min.desktop",
 		"restart.desktop": "~/.local/share/applications/restart.desktop",
+		"restart-athena-offensive.desktop": "~/.local/share/applications/restart-athena-offensive.desktop",
 		}, 
     },
     dunst: #{

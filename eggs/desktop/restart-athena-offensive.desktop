@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Reboot into Athena Offensive
+Comment=Reboot the system
+Exec=systemctl reboot --boot-loader-entry=athena-linux-aegis-offensive.conf
+Icon=~/.dotfiles/share/icons/google-material-mode-off-on.svg
+Terminal=false
+Categories=System;Utility;
+StartupNotify=true

@@ -8,7 +8,7 @@ control_server_port = 8100
 
 [defaults]
 tcp_port = 5829
-autorestart_on_crash = false
+autorestart_on_crash = true
 
 [defaults.hooks]
 # Hooks allow running custom commands on specific events (e.g. when starting preset).
@@ -19,8 +19,7 @@ PRIMUS = 'PRIMUS.png'
 SECUNDUS = 'SECUNDUS.png'
 TERTIUS = 'TERTIUS.png'
 
-
 [presets.'kenkyo']
-kanata_executable = '~/.dotfiles/config/kanata/fake-kanata.sh'
+kanata_executable = 'kanata'
 kanata_config = '~/.dotfiles/config/kanata/kenkyo.kbd'
 autorun = true

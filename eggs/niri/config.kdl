@@ -9,7 +9,7 @@ overview {
 
 workspace "PRIMUS"
 workspace "SECUNDUS"
-// workspace "TERTIUS"
+workspace "TERTIUS"
 // workspace "QUARTUS"
 // workspace "QUINTUS"
 
