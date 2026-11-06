@@ -23,9 +23,9 @@
 			"4": "QUARTUS",
 			"5": "QUINTUS",
 			"urgent": "⚠",
-			// "active": "",
-			"empty": "",
-			"default": ""
+			// "active": "",
+			"empty": "◯",
+			"default": "⬤"
 		 },
 		 "hide-empty": true,
 		 "on-scroll-up": "niri msg action focus-workspace-up",
